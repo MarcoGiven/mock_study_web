@@ -1,0 +1,482 @@
+17.0838 	WARNING 	Font Manager failed to load file /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc
+17.1758 	WARNING 	Font Manager failed to load file /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc
+18.7072 	INFO 	Loaded monitor calibration from ['2025_06_12 14:42']
+18.8455 	INFO 	Using renderer 'Apple M1 Pro' for graphics
+18.8455 	INFO 	OpenGL version supported by driver is 2..
+18.8776 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x158358400>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x1583583a0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1583b6530>, multiSample=False, name='window1', numSamples=2, pos=[np.float64(260.0), np.float64(224.5)], screen=0, size=array([2560, 1440]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+18.8777 	EXP 	window1: backgroundImage = ''
+18.8777 	EXP 	window1: backgroundFit = 'none'
+19.3867 	INFO 	keyboard.Keyboard is using ptb backend.
+19.5565 	INFO 	keyboard.Keyboard is using ptb backend.
+19.6487 	INFO 	keyboard.Keyboard is using ptb backend.
+19.6488 	EXP 	mock_study: status = STARTED
+19.6981 	EXP 	Created textWelcomeMessage = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='textWelcomeMessage', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+19.7178 	EXP 	Created imageQuery = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='imageQuery', opacity=1, ori=0.0, pos=array([-0.5,  0. ]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+19.7216 	EXP 	Created image1 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image1', opacity=1, ori=0.0, pos=array([0. , 0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7249 	EXP 	Created image2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image2', opacity=1, ori=0.0, pos=array([0.3, 0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7281 	EXP 	Created image3 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image3', opacity=1, ori=0.0, pos=array([0.6, 0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7316 	EXP 	Created image4 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image4', opacity=1, ori=0.0, pos=array([ 0. , -0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7350 	EXP 	Created image5 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image5', opacity=1, ori=0.0, pos=array([ 0.3, -0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7358 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.7423 	EXP 	Created textNextScreen = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='textNextScreen', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+19.7463 	EXP 	Created imageQuery_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='imageQuery_2', opacity=1, ori=0.0, pos=array([-0.5,  0. ]), size=array([0.5, 0.5]), texRes=128.0, units='height', win=Window(...))
+19.7500 	EXP 	Created image1_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image1_2', opacity=1, ori=0.0, pos=array([0. , 0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7535 	EXP 	Created image2_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image2_2', opacity=1, ori=0.0, pos=array([0.3, 0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7571 	EXP 	Created image3_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image3_2', opacity=1, ori=0.0, pos=array([0.6, 0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7604 	EXP 	Created image4_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image4_2', opacity=1, ori=0.0, pos=array([ 0. , -0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.7638 	EXP 	Created image5_2 = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, draggable=False, flipHoriz=np.False_, flipVert=np.False_, image='default.png', interpolate=True, mask=None, maskParams=None, name='image5_2', opacity=1, ori=0.0, pos=array([ 0.3, -0.2]), size=array([0.25, 0.25]), texRes=128.0, units='height', win=Window(...))
+19.8014 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+19.8051 	EXP 	Created textEndMessage = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='textEndMessage', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Thank you for completing!', units='height', win=Window(...), wrapWidth=1)
+0.0562 	INFO 	Keyboard events cleared
+0.0561 	EXP 	textWelcomeMessage: autoDraw = True
+1.4030 	EXP 	Device response: <KeyPress from None: t=1.2196711249416694, value=space, duration=None>
+1.4031 	EXP 	Device response: <KeyPress from None: t=1.2196711249416694, value=space, duration=0.10788962501101196>
+1.4091 	EXP 	Imported queryImages.xlsx as conditions, 5 conditions, 12 params
+1.4096 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'query_image': 'images/grape.png', 'choice1': 'images/kiwi.png', 'choice2': 'images/orange.png', 'choice3': 'images/grape.png', 'choice4': 'images/banana.png', 'choice5': 'images/apple.png', 'correct_answer': 'image3', 'gray1': 'images/kiwi_gray.png', 'gray2': 'images/orange_gray.png', 'gray3': 'images/grape_gray.png', 'gray4': 'images/banana_gray.png', 'gray5': 'images/apple_gray.png', 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+1.5431 	EXP 	textWelcomeMessage: autoDraw = False
+1.5431 	EXP 	imageQuery: image = 'images/grape.png'
+1.5431 	EXP 	image1: image = 'images/kiwi.png'
+1.5431 	EXP 	image2: image = 'images/orange.png'
+1.5431 	EXP 	image3: image = 'images/grape.png'
+1.5431 	EXP 	image4: image = 'images/banana.png'
+1.5431 	EXP 	image5: image = 'images/apple.png'
+1.5431 	EXP 	imageQuery: autoDraw = True
+1.5431 	EXP 	image1: autoDraw = True
+1.5431 	EXP 	image2: autoDraw = True
+1.5431 	EXP 	image3: autoDraw = True
+1.5431 	EXP 	image4: autoDraw = True
+1.5431 	EXP 	image5: autoDraw = True
+7.3948 	DATA 	Mouse: Left button down, pos=(1086,541)
+7.3951 	DATA 	Mouse:  Left button up, pos=(1086,541)
+7.3955 	DATA 	Mouse: Left button down, pos=(1086,541)
+7.4065 	EXP 	imageQuery: autoDraw = False
+7.4065 	EXP 	image1: autoDraw = False
+7.4065 	EXP 	image2: autoDraw = False
+7.4065 	EXP 	image3: autoDraw = False
+7.4065 	EXP 	image4: autoDraw = False
+7.4065 	EXP 	image5: autoDraw = False
+7.4065 	EXP 	text: autoDraw = True
+7.4857 	DATA 	Mouse:  Left button up, pos=(1086,541)
+8.3991 	EXP 	New trial (rep=0, index=1): <Trial 1 (1 in rep 0) data={'query_image': 'images/apple.png', 'choice1': 'images/orange.png', 'choice2': 'images/apple.png', 'choice3': 'images/grape.png', 'choice4': 'images/banana.png', 'choice5': 'images/kiwi.png', 'correct_answer': 'image2', 'gray1': 'images/orange_gray.png', 'gray2': 'images/apple_gray.png', 'gray3': 'images/grape_gray.png', 'gray4': 'images/banana_gray.png', 'gray5': 'images/kiwi_gray.png', 'thisN': 1, 'thisTrialN': 1, 'thisRepN': 0}>
+8.5312 	EXP 	text: autoDraw = False
+8.5312 	EXP 	text: autoDraw = False
+8.5312 	EXP 	imageQuery: image = 'images/apple.png'
+8.5312 	EXP 	image1: image = 'images/orange.png'
+8.5312 	EXP 	image2: image = 'images/apple.png'
+8.5312 	EXP 	image3: image = 'images/grape.png'
+8.5312 	EXP 	image4: image = 'images/banana.png'
+8.5312 	EXP 	image5: image = 'images/kiwi.png'
+8.5312 	EXP 	imageQuery: autoDraw = True
+8.5312 	EXP 	image1: autoDraw = True
+8.5312 	EXP 	image2: autoDraw = True
+8.5312 	EXP 	image3: autoDraw = True
+8.5312 	EXP 	image4: autoDraw = True
+8.5312 	EXP 	image5: autoDraw = True
+10.5432 	DATA 	Mouse: Left button down, pos=(887,518)
+10.5435 	DATA 	Mouse:  Left button up, pos=(887,518)
+10.5438 	DATA 	Mouse: Left button down, pos=(887,518)
+10.5488 	EXP 	imageQuery: autoDraw = False
+10.5488 	EXP 	image1: autoDraw = False
+10.5488 	EXP 	image2: autoDraw = False
+10.5488 	EXP 	image3: autoDraw = False
+10.5488 	EXP 	image4: autoDraw = False
+10.5488 	EXP 	image5: autoDraw = False
+10.5488 	EXP 	text: autoDraw = True
+10.7180 	DATA 	Mouse:  Left button up, pos=(887,518)
+11.5398 	EXP 	New trial (rep=0, index=2): <Trial 2 (2 in rep 0) data={'query_image': 'images/kiwi.png', 'choice1': 'images/kiwi.png', 'choice2': 'images/apple.png', 'choice3': 'images/grape.png', 'choice4': 'images/banana.png', 'choice5': 'images/orange.png', 'correct_answer': 'image1', 'gray1': 'images/kiwi_gray.png', 'gray2': 'images/apple_gray.png', 'gray3': 'images/grape_gray.png', 'gray4': 'images/banana_gray.png', 'gray5': 'images/orange_gray.png', 'thisN': 2, 'thisTrialN': 2, 'thisRepN': 0}>
+11.6982 	EXP 	text: autoDraw = False
+11.6982 	EXP 	text: autoDraw = False
+11.6982 	EXP 	imageQuery: image = 'images/kiwi.png'
+11.6982 	EXP 	image1: image = 'images/kiwi.png'
+11.6982 	EXP 	image2: image = 'images/apple.png'
+11.6982 	EXP 	image3: image = 'images/grape.png'
+11.6982 	EXP 	image4: image = 'images/banana.png'
+11.6982 	EXP 	image5: image = 'images/orange.png'
+11.6982 	EXP 	imageQuery: autoDraw = True
+11.6982 	EXP 	image1: autoDraw = True
+11.6982 	EXP 	image2: autoDraw = True
+11.6982 	EXP 	image3: autoDraw = True
+11.6982 	EXP 	image4: autoDraw = True
+11.6982 	EXP 	image5: autoDraw = True
+13.3182 	DATA 	Mouse: Left button down, pos=(683,524)
+13.3194 	DATA 	Mouse:  Left button up, pos=(683,524)
+13.3199 	DATA 	Mouse: Left button down, pos=(683,524)
+13.3246 	EXP 	imageQuery: autoDraw = False
+13.3246 	EXP 	image1: autoDraw = False
+13.3246 	EXP 	image2: autoDraw = False
+13.3246 	EXP 	image3: autoDraw = False
+13.3246 	EXP 	image4: autoDraw = False
+13.3246 	EXP 	image5: autoDraw = False
+13.3246 	EXP 	text: autoDraw = True
+13.4668 	DATA 	Mouse:  Left button up, pos=(683,524)
+14.3109 	EXP 	New trial (rep=0, index=3): <Trial 3 (3 in rep 0) data={'query_image': 'images/orange.png', 'choice1': 'images/banana.png', 'choice2': 'images/apple.png', 'choice3': 'images/kiwi.png', 'choice4': 'images/grape.png', 'choice5': 'images/orange.png', 'correct_answer': 'image5', 'gray1': 'images/banana_gray.png', 'gray2': 'images/apple_gray.png', 'gray3': 'images/kiwi_gray.png', 'gray4': 'images/grape_gray.png', 'gray5': 'images/orange_gray.png', 'thisN': 3, 'thisTrialN': 3, 'thisRepN': 0}>
+14.4515 	EXP 	text: autoDraw = False
+14.4515 	EXP 	text: autoDraw = False
+14.4515 	EXP 	imageQuery: image = 'images/orange.png'
+14.4515 	EXP 	image1: image = 'images/banana.png'
+14.4515 	EXP 	image2: image = 'images/apple.png'
+14.4515 	EXP 	image3: image = 'images/kiwi.png'
+14.4515 	EXP 	image4: image = 'images/grape.png'
+14.4515 	EXP 	image5: image = 'images/orange.png'
+14.4515 	EXP 	imageQuery: autoDraw = True
+14.4515 	EXP 	image1: autoDraw = True
+14.4515 	EXP 	image2: autoDraw = True
+14.4515 	EXP 	image3: autoDraw = True
+14.4515 	EXP 	image4: autoDraw = True
+14.4515 	EXP 	image5: autoDraw = True
+18.9148 	DATA 	Mouse: Left button down, pos=(875,276)
+18.9151 	DATA 	Mouse:  Left button up, pos=(875,276)
+18.9156 	DATA 	Mouse: Left button down, pos=(875,276)
+18.9207 	EXP 	imageQuery: autoDraw = False
+18.9207 	EXP 	image1: autoDraw = False
+18.9207 	EXP 	image2: autoDraw = False
+18.9207 	EXP 	image3: autoDraw = False
+18.9207 	EXP 	image4: autoDraw = False
+18.9207 	EXP 	image5: autoDraw = False
+18.9207 	EXP 	text: autoDraw = True
+19.0247 	DATA 	Mouse:  Left button up, pos=(875,276)
+19.9064 	EXP 	New trial (rep=0, index=4): <Trial 4 (4 in rep 0) data={'query_image': 'images/banana.png', 'choice1': 'images/apple.png', 'choice2': 'images/banana.png', 'choice3': 'images/orange.png', 'choice4': 'images/kiwi.png', 'choice5': 'images/grape.png', 'correct_answer': 'image2', 'gray1': 'images/apple_gray.png', 'gray2': 'images/banana_gray.png', 'gray3': 'images/orange_gray.png', 'gray4': 'images/kiwi_gray.png', 'gray5': 'images/grape_gray.png', 'thisN': 4, 'thisTrialN': 4, 'thisRepN': 0}>
+20.1009 	EXP 	text: autoDraw = False
+20.1009 	EXP 	text: autoDraw = False
+20.1009 	EXP 	imageQuery: image = 'images/banana.png'
+20.1009 	EXP 	image1: image = 'images/apple.png'
+20.1009 	EXP 	image2: image = 'images/banana.png'
+20.1009 	EXP 	image3: image = 'images/orange.png'
+20.1009 	EXP 	image4: image = 'images/kiwi.png'
+20.1009 	EXP 	image5: image = 'images/grape.png'
+20.1009 	EXP 	imageQuery: autoDraw = True
+20.1009 	EXP 	image1: autoDraw = True
+20.1009 	EXP 	image2: autoDraw = True
+20.1009 	EXP 	image3: autoDraw = True
+20.1009 	EXP 	image4: autoDraw = True
+20.1009 	EXP 	image5: autoDraw = True
+21.6658 	DATA 	Mouse: Left button down, pos=(866,532)
+21.6670 	DATA 	Mouse:  Left button up, pos=(866,532)
+21.6674 	DATA 	Mouse: Left button down, pos=(866,532)
+21.6733 	EXP 	imageQuery: autoDraw = False
+21.6733 	EXP 	image1: autoDraw = False
+21.6733 	EXP 	image2: autoDraw = False
+21.6733 	EXP 	image3: autoDraw = False
+21.6733 	EXP 	image4: autoDraw = False
+21.6733 	EXP 	image5: autoDraw = False
+21.6733 	EXP 	text: autoDraw = True
+21.7774 	DATA 	Mouse:  Left button up, pos=(866,532)
+22.6626 	INFO 	Keyboard events cleared
+22.6625 	EXP 	text: autoDraw = False
+22.6625 	EXP 	text: autoDraw = False
+22.6625 	EXP 	textNextScreen: autoDraw = True
+23.7577 	EXP 	Device response: <KeyPress from None: t=23.754279125016183, value=space, duration=None>
+23.7674 	EXP 	Imported queryImages.xlsx as conditions, 5 conditions, 12 params
+23.7679 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'query_image': 'images/kiwi.png', 'choice1': 'images/kiwi.png', 'choice2': 'images/apple.png', 'choice3': 'images/grape.png', 'choice4': 'images/banana.png', 'choice5': 'images/orange.png', 'correct_answer': 'image1', 'gray1': 'images/kiwi_gray.png', 'gray2': 'images/apple_gray.png', 'gray3': 'images/grape_gray.png', 'gray4': 'images/banana_gray.png', 'gray5': 'images/orange_gray.png', 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+24.0170 	EXP 	Device response: <KeyPress from None: t=23.754279125016183, value=space, duration=0.0880703330039978>
+24.0262 	EXP 	textNextScreen: autoDraw = False
+24.0262 	EXP 	imageQuery_2: image = 'images/kiwi.png'
+24.0262 	EXP 	image1_2: image = 'images/kiwi.png'
+24.0262 	EXP 	image2_2: image = 'images/apple.png'
+24.0262 	EXP 	image3_2: image = 'images/grape.png'
+24.0262 	EXP 	image4_2: image = 'images/banana.png'
+24.0262 	EXP 	image5_2: image = 'images/orange.png'
+24.0262 	EXP 	image1_2: image = 'images/kiwi.png'
+24.0262 	EXP 	image2_2: image = 'images/apple.png'
+24.0262 	EXP 	image3_2: image = 'images/grape.png'
+24.0262 	EXP 	image4_2: image = 'images/banana.png'
+24.0262 	EXP 	image5_2: image = 'images/orange.png'
+24.0262 	EXP 	imageQuery_2: autoDraw = True
+24.0262 	EXP 	image1_2: autoDraw = True
+24.0262 	EXP 	image2_2: autoDraw = True
+24.0262 	EXP 	image3_2: autoDraw = True
+24.0262 	EXP 	image4_2: autoDraw = True
+24.0262 	EXP 	image5_2: autoDraw = True
+26.7991 	DATA 	Mouse: Left button down, pos=(314,32)
+26.7993 	DATA 	Mouse:  Left button up, pos=(314,32)
+26.7995 	DATA 	Mouse: Left button down, pos=(314,32)
+26.9952 	DATA 	Mouse:  Left button up, pos=(314,32)
+27.0000 	EXP 	image1: image = 'images/kiwi_gray.png'
+27.0000 	EXP 	image2: image = 'images/apple_gray.png'
+27.0000 	EXP 	image3: image = 'images/grape_gray.png'
+27.0000 	EXP 	image4: image = 'images/banana_gray.png'
+27.0000 	EXP 	image5: image = 'images/orange_gray.png'
+27.0000 	EXP 	image1_2: image = 'images/kiwi.png'
+27.0000 	EXP 	image2_2: image = 'images/apple.png'
+27.0000 	EXP 	image3_2: image = 'images/grape.png'
+27.0000 	EXP 	image4_2: image = 'images/banana.png'
+27.0000 	EXP 	image5_2: image = 'images/orange.png'
+27.1638 	DATA 	Mouse: Left button down, pos=(314,32)
+27.3373 	DATA 	Mouse:  Left button up, pos=(314,32)
+27.3415 	EXP 	image1: image = 'images/kiwi_gray.png'
+27.3415 	EXP 	image2: image = 'images/apple_gray.png'
+27.3415 	EXP 	image3: image = 'images/grape_gray.png'
+27.3415 	EXP 	image4: image = 'images/banana_gray.png'
+27.3415 	EXP 	image5: image = 'images/orange_gray.png'
+27.3415 	EXP 	image1_2: image = 'images/kiwi.png'
+27.3415 	EXP 	image2_2: image = 'images/apple.png'
+27.3415 	EXP 	image3_2: image = 'images/grape.png'
+27.3415 	EXP 	image4_2: image = 'images/banana.png'
+27.3415 	EXP 	image5_2: image = 'images/orange.png'
+27.8593 	DATA 	Mouse: Left button down, pos=(286,34)
+27.8595 	DATA 	Mouse:  Left button up, pos=(286,34)
+27.8598 	DATA 	Mouse: Left button down, pos=(286,34)
+28.0384 	DATA 	Mouse:  Left button up, pos=(286,34)
+28.0388 	DATA 	Mouse: Left button down, pos=(286,34)
+28.0436 	EXP 	image1: image = 'images/kiwi_gray.png'
+28.0436 	EXP 	image2: image = 'images/apple_gray.png'
+28.0436 	EXP 	image3: image = 'images/grape_gray.png'
+28.0436 	EXP 	image4: image = 'images/banana_gray.png'
+28.0436 	EXP 	image5: image = 'images/orange_gray.png'
+28.0436 	EXP 	image1_2: image = 'images/kiwi.png'
+28.0436 	EXP 	image2_2: image = 'images/apple.png'
+28.0436 	EXP 	image3_2: image = 'images/grape.png'
+28.0436 	EXP 	image4_2: image = 'images/banana.png'
+28.0436 	EXP 	image5_2: image = 'images/orange.png'
+28.1233 	EXP 	image1: image = 'images/kiwi_gray.png'
+28.1233 	EXP 	image2: image = 'images/apple_gray.png'
+28.1233 	EXP 	image3: image = 'images/grape_gray.png'
+28.1233 	EXP 	image4: image = 'images/banana_gray.png'
+28.1233 	EXP 	image5: image = 'images/orange_gray.png'
+28.2201 	DATA 	Mouse:  Left button up, pos=(286,34)
+28.2241 	EXP 	image1: image = 'images/kiwi.png'
+28.2241 	EXP 	image2: image = 'images/apple.png'
+28.2241 	EXP 	image3: image = 'images/grape.png'
+28.2241 	EXP 	image4: image = 'images/banana.png'
+28.2241 	EXP 	image5: image = 'images/orange.png'
+28.2333 	DATA 	Mouse: Left button down, pos=(286,34)
+28.4090 	DATA 	Mouse:  Left button up, pos=(286,34)
+28.4135 	EXP 	image1: image = 'images/kiwi_gray.png'
+28.4135 	EXP 	image2: image = 'images/apple_gray.png'
+28.4135 	EXP 	image3: image = 'images/grape_gray.png'
+28.4135 	EXP 	image4: image = 'images/banana_gray.png'
+28.4135 	EXP 	image5: image = 'images/orange_gray.png'
+28.4135 	EXP 	image1_2: image = 'images/kiwi.png'
+28.4135 	EXP 	image2_2: image = 'images/apple.png'
+28.4135 	EXP 	image3_2: image = 'images/grape.png'
+28.4135 	EXP 	image4_2: image = 'images/banana.png'
+28.4135 	EXP 	image5_2: image = 'images/orange.png'
+28.9219 	DATA 	Mouse: Left button down, pos=(359,22)
+28.9224 	DATA 	Mouse:  Left button up, pos=(359,22)
+28.9226 	DATA 	Mouse: Left button down, pos=(359,22)
+29.0978 	DATA 	Mouse:  Left button up, pos=(359,22)
+29.1025 	EXP 	image1: image = 'images/kiwi_gray.png'
+29.1025 	EXP 	image2: image = 'images/apple_gray.png'
+29.1025 	EXP 	image3: image = 'images/grape_gray.png'
+29.1025 	EXP 	image4: image = 'images/banana_gray.png'
+29.1025 	EXP 	image5: image = 'images/orange_gray.png'
+29.1025 	EXP 	image1_2: image = 'images/kiwi.png'
+29.1025 	EXP 	image2_2: image = 'images/apple.png'
+29.1025 	EXP 	image3_2: image = 'images/grape.png'
+29.1025 	EXP 	image4_2: image = 'images/banana.png'
+29.1025 	EXP 	image5_2: image = 'images/orange.png'
+30.0114 	DATA 	Mouse: Left button down, pos=(319,56)
+30.0115 	DATA 	Mouse:  Left button up, pos=(319,56)
+30.0117 	DATA 	Mouse: Left button down, pos=(319,56)
+30.1905 	DATA 	Mouse:  Left button up, pos=(319,56)
+30.1951 	EXP 	image1: image = 'images/kiwi_gray.png'
+30.1951 	EXP 	image2: image = 'images/apple_gray.png'
+30.1951 	EXP 	image3: image = 'images/grape_gray.png'
+30.1951 	EXP 	image4: image = 'images/banana_gray.png'
+30.1951 	EXP 	image5: image = 'images/orange_gray.png'
+30.1951 	EXP 	image1_2: image = 'images/kiwi.png'
+30.1951 	EXP 	image2_2: image = 'images/apple.png'
+30.1951 	EXP 	image3_2: image = 'images/grape.png'
+30.1951 	EXP 	image4_2: image = 'images/banana.png'
+30.1951 	EXP 	image5_2: image = 'images/orange.png'
+30.6263 	DATA 	Mouse: Left button down, pos=(310,32)
+30.6268 	DATA 	Mouse:  Left button up, pos=(310,32)
+30.6270 	DATA 	Mouse: Left button down, pos=(310,32)
+30.7060 	DATA 	Mouse:  Left button up, pos=(310,32)
+30.7100 	EXP 	image1: image = 'images/kiwi_gray.png'
+30.7100 	EXP 	image2: image = 'images/apple_gray.png'
+30.7100 	EXP 	image3: image = 'images/grape_gray.png'
+30.7100 	EXP 	image4: image = 'images/banana_gray.png'
+30.7100 	EXP 	image5: image = 'images/orange_gray.png'
+34.3971 	DATA 	Mouse: Left button down, pos=(689,543)
+34.3978 	DATA 	Mouse:  Left button up, pos=(689,543)
+34.3980 	DATA 	Mouse: Left button down, pos=(689,543)
+34.4039 	EXP 	imageQuery_2: autoDraw = False
+34.4039 	EXP 	image1_2: autoDraw = False
+34.4039 	EXP 	image2_2: autoDraw = False
+34.4039 	EXP 	image3_2: autoDraw = False
+34.4039 	EXP 	image4_2: autoDraw = False
+34.4039 	EXP 	image5_2: autoDraw = False
+34.4039 	EXP 	text: autoDraw = True
+34.4971 	DATA 	Mouse:  Left button up, pos=(689,543)
+35.3903 	EXP 	New trial (rep=0, index=1): <Trial 1 (1 in rep 0) data={'query_image': 'images/grape.png', 'choice1': 'images/kiwi.png', 'choice2': 'images/orange.png', 'choice3': 'images/grape.png', 'choice4': 'images/banana.png', 'choice5': 'images/apple.png', 'correct_answer': 'image3', 'gray1': 'images/kiwi_gray.png', 'gray2': 'images/orange_gray.png', 'gray3': 'images/grape_gray.png', 'gray4': 'images/banana_gray.png', 'gray5': 'images/apple_gray.png', 'thisN': 1, 'thisTrialN': 1, 'thisRepN': 0}>
+35.6095 	EXP 	text: autoDraw = False
+35.6095 	EXP 	text: autoDraw = False
+35.6095 	EXP 	imageQuery_2: image = 'images/grape.png'
+35.6095 	EXP 	image1_2: image = 'images/kiwi.png'
+35.6095 	EXP 	image2_2: image = 'images/orange.png'
+35.6095 	EXP 	image3_2: image = 'images/grape.png'
+35.6095 	EXP 	image4_2: image = 'images/banana.png'
+35.6095 	EXP 	image5_2: image = 'images/apple.png'
+35.6095 	EXP 	image1_2: image = 'images/kiwi.png'
+35.6095 	EXP 	image2_2: image = 'images/orange.png'
+35.6095 	EXP 	image3_2: image = 'images/grape.png'
+35.6095 	EXP 	image4_2: image = 'images/banana.png'
+35.6095 	EXP 	image5_2: image = 'images/apple.png'
+35.6095 	EXP 	imageQuery_2: autoDraw = True
+35.6095 	EXP 	image1_2: autoDraw = True
+35.6095 	EXP 	image2_2: autoDraw = True
+35.6095 	EXP 	image3_2: autoDraw = True
+35.6095 	EXP 	image4_2: autoDraw = True
+35.6095 	EXP 	image5_2: autoDraw = True
+36.1467 	DATA 	Mouse: Left button down, pos=(294,52)
+36.1469 	DATA 	Mouse:  Left button up, pos=(294,52)
+36.1471 	DATA 	Mouse: Left button down, pos=(294,52)
+36.3267 	DATA 	Mouse:  Left button up, pos=(294,52)
+36.3271 	DATA 	Mouse: Left button down, pos=(294,52)
+36.3320 	EXP 	image1: image = 'images/kiwi_gray.png'
+36.3320 	EXP 	image2: image = 'images/orange_gray.png'
+36.3320 	EXP 	image3: image = 'images/grape_gray.png'
+36.3320 	EXP 	image4: image = 'images/banana_gray.png'
+36.3320 	EXP 	image5: image = 'images/apple_gray.png'
+36.3320 	EXP 	image1_2: image = 'images/kiwi.png'
+36.3320 	EXP 	image2_2: image = 'images/orange.png'
+36.3320 	EXP 	image3_2: image = 'images/grape.png'
+36.3320 	EXP 	image4_2: image = 'images/banana.png'
+36.3320 	EXP 	image5_2: image = 'images/apple.png'
+36.4058 	DATA 	Mouse:  Left button up, pos=(294,52)
+36.4102 	EXP 	image1: image = 'images/kiwi_gray.png'
+36.4102 	EXP 	image2: image = 'images/orange_gray.png'
+36.4102 	EXP 	image3: image = 'images/grape_gray.png'
+36.4102 	EXP 	image4: image = 'images/banana_gray.png'
+36.4102 	EXP 	image5: image = 'images/apple_gray.png'
+36.4965 	DATA 	Mouse: Left button down, pos=(294,52)
+36.5991 	DATA 	Mouse:  Left button up, pos=(294,52)
+36.6032 	EXP 	image1: image = 'images/kiwi.png'
+36.6032 	EXP 	image2: image = 'images/orange.png'
+36.6032 	EXP 	image3: image = 'images/grape.png'
+36.6032 	EXP 	image4: image = 'images/banana.png'
+36.6032 	EXP 	image5: image = 'images/apple.png'
+37.1801 	DATA 	Mouse: Left button down, pos=(297,57)
+37.1807 	DATA 	Mouse:  Left button up, pos=(297,57)
+37.1810 	DATA 	Mouse: Left button down, pos=(297,57)
+37.2598 	DATA 	Mouse:  Left button up, pos=(297,57)
+37.2635 	EXP 	image1: image = 'images/kiwi_gray.png'
+37.2635 	EXP 	image2: image = 'images/orange_gray.png'
+37.2635 	EXP 	image3: image = 'images/grape_gray.png'
+37.2635 	EXP 	image4: image = 'images/banana_gray.png'
+37.2635 	EXP 	image5: image = 'images/apple_gray.png'
+37.3424 	DATA 	Mouse: Left button down, pos=(297,57)
+37.4554 	DATA 	Mouse:  Left button up, pos=(297,57)
+37.4594 	EXP 	image1: image = 'images/kiwi.png'
+37.4594 	EXP 	image2: image = 'images/orange.png'
+37.4594 	EXP 	image3: image = 'images/grape.png'
+37.4594 	EXP 	image4: image = 'images/banana.png'
+37.4594 	EXP 	image5: image = 'images/apple.png'
+39.1218 	DATA 	Mouse: Left button down, pos=(1070,529)
+39.1227 	DATA 	Mouse:  Left button up, pos=(1070,529)
+39.1230 	DATA 	Mouse: Left button down, pos=(1070,529)
+39.1289 	EXP 	imageQuery_2: autoDraw = False
+39.1289 	EXP 	image1_2: autoDraw = False
+39.1289 	EXP 	image2_2: autoDraw = False
+39.1289 	EXP 	image3_2: autoDraw = False
+39.1289 	EXP 	image4_2: autoDraw = False
+39.1289 	EXP 	image5_2: autoDraw = False
+39.1289 	EXP 	text: autoDraw = True
+39.2226 	DATA 	Mouse:  Left button up, pos=(1070,529)
+40.1146 	EXP 	New trial (rep=0, index=2): <Trial 2 (2 in rep 0) data={'query_image': 'images/apple.png', 'choice1': 'images/orange.png', 'choice2': 'images/apple.png', 'choice3': 'images/grape.png', 'choice4': 'images/banana.png', 'choice5': 'images/kiwi.png', 'correct_answer': 'image2', 'gray1': 'images/orange_gray.png', 'gray2': 'images/apple_gray.png', 'gray3': 'images/grape_gray.png', 'gray4': 'images/banana_gray.png', 'gray5': 'images/kiwi_gray.png', 'thisN': 2, 'thisTrialN': 2, 'thisRepN': 0}>
+40.3443 	EXP 	text: autoDraw = False
+40.3443 	EXP 	text: autoDraw = False
+40.3443 	EXP 	imageQuery_2: image = 'images/apple.png'
+40.3443 	EXP 	image1_2: image = 'images/orange.png'
+40.3443 	EXP 	image2_2: image = 'images/apple.png'
+40.3443 	EXP 	image3_2: image = 'images/grape.png'
+40.3443 	EXP 	image4_2: image = 'images/banana.png'
+40.3443 	EXP 	image5_2: image = 'images/kiwi.png'
+40.3443 	EXP 	image1_2: image = 'images/orange.png'
+40.3443 	EXP 	image2_2: image = 'images/apple.png'
+40.3443 	EXP 	image3_2: image = 'images/grape.png'
+40.3443 	EXP 	image4_2: image = 'images/banana.png'
+40.3443 	EXP 	image5_2: image = 'images/kiwi.png'
+40.3443 	EXP 	imageQuery_2: autoDraw = True
+40.3443 	EXP 	image1_2: autoDraw = True
+40.3443 	EXP 	image2_2: autoDraw = True
+40.3443 	EXP 	image3_2: autoDraw = True
+40.3443 	EXP 	image4_2: autoDraw = True
+40.3443 	EXP 	image5_2: autoDraw = True
+42.0888 	DATA 	Mouse: Left button down, pos=(862,509)
+42.0894 	DATA 	Mouse:  Left button up, pos=(862,509)
+42.0897 	DATA 	Mouse: Left button down, pos=(862,509)
+42.0957 	EXP 	imageQuery_2: autoDraw = False
+42.0957 	EXP 	image1_2: autoDraw = False
+42.0957 	EXP 	image2_2: autoDraw = False
+42.0957 	EXP 	image3_2: autoDraw = False
+42.0957 	EXP 	image4_2: autoDraw = False
+42.0957 	EXP 	image5_2: autoDraw = False
+42.0957 	EXP 	text: autoDraw = True
+42.2180 	DATA 	Mouse:  Left button up, pos=(862,509)
+43.0816 	EXP 	New trial (rep=0, index=3): <Trial 3 (3 in rep 0) data={'query_image': 'images/orange.png', 'choice1': 'images/banana.png', 'choice2': 'images/apple.png', 'choice3': 'images/kiwi.png', 'choice4': 'images/grape.png', 'choice5': 'images/orange.png', 'correct_answer': 'image5', 'gray1': 'images/banana_gray.png', 'gray2': 'images/apple_gray.png', 'gray3': 'images/kiwi_gray.png', 'gray4': 'images/grape_gray.png', 'gray5': 'images/orange_gray.png', 'thisN': 3, 'thisTrialN': 3, 'thisRepN': 0}>
+43.3192 	EXP 	text: autoDraw = False
+43.3192 	EXP 	text: autoDraw = False
+43.3192 	EXP 	imageQuery_2: image = 'images/orange.png'
+43.3192 	EXP 	image1_2: image = 'images/banana.png'
+43.3192 	EXP 	image2_2: image = 'images/apple.png'
+43.3192 	EXP 	image3_2: image = 'images/kiwi.png'
+43.3192 	EXP 	image4_2: image = 'images/grape.png'
+43.3192 	EXP 	image5_2: image = 'images/orange.png'
+43.3192 	EXP 	image1_2: image = 'images/banana.png'
+43.3192 	EXP 	image2_2: image = 'images/apple.png'
+43.3192 	EXP 	image3_2: image = 'images/kiwi.png'
+43.3192 	EXP 	image4_2: image = 'images/grape.png'
+43.3192 	EXP 	image5_2: image = 'images/orange.png'
+43.3192 	EXP 	imageQuery_2: autoDraw = True
+43.3192 	EXP 	image1_2: autoDraw = True
+43.3192 	EXP 	image2_2: autoDraw = True
+43.3192 	EXP 	image3_2: autoDraw = True
+43.3192 	EXP 	image4_2: autoDraw = True
+43.3192 	EXP 	image5_2: autoDraw = True
+44.9722 	DATA 	Mouse: Left button down, pos=(865,227)
+44.9724 	DATA 	Mouse:  Left button up, pos=(865,227)
+44.9732 	DATA 	Mouse: Left button down, pos=(865,227)
+44.9790 	EXP 	imageQuery_2: autoDraw = False
+44.9790 	EXP 	image1_2: autoDraw = False
+44.9790 	EXP 	image2_2: autoDraw = False
+44.9790 	EXP 	image3_2: autoDraw = False
+44.9790 	EXP 	image4_2: autoDraw = False
+44.9790 	EXP 	image5_2: autoDraw = False
+44.9790 	EXP 	text: autoDraw = True
+45.1088 	DATA 	Mouse:  Left button up, pos=(865,227)
+45.9630 	EXP 	New trial (rep=0, index=4): <Trial 4 (4 in rep 0) data={'query_image': 'images/banana.png', 'choice1': 'images/apple.png', 'choice2': 'images/banana.png', 'choice3': 'images/orange.png', 'choice4': 'images/kiwi.png', 'choice5': 'images/grape.png', 'correct_answer': 'image2', 'gray1': 'images/apple_gray.png', 'gray2': 'images/banana_gray.png', 'gray3': 'images/orange_gray.png', 'gray4': 'images/kiwi_gray.png', 'gray5': 'images/grape_gray.png', 'thisN': 4, 'thisTrialN': 4, 'thisRepN': 0}>
+46.2485 	EXP 	text: autoDraw = False
+46.2485 	EXP 	text: autoDraw = False
+46.2485 	EXP 	imageQuery_2: image = 'images/banana.png'
+46.2485 	EXP 	image1_2: image = 'images/apple.png'
+46.2485 	EXP 	image2_2: image = 'images/banana.png'
+46.2485 	EXP 	image3_2: image = 'images/orange.png'
+46.2485 	EXP 	image4_2: image = 'images/kiwi.png'
+46.2485 	EXP 	image5_2: image = 'images/grape.png'
+46.2485 	EXP 	image1_2: image = 'images/apple.png'
+46.2485 	EXP 	image2_2: image = 'images/banana.png'
+46.2485 	EXP 	image3_2: image = 'images/orange.png'
+46.2485 	EXP 	image4_2: image = 'images/kiwi.png'
+46.2485 	EXP 	image5_2: image = 'images/grape.png'
+46.2485 	EXP 	imageQuery_2: autoDraw = True
+46.2485 	EXP 	image1_2: autoDraw = True
+46.2485 	EXP 	image2_2: autoDraw = True
+46.2485 	EXP 	image3_2: autoDraw = True
+46.2485 	EXP 	image4_2: autoDraw = True
+46.2485 	EXP 	image5_2: autoDraw = True
+49.1226 	DATA 	Mouse: Left button down, pos=(869,562)
+49.1228 	DATA 	Mouse:  Left button up, pos=(869,562)
+49.1231 	DATA 	Mouse: Left button down, pos=(869,562)
+49.1289 	EXP 	imageQuery_2: autoDraw = False
+49.1289 	EXP 	image1_2: autoDraw = False
+49.1289 	EXP 	image2_2: autoDraw = False
+49.1289 	EXP 	image3_2: autoDraw = False
+49.1289 	EXP 	image4_2: autoDraw = False
+49.1289 	EXP 	image5_2: autoDraw = False
+49.1289 	EXP 	text: autoDraw = True
+49.2089 	DATA 	Mouse:  Left button up, pos=(869,562)
+50.1289 	EXP 	text: autoDraw = False
+50.1289 	EXP 	text: autoDraw = False
+50.1289 	EXP 	textEndMessage: autoDraw = True
+51.7720 	EXP 	Device response: <KeyPress from None: t=51.761013000039384, value=escape, duration=None>
+51.8551 	EXP 	Device response: <KeyPress from None: t=51.761013000039384, value=escape, duration=0.08799658296629786>
+51.8551 	EXP 	mock_study: status = STOPPED
+51.8578 	EXP 	textEndMessage: autoDraw = False
+51.8579 	EXP 	mock_study: status = STOPPED
+51.8667 	INFO 	saved data to '/Users/marcogiven/Desktop/PsychoPyProjects/mock_study_clean/data/_mock_study_2025-06-17_12h07.36.224.csv'
+51.8679 	INFO 	saved data to /Users/marcogiven/Desktop/PsychoPyProjects/mock_study_clean/data/_mock_study_2025-06-17_12h07.36.224.psydat
+51.9950 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+51.9951 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+51.9951 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.

@@ -1,0 +1,33 @@
+17.1883 	WARNING 	Font Manager failed to load file /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc
+17.2945 	WARNING 	Font Manager failed to load file /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc
+1.3462 	DATA 	Mouse: Left button down, pos=(833,288)
+1.4211 	DATA 	Mouse:  Left button up, pos=(833,288)
+34.1658 	DATA 	Keypress: space
+35.1034 	DATA 	Mouse: Left button down, pos=(865,229)
+35.2041 	DATA 	Mouse:  Left button up, pos=(865,229)
+37.0866 	DATA 	Mouse: Left button down, pos=(860,499)
+37.1720 	DATA 	Mouse:  Left button up, pos=(859,499)
+39.1047 	DATA 	Mouse: Left button down, pos=(1058,528)
+39.1963 	DATA 	Mouse:  Left button up, pos=(1058,528)
+41.3378 	DATA 	Mouse: Left button down, pos=(880,527)
+41.4150 	DATA 	Mouse:  Left button up, pos=(880,527)
+43.1560 	DATA 	Mouse: Left button down, pos=(640,483)
+43.2454 	DATA 	Mouse:  Left button up, pos=(640,483)
+45.3729 	DATA 	Keypress: space
+46.6414 	DATA 	Mouse: Left button down, pos=(305,71)
+46.7347 	DATA 	Mouse:  Left button up, pos=(304,70)
+47.1448 	DATA 	Mouse: Left button down, pos=(304,70)
+47.2555 	DATA 	Mouse:  Left button up, pos=(304,70)
+47.8289 	DATA 	Mouse: Left button down, pos=(881,203)
+47.9279 	DATA 	Mouse:  Left button up, pos=(881,203)
+49.8860 	DATA 	Mouse: Left button down, pos=(827,480)
+49.9784 	DATA 	Mouse:  Left button up, pos=(827,480)
+51.6609 	DATA 	Mouse: Left button down, pos=(884,523)
+51.7487 	DATA 	Mouse:  Left button up, pos=(884,523)
+53.2525 	DATA 	Mouse: Left button down, pos=(862,534)
+53.3396 	DATA 	Mouse:  Left button up, pos=(862,534)
+55.4237 	DATA 	Mouse: Left button down, pos=(671,186)
+55.4945 	DATA 	Mouse:  Left button up, pos=(671,185)
+61.5863 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+61.5870 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+61.5870 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
