@@ -49,16 +49,22 @@ flowScheduler.add(trialsColorLoopEnd);
 
 
 
+flowScheduler.add(confidenceScreenRoutineBegin());
+flowScheduler.add(confidenceScreenRoutineEachFrame());
+flowScheduler.add(confidenceScreenRoutineEnd());
 flowScheduler.add(NextScreenRoutineBegin());
 flowScheduler.add(NextScreenRoutineEachFrame());
 flowScheduler.add(NextScreenRoutineEnd());
-const trialsLoopScheduler = new Scheduler(psychoJS);
-flowScheduler.add(trialsLoopBegin(trialsLoopScheduler));
-flowScheduler.add(trialsLoopScheduler);
-flowScheduler.add(trialsLoopEnd);
+const trialsGrayscaleLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(trialsGrayscaleLoopBegin(trialsGrayscaleLoopScheduler));
+flowScheduler.add(trialsGrayscaleLoopScheduler);
+flowScheduler.add(trialsGrayscaleLoopEnd);
 
 
 
+flowScheduler.add(confidenceScreenRoutineBegin());
+flowScheduler.add(confidenceScreenRoutineEachFrame());
+flowScheduler.add(confidenceScreenRoutineEnd());
 flowScheduler.add(EndScreenRoutineBegin());
 flowScheduler.add(EndScreenRoutineEachFrame());
 flowScheduler.add(EndScreenRoutineEnd());
@@ -144,6 +150,9 @@ var image4;
 var image5;
 var blank500Clock;
 var text;
+var confidenceScreenClock;
+var text_confidenceQuestion;
+var slider;
 var NextScreenClock;
 var textNextScreen;
 var key_NextScreen;
@@ -273,6 +282,31 @@ async function experimentInit() {
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
+  });
+  
+  // Initialize components for Routine "confidenceScreen"
+  confidenceScreenClock = new util.Clock();
+  text_confidenceQuestion = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'text_confidenceQuestion',
+    text: 'Any text\n\nincluding line breaks',
+    font: 'Arial',
+    units: undefined, 
+    pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: 0.0 
+  });
+  
+  slider = new visual.Slider({
+    win: psychoJS.window, name: 'slider',
+    startValue: undefined,
+    size: [1.0, 0.1], pos: [0, (- 0.4)], ori: 0.0, units: psychoJS.window.units,
+    labels: [1, 2, 3, 4, 5], fontSize: 0.05, ticks: [1, 2, 3, 4, 5],
+    granularity: 1.0, style: ["RATING"],
+    color: new util.Color('LightGray'), markerColor: new util.Color('Red'), lineColor: new util.Color('White'), 
+    opacity: undefined, fontFamily: 'Noto Sans', bold: true, italic: false, depth: -1, 
+    flip: false,
   });
   
   // Initialize components for Routine "NextScreen"
@@ -638,34 +672,34 @@ function trialsColorLoopEndIteration(scheduler, snapshot) {
 }
 
 
-var trials;
-function trialsLoopBegin(trialsLoopScheduler, snapshot) {
+var trialsGrayscale;
+function trialsGrayscaleLoopBegin(trialsGrayscaleLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
     
     // set up handler to look after randomisation of conditions etc
-    trials = new TrialHandler({
+    trialsGrayscale = new TrialHandler({
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'queryImages.xlsx',
-      seed: undefined, name: 'trials'
+      seed: undefined, name: 'trialsGrayscale'
     });
-    psychoJS.experiment.addLoop(trials); // add the loop to the experiment
-    currentLoop = trials;  // we're now the current loop
+    psychoJS.experiment.addLoop(trialsGrayscale); // add the loop to the experiment
+    currentLoop = trialsGrayscale;  // we're now the current loop
     
     // Schedule all the trials in the trialList:
-    trials.forEach(function() {
-      snapshot = trials.getSnapshot();
+    trialsGrayscale.forEach(function() {
+      snapshot = trialsGrayscale.getSnapshot();
     
-      trialsLoopScheduler.add(importConditions(snapshot));
-      trialsLoopScheduler.add(trialGrayscaleRoutineBegin(snapshot));
-      trialsLoopScheduler.add(trialGrayscaleRoutineEachFrame());
-      trialsLoopScheduler.add(trialGrayscaleRoutineEnd(snapshot));
-      trialsLoopScheduler.add(blank500RoutineBegin(snapshot));
-      trialsLoopScheduler.add(blank500RoutineEachFrame());
-      trialsLoopScheduler.add(blank500RoutineEnd(snapshot));
-      trialsLoopScheduler.add(trialsLoopEndIteration(trialsLoopScheduler, snapshot));
+      trialsGrayscaleLoopScheduler.add(importConditions(snapshot));
+      trialsGrayscaleLoopScheduler.add(trialGrayscaleRoutineBegin(snapshot));
+      trialsGrayscaleLoopScheduler.add(trialGrayscaleRoutineEachFrame());
+      trialsGrayscaleLoopScheduler.add(trialGrayscaleRoutineEnd(snapshot));
+      trialsGrayscaleLoopScheduler.add(blank500RoutineBegin(snapshot));
+      trialsGrayscaleLoopScheduler.add(blank500RoutineEachFrame());
+      trialsGrayscaleLoopScheduler.add(blank500RoutineEnd(snapshot));
+      trialsGrayscaleLoopScheduler.add(trialsGrayscaleLoopEndIteration(trialsGrayscaleLoopScheduler, snapshot));
     });
     
     return Scheduler.Event.NEXT;
@@ -673,9 +707,9 @@ function trialsLoopBegin(trialsLoopScheduler, snapshot) {
 }
 
 
-async function trialsLoopEnd() {
+async function trialsGrayscaleLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(trials);
+  psychoJS.experiment.removeLoop(trialsGrayscale);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -685,7 +719,7 @@ async function trialsLoopEnd() {
 }
 
 
-function trialsLoopEndIteration(scheduler, snapshot) {
+function trialsGrayscaleLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -1088,6 +1122,132 @@ function blank500RoutineEnd(snapshot) {
     } else {
         blank500Clock.add(1.000000);
     }
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+var confidenceScreenMaxDurationReached;
+var confidenceScreenMaxDuration;
+var confidenceScreenComponents;
+function confidenceScreenRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'confidenceScreen' ---
+    t = 0;
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // keep track of whether this Routine was forcibly ended
+    routineForceEnded = false;
+    confidenceScreenClock.reset();
+    routineTimer.reset();
+    confidenceScreenMaxDurationReached = false;
+    // update component parameters for each repeat
+    slider.reset()
+    psychoJS.experiment.addData('confidenceScreen.started', globalClock.getTime());
+    confidenceScreenMaxDuration = null
+    // keep track of which components have finished
+    confidenceScreenComponents = [];
+    confidenceScreenComponents.push(text_confidenceQuestion);
+    confidenceScreenComponents.push(slider);
+    
+    confidenceScreenComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+       });
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function confidenceScreenRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'confidenceScreen' ---
+    // get current time
+    t = confidenceScreenClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *text_confidenceQuestion* updates
+    if (t >= 0.0 && text_confidenceQuestion.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      text_confidenceQuestion.tStart = t;  // (not accounting for frame time here)
+      text_confidenceQuestion.frameNStart = frameN;  // exact frame index
+      
+      text_confidenceQuestion.setAutoDraw(true);
+    }
+    
+    
+    // if text_confidenceQuestion is active this frame...
+    if (text_confidenceQuestion.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // *slider* updates
+    if (t >= 0.0 && slider.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      slider.tStart = t;  // (not accounting for frame time here)
+      slider.frameNStart = frameN;  // exact frame index
+      
+      slider.setAutoDraw(true);
+    }
+    
+    
+    // if slider is active this frame...
+    if (slider.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // Check slider for response to end Routine
+    if (slider.getRating() !== undefined && slider.status === PsychoJS.Status.STARTED) {
+      continueRoutine = false; }
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      routineForceEnded = true;
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    confidenceScreenComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+      }
+    });
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function confidenceScreenRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'confidenceScreen' ---
+    confidenceScreenComponents.forEach( function(thisComponent) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    });
+    psychoJS.experiment.addData('confidenceScreen.stopped', globalClock.getTime());
+    psychoJS.experiment.addData('slider.response', slider.getRating());
+    psychoJS.experiment.addData('slider.rt', slider.getRT());
+    // the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
       psychoJS.experiment.nextEntry(snapshot);
