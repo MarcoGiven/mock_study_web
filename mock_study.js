@@ -161,6 +161,7 @@ var text;
 var confidenceScreenClock;
 var text_confidenceQuestion;
 var slider;
+var buttonAdvance;
 var NextScreenClock;
 var textNextScreen;
 var key_NextScreen;
@@ -297,7 +298,7 @@ async function experimentInit() {
   text_confidenceQuestion = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_confidenceQuestion',
-    text: 'Any text\n\nincluding line breaks',
+    text: 'How confident do you feel your selected image was correct?',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
@@ -309,13 +310,37 @@ async function experimentInit() {
   slider = new visual.Slider({
     win: psychoJS.window, name: 'slider',
     startValue: undefined,
-    size: [1.0, 0.1], pos: [0, (- 0.4)], ori: 0.0, units: psychoJS.window.units,
+    size: [0.5, 0.05], pos: [0, (- 0.2)], ori: 0.0, units: psychoJS.window.units,
     labels: [1, 2, 3, 4, 5], fontSize: 0.05, ticks: [1, 2, 3, 4, 5],
     granularity: 1.0, style: ["RATING"],
     color: new util.Color('LightGray'), markerColor: new util.Color('Red'), lineColor: new util.Color('White'), 
     opacity: undefined, fontFamily: 'Noto Sans', bold: true, italic: false, depth: -1, 
     flip: false,
   });
+  
+  buttonAdvance = new visual.ButtonStim({
+    win: psychoJS.window,
+    name: 'buttonAdvance',
+    text: 'Submit',
+    font: 'Arvo',
+    pos: [0, (- 0.45)],
+    size: [0.2, 0.065],
+    padding: null,
+    anchor: 'center',
+    ori: 0.0,
+    units: psychoJS.window.units,
+    color: 'white',
+    fillColor: 'darkgrey',
+    borderColor: null,
+    colorSpace: 'rgb',
+    borderWidth: 0.0,
+    opacity: null,
+    depth: -2,
+    letterHeight: 0.035,
+    bold: true,
+    italic: false,
+  });
+  buttonAdvance.clock = new util.Clock();
   
   // Initialize components for Routine "NextScreen"
   NextScreenClock = new util.Clock();
@@ -423,7 +448,7 @@ async function experimentInit() {
     text: 'Toggle Color/Grayscale',
     font: 'Arvo',
     pos: [(- 0.5), (- 0.4)],
-    size: [0.25, 0.125],
+    size: [0.45, 0.125],
     padding: null,
     anchor: 'center',
     ori: 0.0,
@@ -432,7 +457,7 @@ async function experimentInit() {
     fillColor: 'darkgrey',
     borderColor: [0.9608, 0.8431, 0.6863],
     colorSpace: 'rgb',
-    borderWidth: 0.5,
+    borderWidth: 0.1,
     opacity: null,
     depth: -8,
     letterHeight: 0.025,
@@ -1152,12 +1177,15 @@ function confidenceScreenRoutineBegin(snapshot) {
     confidenceScreenMaxDurationReached = false;
     // update component parameters for each repeat
     slider.reset()
+    // reset buttonAdvance to account for continued clicks & clear times on/off
+    buttonAdvance.reset()
     psychoJS.experiment.addData('confidenceScreen.started', globalClock.getTime());
     confidenceScreenMaxDuration = null
     // keep track of which components have finished
     confidenceScreenComponents = [];
     confidenceScreenComponents.push(text_confidenceQuestion);
     confidenceScreenComponents.push(slider);
+    confidenceScreenComponents.push(buttonAdvance);
     
     for (const thisComponent of confidenceScreenComponents)
       if ('status' in thisComponent)
@@ -1205,9 +1233,49 @@ function confidenceScreenRoutineEachFrame() {
     }
     
     
-    // Check slider for response to end Routine
-    if (slider.getRating() !== undefined && slider.status === PsychoJS.Status.STARTED) {
-      continueRoutine = false; }
+    // *buttonAdvance* updates
+    if (t >= 0 && buttonAdvance.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      buttonAdvance.tStart = t;  // (not accounting for frame time here)
+      buttonAdvance.frameNStart = frameN;  // exact frame index
+      
+      buttonAdvance.setAutoDraw(true);
+    }
+    
+    
+    // if buttonAdvance is active this frame...
+    if (buttonAdvance.status === PsychoJS.Status.STARTED) {
+    }
+    
+    if (buttonAdvance.status === PsychoJS.Status.STARTED) {
+      // check whether buttonAdvance has been pressed
+      if (buttonAdvance.isClicked) {
+        if (!buttonAdvance.wasClicked) {
+          // store time of first click
+          buttonAdvance.timesOn.push(buttonAdvance.clock.getTime());
+          // store time clicked until
+          buttonAdvance.timesOff.push(buttonAdvance.clock.getTime());
+        } else {
+          // update time clicked until;
+          buttonAdvance.timesOff[buttonAdvance.timesOff.length - 1] = buttonAdvance.clock.getTime();
+        }
+        if (!buttonAdvance.wasClicked) {
+          // end routine when buttonAdvance is clicked
+          continueRoutine = false;
+          
+        }
+        // if buttonAdvance is still clicked next frame, it is not a new click
+        buttonAdvance.wasClicked = true;
+      } else {
+        // if buttonAdvance is clicked next frame, it is a new click
+        buttonAdvance.wasClicked = false;
+      }
+    } else {
+      // keep clock at 0 if buttonAdvance hasn't started / has finished
+      buttonAdvance.clock.reset();
+      // if buttonAdvance is clicked next frame, it is a new click
+      buttonAdvance.wasClicked = false;
+    }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -1247,6 +1315,9 @@ function confidenceScreenRoutineEnd(snapshot) {
     psychoJS.experiment.addData('confidenceScreen.stopped', globalClock.getTime());
     psychoJS.experiment.addData('slider.response', slider.getRating());
     psychoJS.experiment.addData('slider.rt', slider.getRT());
+    psychoJS.experiment.addData('buttonAdvance.numClicks', buttonAdvance.numClicks);
+    psychoJS.experiment.addData('buttonAdvance.timesOn', buttonAdvance.timesOn);
+    psychoJS.experiment.addData('buttonAdvance.timesOff', buttonAdvance.timesOff);
     // the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -1656,21 +1727,21 @@ function trialGrayscaleRoutineEachFrame() {
           toggle_button.timesOff[toggle_button.timesOff.length - 1] = toggle_button.clock.getTime();
         }
         if (!toggle_button.wasClicked) {
-          console.log("Button clicked.");
           toggle_button.toggleGray = (! toggle_button.toggleGray);
-          console.log("Grayscale is now:", toggle_button.toggleGray);
           if (toggle_button.toggleGray) {
               image1_2.setImage(grayscale_paths[0]);
               image2_2.setImage(grayscale_paths[1]);
               image3_2.setImage(grayscale_paths[2]);
               image4_2.setImage(grayscale_paths[3]);
               image5_2.setImage(grayscale_paths[4]);
+              toggle_button.color = [0.5, 0.5, 0.5];
           } else {
               image1_2.setImage(color_paths[0]);
               image2_2.setImage(color_paths[1]);
               image3_2.setImage(color_paths[2]);
               image4_2.setImage(color_paths[3]);
               image5_2.setImage(color_paths[4]);
+              toggle_button.color = [0.8, 0.8, 0.8];
           }
         }
         // if toggle_button is still clicked next frame, it is not a new click

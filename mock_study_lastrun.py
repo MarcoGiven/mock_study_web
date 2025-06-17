@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Tue Jun 17 13:35:00 2025
+    on Tue Jun 17 15:25:22 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -164,18 +164,6 @@ def setupLogging(filename):
         )
     else:
         logging.console.setLevel('warning')
-    # save a log file for detail verbose info
-    logFile = logging.LogFile(filename+'.log')
-    if PILOTING:
-        logFile.setLevel(
-            prefs.piloting['pilotLoggingLevel']
-        )
-    else:
-        logFile.setLevel(
-            logging.getLevel('data')
-        )
-    
-    return logFile
 
 
 def setupWindow(expInfo=None, win=None):
@@ -446,6 +434,39 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=0.0);
     
+    # --- Initialize components for Routine "confidenceScreen" ---
+    text_confidenceQuestion = visual.TextStim(win=win, name='text_confidenceQuestion',
+        text='How confident do you feel your selected image was correct?',
+        font='Arial',
+        pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
+    slider = visual.Slider(win=win, name='slider',
+        startValue=None, size=(0.5, 0.05), pos=(0, -0.2), units=win.units,
+        labels=[1, 2, 3, 4, 5], ticks=(1, 2, 3, 4, 5), granularity=1.0,
+        style='rating', styleTweaks=(), opacity=None,
+        labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+        font='Noto Sans', labelHeight=0.05,
+        flip=False, ori=0.0, depth=-1, readOnly=False)
+    buttonAdvance = visual.ButtonStim(win, 
+        text='Submit', font='Arvo',
+        pos=(0, -0.45),
+        letterHeight=0.035,
+        size=(0.2, 0.065), 
+        ori=0.0
+        ,borderWidth=0.0,
+        fillColor='darkgrey', borderColor=None,
+        color='white', colorSpace='rgb',
+        opacity=None,
+        bold=True, italic=False,
+        padding=None,
+        anchor='center',
+        name='buttonAdvance',
+        depth=-2
+    )
+    buttonAdvance.buttonClock = core.Clock()
+    
     # --- Initialize components for Routine "NextScreen" ---
     textNextScreen = visual.TextStim(win=win, name='textNextScreen',
         text="Next Set of Images\n\nUse the Button to change between color and grayscale\n\nPress 'SPACE' to continue",
@@ -512,9 +533,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         text='Toggle Color/Grayscale', font='Arvo',
         pos=(-0.5, -0.4),
         letterHeight=0.025,
-        size=(0.25, 0.125), 
+        size=(0.45, 0.125), 
         ori=0.0
-        ,borderWidth=0.5,
+        ,borderWidth=0.1,
         fillColor='darkgrey', borderColor=[0.9608, 0.8431, 0.6863],
         color='white', colorSpace='rgb',
         opacity=None,
@@ -534,6 +555,39 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
+    
+    # --- Initialize components for Routine "confidenceScreen" ---
+    text_confidenceQuestion = visual.TextStim(win=win, name='text_confidenceQuestion',
+        text='How confident do you feel your selected image was correct?',
+        font='Arial',
+        pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
+    slider = visual.Slider(win=win, name='slider',
+        startValue=None, size=(0.5, 0.05), pos=(0, -0.2), units=win.units,
+        labels=[1, 2, 3, 4, 5], ticks=(1, 2, 3, 4, 5), granularity=1.0,
+        style='rating', styleTweaks=(), opacity=None,
+        labelColor='LightGray', markerColor='Red', lineColor='White', colorSpace='rgb',
+        font='Noto Sans', labelHeight=0.05,
+        flip=False, ori=0.0, depth=-1, readOnly=False)
+    buttonAdvance = visual.ButtonStim(win, 
+        text='Submit', font='Arvo',
+        pos=(0, -0.45),
+        letterHeight=0.035,
+        size=(0.2, 0.065), 
+        ori=0.0
+        ,borderWidth=0.0,
+        fillColor='darkgrey', borderColor=None,
+        color='white', colorSpace='rgb',
+        opacity=None,
+        bold=True, italic=False,
+        padding=None,
+        anchor='center',
+        name='buttonAdvance',
+        depth=-2
+    )
+    buttonAdvance.buttonClock = core.Clock()
     
     # --- Initialize components for Routine "EndScreen" ---
     textEndMessage = visual.TextStim(win=win, name='textEndMessage',
@@ -1169,6 +1223,177 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # if running in a Session with a Liaison client, send data up to now
         thisSession.sendExperimentData()
     
+    # --- Prepare to start Routine "confidenceScreen" ---
+    # create an object to store info about Routine confidenceScreen
+    confidenceScreen = data.Routine(
+        name='confidenceScreen',
+        components=[text_confidenceQuestion, slider, buttonAdvance],
+    )
+    confidenceScreen.status = NOT_STARTED
+    continueRoutine = True
+    # update component parameters for each repeat
+    slider.reset()
+    # reset buttonAdvance to account for continued clicks & clear times on/off
+    buttonAdvance.reset()
+    # store start times for confidenceScreen
+    confidenceScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    confidenceScreen.tStart = globalClock.getTime(format='float')
+    confidenceScreen.status = STARTED
+    thisExp.addData('confidenceScreen.started', confidenceScreen.tStart)
+    confidenceScreen.maxDuration = None
+    # keep track of which components have finished
+    confidenceScreenComponents = confidenceScreen.components
+    for thisComponent in confidenceScreen.components:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    frameN = -1
+    
+    # --- Run Routine "confidenceScreen" ---
+    confidenceScreen.forceEnded = routineForceEnded = not continueRoutine
+    while continueRoutine:
+        # get current time
+        t = routineTimer.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *text_confidenceQuestion* updates
+        
+        # if text_confidenceQuestion is starting this frame...
+        if text_confidenceQuestion.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            text_confidenceQuestion.frameNStart = frameN  # exact frame index
+            text_confidenceQuestion.tStart = t  # local t and not account for scr refresh
+            text_confidenceQuestion.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(text_confidenceQuestion, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'text_confidenceQuestion.started')
+            # update status
+            text_confidenceQuestion.status = STARTED
+            text_confidenceQuestion.setAutoDraw(True)
+        
+        # if text_confidenceQuestion is active this frame...
+        if text_confidenceQuestion.status == STARTED:
+            # update params
+            pass
+        
+        # *slider* updates
+        
+        # if slider is starting this frame...
+        if slider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            slider.frameNStart = frameN  # exact frame index
+            slider.tStart = t  # local t and not account for scr refresh
+            slider.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(slider, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'slider.started')
+            # update status
+            slider.status = STARTED
+            slider.setAutoDraw(True)
+        
+        # if slider is active this frame...
+        if slider.status == STARTED:
+            # update params
+            pass
+        # *buttonAdvance* updates
+        
+        # if buttonAdvance is starting this frame...
+        if buttonAdvance.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+            # keep track of start time/frame for later
+            buttonAdvance.frameNStart = frameN  # exact frame index
+            buttonAdvance.tStart = t  # local t and not account for scr refresh
+            buttonAdvance.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(buttonAdvance, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'buttonAdvance.started')
+            # update status
+            buttonAdvance.status = STARTED
+            win.callOnFlip(buttonAdvance.buttonClock.reset)
+            buttonAdvance.setAutoDraw(True)
+        
+        # if buttonAdvance is active this frame...
+        if buttonAdvance.status == STARTED:
+            # update params
+            pass
+            # check whether buttonAdvance has been pressed
+            if buttonAdvance.isClicked:
+                if not buttonAdvance.wasClicked:
+                    # if this is a new click, store time of first click and clicked until
+                    buttonAdvance.timesOn.append(buttonAdvance.buttonClock.getTime())
+                    buttonAdvance.timesOff.append(buttonAdvance.buttonClock.getTime())
+                elif len(buttonAdvance.timesOff):
+                    # if click is continuing from last frame, update time of clicked until
+                    buttonAdvance.timesOff[-1] = buttonAdvance.buttonClock.getTime()
+                if not buttonAdvance.wasClicked:
+                    # end routine when buttonAdvance is clicked
+                    continueRoutine = False
+                if not buttonAdvance.wasClicked:
+                    # run callback code when buttonAdvance is clicked
+                    pass
+        # take note of whether buttonAdvance was clicked, so that next frame we know if clicks are new
+        buttonAdvance.wasClicked = buttonAdvance.isClicked and buttonAdvance.status == STARTED
+        
+        # check for quit (typically the Esc key)
+        if defaultKeyboard.getKeys(keyList=["escape"]):
+            thisExp.status = FINISHED
+        if thisExp.status == FINISHED or endExpNow:
+            endExperiment(thisExp, win=win)
+            return
+        # pause experiment here if requested
+        if thisExp.status == PAUSED:
+            pauseExperiment(
+                thisExp=thisExp, 
+                win=win, 
+                timers=[routineTimer, globalClock], 
+                currentRoutine=confidenceScreen,
+            )
+            # skip the frame we paused on
+            continue
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            confidenceScreen.forceEnded = routineForceEnded = True
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in confidenceScreen.components:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # --- Ending Routine "confidenceScreen" ---
+    for thisComponent in confidenceScreen.components:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # store stop times for confidenceScreen
+    confidenceScreen.tStop = globalClock.getTime(format='float')
+    confidenceScreen.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('confidenceScreen.stopped', confidenceScreen.tStop)
+    thisExp.addData('slider.response', slider.getRating())
+    thisExp.addData('slider.rt', slider.getRT())
+    thisExp.addData('buttonAdvance.numClicks', buttonAdvance.numClicks)
+    if buttonAdvance.numClicks:
+       thisExp.addData('buttonAdvance.timesOn', buttonAdvance.timesOn)
+       thisExp.addData('buttonAdvance.timesOff', buttonAdvance.timesOff)
+    else:
+       thisExp.addData('buttonAdvance.timesOn', "")
+       thisExp.addData('buttonAdvance.timesOff', "")
+    thisExp.nextEntry()
+    # the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    
     # --- Prepare to start Routine "NextScreen" ---
     # create an object to store info about Routine NextScreen
     NextScreen = data.Routine(
@@ -1311,8 +1536,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     routineTimer.reset()
     
     # set up handler to look after randomisation of conditions etc
-    trials = data.TrialHandler2(
-        name='trials',
+    trialsGrayscale = data.TrialHandler2(
+        name='trialsGrayscale',
         nReps=1.0, 
         method='random', 
         extraInfo=expInfo, 
@@ -1320,29 +1545,29 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         trialList=data.importConditions('queryImages.xlsx'), 
         seed=None, 
     )
-    thisExp.addLoop(trials)  # add the loop to the experiment
-    thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
-    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
-    if thisTrial != None:
-        for paramName in thisTrial:
-            globals()[paramName] = thisTrial[paramName]
+    thisExp.addLoop(trialsGrayscale)  # add the loop to the experiment
+    thisTrialsGrayscale = trialsGrayscale.trialList[0]  # so we can initialise stimuli with some values
+    # abbreviate parameter names if possible (e.g. rgb = thisTrialsGrayscale.rgb)
+    if thisTrialsGrayscale != None:
+        for paramName in thisTrialsGrayscale:
+            globals()[paramName] = thisTrialsGrayscale[paramName]
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
         thisSession.sendExperimentData()
     
-    for thisTrial in trials:
-        trials.status = STARTED
-        if hasattr(thisTrial, 'status'):
-            thisTrial.status = STARTED
-        currentLoop = trials
+    for thisTrialsGrayscale in trialsGrayscale:
+        trialsGrayscale.status = STARTED
+        if hasattr(thisTrialsGrayscale, 'status'):
+            thisTrialsGrayscale.status = STARTED
+        currentLoop = trialsGrayscale
         thisExp.timestampOnFlip(win, 'thisRow.t', format=globalClock.format)
         if thisSession is not None:
             # if running in a Session with a Liaison client, send data up to now
             thisSession.sendExperimentData()
-        # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
-        if thisTrial != None:
-            for paramName in thisTrial:
-                globals()[paramName] = thisTrial[paramName]
+        # abbreviate parameter names if possible (e.g. rgb = thisTrialsGrayscale.rgb)
+        if thisTrialsGrayscale != None:
+            for paramName in thisTrialsGrayscale:
+                globals()[paramName] = thisTrialsGrayscale[paramName]
         
         # --- Prepare to start Routine "trialGrayscale" ---
         # create an object to store info about Routine trialGrayscale
@@ -1409,7 +1634,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         trialGrayscale.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine:
             # if trial has changed, end Routine now
-            if hasattr(thisTrial, 'status') and thisTrial.status == STOPPING:
+            if hasattr(thisTrialsGrayscale, 'status') and thisTrialsGrayscale.status == STOPPING:
                 continueRoutine = False
             # get current time
             t = routineTimer.getTime()
@@ -1628,12 +1853,20 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                             image3_2.setImage(grayscale_paths[2])
                             image4_2.setImage(grayscale_paths[3])
                             image5_2.setImage(grayscale_paths[4])
+                        
+                             # Change button background color to darker to indicate grayscale
+                            toggle_button.color = [0.5, 0.5, 0.5]  # RGB in 0–1 range (gray)
+                        
                         else:
                             image1_2.setImage(color_paths[0])
                             image2_2.setImage(color_paths[1])
                             image3_2.setImage(color_paths[2])
                             image4_2.setImage(color_paths[3])
                             image5_2.setImage(color_paths[4])
+                            
+                           # Change button background back to lighter
+                            toggle_button.color = [0.8, 0.8, 0.8]  # light gray
+                            
             # take note of whether toggle_button was clicked, so that next frame we know if clicks are new
             toggle_button.wasClicked = toggle_button.isClicked and toggle_button.status == STARTED
             
@@ -1676,22 +1909,22 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         trialGrayscale.tStop = globalClock.getTime(format='float')
         trialGrayscale.tStopRefresh = tThisFlipGlobal
         thisExp.addData('trialGrayscale.stopped', trialGrayscale.tStop)
-        # store data for trials (TrialHandler)
-        trials.addData('mouse_2.x', mouse_2.x)
-        trials.addData('mouse_2.y', mouse_2.y)
-        trials.addData('mouse_2.leftButton', mouse_2.leftButton)
-        trials.addData('mouse_2.midButton', mouse_2.midButton)
-        trials.addData('mouse_2.rightButton', mouse_2.rightButton)
-        trials.addData('mouse_2.time', mouse_2.time)
-        trials.addData('mouse_2.corr', mouse_2.corr)
-        trials.addData('mouse_2.clicked_name', mouse_2.clicked_name)
-        trials.addData('toggle_button.numClicks', toggle_button.numClicks)
+        # store data for trialsGrayscale (TrialHandler)
+        trialsGrayscale.addData('mouse_2.x', mouse_2.x)
+        trialsGrayscale.addData('mouse_2.y', mouse_2.y)
+        trialsGrayscale.addData('mouse_2.leftButton', mouse_2.leftButton)
+        trialsGrayscale.addData('mouse_2.midButton', mouse_2.midButton)
+        trialsGrayscale.addData('mouse_2.rightButton', mouse_2.rightButton)
+        trialsGrayscale.addData('mouse_2.time', mouse_2.time)
+        trialsGrayscale.addData('mouse_2.corr', mouse_2.corr)
+        trialsGrayscale.addData('mouse_2.clicked_name', mouse_2.clicked_name)
+        trialsGrayscale.addData('toggle_button.numClicks', toggle_button.numClicks)
         if toggle_button.numClicks:
-           trials.addData('toggle_button.timesOn', toggle_button.timesOn)
-           trials.addData('toggle_button.timesOff', toggle_button.timesOff)
+           trialsGrayscale.addData('toggle_button.timesOn', toggle_button.timesOn)
+           trialsGrayscale.addData('toggle_button.timesOff', toggle_button.timesOff)
         else:
-           trials.addData('toggle_button.timesOn', "")
-           trials.addData('toggle_button.timesOff', "")
+           trialsGrayscale.addData('toggle_button.timesOn', "")
+           trialsGrayscale.addData('toggle_button.timesOff', "")
         # the Routine "trialGrayscale" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
@@ -1728,7 +1961,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         blank500.forceEnded = routineForceEnded = not continueRoutine
         while continueRoutine and routineTimer.getTime() < 1.0:
             # if trial has changed, end Routine now
-            if hasattr(thisTrial, 'status') and thisTrial.status == STOPPING:
+            if hasattr(thisTrialsGrayscale, 'status') and thisTrialsGrayscale.status == STOPPING:
                 continueRoutine = False
             # get current time
             t = routineTimer.getTime()
@@ -1817,11 +2050,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             routineTimer.reset()
         else:
             routineTimer.addTime(-1.000000)
-        # mark thisTrial as finished
-        if hasattr(thisTrial, 'status'):
-            thisTrial.status = FINISHED
+        # mark thisTrialsGrayscale as finished
+        if hasattr(thisTrialsGrayscale, 'status'):
+            thisTrialsGrayscale.status = FINISHED
         # if awaiting a pause, pause now
-        if trials.status == PAUSED:
+        if trialsGrayscale.status == PAUSED:
             thisExp.status = PAUSED
             pauseExperiment(
                 thisExp=thisExp, 
@@ -1829,15 +2062,186 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 timers=[globalClock], 
             )
             # once done pausing, restore running status
-            trials.status = STARTED
+            trialsGrayscale.status = STARTED
         thisExp.nextEntry()
         
-    # completed 1.0 repeats of 'trials'
-    trials.status = FINISHED
+    # completed 1.0 repeats of 'trialsGrayscale'
+    trialsGrayscale.status = FINISHED
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
         thisSession.sendExperimentData()
+    
+    # --- Prepare to start Routine "confidenceScreen" ---
+    # create an object to store info about Routine confidenceScreen
+    confidenceScreen = data.Routine(
+        name='confidenceScreen',
+        components=[text_confidenceQuestion, slider, buttonAdvance],
+    )
+    confidenceScreen.status = NOT_STARTED
+    continueRoutine = True
+    # update component parameters for each repeat
+    slider.reset()
+    # reset buttonAdvance to account for continued clicks & clear times on/off
+    buttonAdvance.reset()
+    # store start times for confidenceScreen
+    confidenceScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+    confidenceScreen.tStart = globalClock.getTime(format='float')
+    confidenceScreen.status = STARTED
+    thisExp.addData('confidenceScreen.started', confidenceScreen.tStart)
+    confidenceScreen.maxDuration = None
+    # keep track of which components have finished
+    confidenceScreenComponents = confidenceScreen.components
+    for thisComponent in confidenceScreen.components:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    frameN = -1
+    
+    # --- Run Routine "confidenceScreen" ---
+    confidenceScreen.forceEnded = routineForceEnded = not continueRoutine
+    while continueRoutine:
+        # get current time
+        t = routineTimer.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *text_confidenceQuestion* updates
+        
+        # if text_confidenceQuestion is starting this frame...
+        if text_confidenceQuestion.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            text_confidenceQuestion.frameNStart = frameN  # exact frame index
+            text_confidenceQuestion.tStart = t  # local t and not account for scr refresh
+            text_confidenceQuestion.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(text_confidenceQuestion, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'text_confidenceQuestion.started')
+            # update status
+            text_confidenceQuestion.status = STARTED
+            text_confidenceQuestion.setAutoDraw(True)
+        
+        # if text_confidenceQuestion is active this frame...
+        if text_confidenceQuestion.status == STARTED:
+            # update params
+            pass
+        
+        # *slider* updates
+        
+        # if slider is starting this frame...
+        if slider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            slider.frameNStart = frameN  # exact frame index
+            slider.tStart = t  # local t and not account for scr refresh
+            slider.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(slider, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'slider.started')
+            # update status
+            slider.status = STARTED
+            slider.setAutoDraw(True)
+        
+        # if slider is active this frame...
+        if slider.status == STARTED:
+            # update params
+            pass
+        # *buttonAdvance* updates
+        
+        # if buttonAdvance is starting this frame...
+        if buttonAdvance.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+            # keep track of start time/frame for later
+            buttonAdvance.frameNStart = frameN  # exact frame index
+            buttonAdvance.tStart = t  # local t and not account for scr refresh
+            buttonAdvance.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(buttonAdvance, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'buttonAdvance.started')
+            # update status
+            buttonAdvance.status = STARTED
+            win.callOnFlip(buttonAdvance.buttonClock.reset)
+            buttonAdvance.setAutoDraw(True)
+        
+        # if buttonAdvance is active this frame...
+        if buttonAdvance.status == STARTED:
+            # update params
+            pass
+            # check whether buttonAdvance has been pressed
+            if buttonAdvance.isClicked:
+                if not buttonAdvance.wasClicked:
+                    # if this is a new click, store time of first click and clicked until
+                    buttonAdvance.timesOn.append(buttonAdvance.buttonClock.getTime())
+                    buttonAdvance.timesOff.append(buttonAdvance.buttonClock.getTime())
+                elif len(buttonAdvance.timesOff):
+                    # if click is continuing from last frame, update time of clicked until
+                    buttonAdvance.timesOff[-1] = buttonAdvance.buttonClock.getTime()
+                if not buttonAdvance.wasClicked:
+                    # end routine when buttonAdvance is clicked
+                    continueRoutine = False
+                if not buttonAdvance.wasClicked:
+                    # run callback code when buttonAdvance is clicked
+                    pass
+        # take note of whether buttonAdvance was clicked, so that next frame we know if clicks are new
+        buttonAdvance.wasClicked = buttonAdvance.isClicked and buttonAdvance.status == STARTED
+        
+        # check for quit (typically the Esc key)
+        if defaultKeyboard.getKeys(keyList=["escape"]):
+            thisExp.status = FINISHED
+        if thisExp.status == FINISHED or endExpNow:
+            endExperiment(thisExp, win=win)
+            return
+        # pause experiment here if requested
+        if thisExp.status == PAUSED:
+            pauseExperiment(
+                thisExp=thisExp, 
+                win=win, 
+                timers=[routineTimer, globalClock], 
+                currentRoutine=confidenceScreen,
+            )
+            # skip the frame we paused on
+            continue
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            confidenceScreen.forceEnded = routineForceEnded = True
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in confidenceScreen.components:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # --- Ending Routine "confidenceScreen" ---
+    for thisComponent in confidenceScreen.components:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # store stop times for confidenceScreen
+    confidenceScreen.tStop = globalClock.getTime(format='float')
+    confidenceScreen.tStopRefresh = tThisFlipGlobal
+    thisExp.addData('confidenceScreen.stopped', confidenceScreen.tStop)
+    thisExp.addData('slider.response', slider.getRating())
+    thisExp.addData('slider.rt', slider.getRT())
+    thisExp.addData('buttonAdvance.numClicks', buttonAdvance.numClicks)
+    if buttonAdvance.numClicks:
+       thisExp.addData('buttonAdvance.timesOn', buttonAdvance.timesOn)
+       thisExp.addData('buttonAdvance.timesOff', buttonAdvance.timesOff)
+    else:
+       thisExp.addData('buttonAdvance.timesOn', "")
+       thisExp.addData('buttonAdvance.timesOff', "")
+    thisExp.nextEntry()
+    # the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
     
     # --- Prepare to start Routine "EndScreen" ---
     # create an object to store info about Routine EndScreen
@@ -2007,7 +2411,6 @@ def endExperiment(thisExp, win=None):
     # run any 'at exit' functions
     for fcn in runAtExit:
         fcn()
-    logging.flush()
 
 
 def quit(thisExp, win=None, thisSession=None):
@@ -2028,7 +2431,6 @@ def quit(thisExp, win=None, thisSession=None):
         # and win.timeOnFlip() tasks get executed before quitting
         win.flip()
         win.close()
-    logging.flush()
     if thisSession is not None:
         thisSession.stop()
     # terminate Python process
