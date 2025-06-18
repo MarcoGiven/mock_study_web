@@ -146,10 +146,10 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="import random&amp;#10;import time&amp;#10;&amp;#10;random.seed(time.time())&amp;#10;&amp;#10;group = random.choice(['color_only', 'grayscale_only', 'both_blocks'])&amp;#10;&amp;#10;# group = 'color_only'&amp;#10;# group = 'gray_only&amp;#10;# group = 'both_blocks'&amp;#10;&amp;#10;thisExp.addData(&quot;assigned_group&quot;, group)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="import * as random from 'random';&amp;#10;import * as time from 'time';&amp;#10;Math.random.seed(time.time());&amp;#10;group = Math.random.choice([&quot;color_only&quot;, &quot;grayscale_only&quot;, &quot;both_blocks&quot;]);&amp;#10;psychoJS.experiment.addData(&quot;assigned_group&quot;, group);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="&amp;#10;const groups = [&quot;color_only&quot;, &quot;grayscale_only&quot;, &quot;both_blocks&quot;];&amp;#10;&amp;#10;// Randomly pick one of the groups&amp;#10;const group = groups[Math.floor(Math.random() * groups.length)];&amp;#10;&amp;#10;// Store it in the experiment data&amp;#10;psychoJS.experiment.addData(&quot;assigned_group&quot;, group);&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>

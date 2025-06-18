@@ -305,11 +305,15 @@ async function experimentInit() {
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
   // Run 'Begin Experiment' code from grouping
-  import * as random from 'random';
-  import * as time from 'time';
-  Math.random.seed(time.time());
-  group = Math.random.choice(["color_only", "grayscale_only", "both_blocks"]);
+  
+  const groups = ["color_only", "grayscale_only", "both_blocks"];
+  
+  // Randomly pick one of the groups
+  const group = groups[Math.floor(Math.random() * groups.length)];
+  
+  // Store it in the experiment data
   psychoJS.experiment.addData("assigned_group", group);
+  
   
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
