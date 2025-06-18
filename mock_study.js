@@ -50,29 +50,37 @@ flowScheduler.add(experimentInit);
 flowScheduler.add(WelcomeScreenRoutineBegin());
 flowScheduler.add(WelcomeScreenRoutineEachFrame());
 flowScheduler.add(WelcomeScreenRoutineEnd());
-const trialsColorLoopScheduler = new Scheduler(psychoJS);
-flowScheduler.add(trialsColorLoopBegin(trialsColorLoopScheduler));
-flowScheduler.add(trialsColorLoopScheduler);
-flowScheduler.add(trialsColorLoopEnd);
+const colorBlockLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(colorBlockLoopBegin(colorBlockLoopScheduler));
+flowScheduler.add(colorBlockLoopScheduler);
+flowScheduler.add(colorBlockLoopEnd);
 
 
 
-flowScheduler.add(confidenceScreenRoutineBegin());
-flowScheduler.add(confidenceScreenRoutineEachFrame());
-flowScheduler.add(confidenceScreenRoutineEnd());
-flowScheduler.add(NextScreenRoutineBegin());
-flowScheduler.add(NextScreenRoutineEachFrame());
-flowScheduler.add(NextScreenRoutineEnd());
-const trialsGrayscaleLoopScheduler = new Scheduler(psychoJS);
-flowScheduler.add(trialsGrayscaleLoopBegin(trialsGrayscaleLoopScheduler));
-flowScheduler.add(trialsGrayscaleLoopScheduler);
-flowScheduler.add(trialsGrayscaleLoopEnd);
 
 
 
-flowScheduler.add(confidenceScreenRoutineBegin());
-flowScheduler.add(confidenceScreenRoutineEachFrame());
-flowScheduler.add(confidenceScreenRoutineEnd());
+const grayBlockLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(grayBlockLoopBegin(grayBlockLoopScheduler));
+flowScheduler.add(grayBlockLoopScheduler);
+flowScheduler.add(grayBlockLoopEnd);
+
+
+
+
+
+
+const bothBlockLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(bothBlockLoopBegin(bothBlockLoopScheduler));
+flowScheduler.add(bothBlockLoopScheduler);
+flowScheduler.add(bothBlockLoopEnd);
+
+
+
+
+
+
+
 flowScheduler.add(EndScreenRoutineBegin());
 flowScheduler.add(EndScreenRoutineEachFrame());
 flowScheduler.add(EndScreenRoutineEnd());
@@ -86,37 +94,15 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
     // resources:
-    {'name': 'queryImages.xlsx', 'path': 'queryImages.xlsx'},
-    {'name': 'images/grape.png', 'path': 'images/grape.png'},
-    {'name': 'images/kiwi.png', 'path': 'images/kiwi.png'},
-    {'name': 'images/orange.png', 'path': 'images/orange.png'},
-    {'name': 'images/banana.png', 'path': 'images/banana.png'},
-    {'name': 'images/apple.png', 'path': 'images/apple.png'},
-    {'name': 'images/kiwi_gray.png', 'path': 'images/kiwi_gray.png'},
-    {'name': 'images/orange_gray.png', 'path': 'images/orange_gray.png'},
-    {'name': 'images/grape_gray.png', 'path': 'images/grape_gray.png'},
-    {'name': 'images/banana_gray.png', 'path': 'images/banana_gray.png'},
-    {'name': 'images/apple_gray.png', 'path': 'images/apple_gray.png'},
-    {'name': 'queryImages.xlsx', 'path': 'queryImages.xlsx'},
-    {'name': 'images/grape.png', 'path': 'images/grape.png'},
-    {'name': 'images/kiwi.png', 'path': 'images/kiwi.png'},
-    {'name': 'images/orange.png', 'path': 'images/orange.png'},
-    {'name': 'images/banana.png', 'path': 'images/banana.png'},
-    {'name': 'images/apple.png', 'path': 'images/apple.png'},
-    {'name': 'images/kiwi_gray.png', 'path': 'images/kiwi_gray.png'},
-    {'name': 'images/orange_gray.png', 'path': 'images/orange_gray.png'},
-    {'name': 'images/grape_gray.png', 'path': 'images/grape_gray.png'},
-    {'name': 'images/banana_gray.png', 'path': 'images/banana_gray.png'},
-    {'name': 'images/apple_gray.png', 'path': 'images/apple_gray.png'},
+    {'name': 'hotel_color.xlsx', 'path': 'hotel_color.xlsx'},
+    {'name': 'hotel_color.xlsx', 'path': 'hotel_color.xlsx'},
+    {'name': 'hotel_color.xlsx', 'path': 'hotel_color.xlsx'},
     {'name': 'default.png', 'path': 'https://pavlovia.org/assets/default/default.png'},
   ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.DATA);
 
-
-var currentLoop;
-var frameDur;
 async function updateInfo() {
   currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
@@ -144,40 +130,6 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
-
-var WelcomeScreenClock;
-var textWelcomeMessage;
-var key_Continue;
-var trialColorClock;
-var mouse;
-var imageQuery;
-var image1;
-var image2;
-var image3;
-var image4;
-var image5;
-var blank500Clock;
-var text;
-var confidenceScreenClock;
-var text_confidenceQuestion;
-var slider;
-var buttonAdvance;
-var NextScreenClock;
-var textNextScreen;
-var key_NextScreen;
-var trialGrayscaleClock;
-var mouse_2;
-var imageQuery_2;
-var image1_2;
-var image2_2;
-var image3_2;
-var image4_2;
-var image5_2;
-var toggle_button;
-var EndScreenClock;
-var textEndMessage;
-var globalClock;
-var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "WelcomeScreen"
   WelcomeScreenClock = new util.Clock();
@@ -195,6 +147,13 @@ async function experimentInit() {
   
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
+  // Run 'Begin Experiment' code from grouping
+  import * as random from 'random';
+  import * as time from 'time';
+  Math.random.seed(time.time());
+  group = Math.random.choice(["color_only", "grayscale_only", "both_blocks"]);
+  psychoJS.experiment.addData("assigned_group", group);
+  
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
   mouse = new core.Mouse({
@@ -207,9 +166,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.5), 0], 
+    pos : [(- 0.5), 0.2], 
     draggable: false,
-    size : [0.5, 0.5],
+    size : [0.71, 0.4],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
@@ -220,9 +179,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0, 0.2], 
+    pos : [(- 0.4), (- 0.2)], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -2.0 
@@ -233,9 +192,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.3, 0.2], 
+    pos : [0.1, 0.1], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
@@ -246,9 +205,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, 0.2], 
+    pos : [0.6, 0.1], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -4.0 
@@ -259,9 +218,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0, (- 0.2)], 
+    pos : [0.1, (- 0.2)], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -5.0 
@@ -272,13 +231,25 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.3, (- 0.2)], 
+    pos : [0.6, (- 0.2)], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -6.0 
   });
+  queryCaption = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'queryCaption',
+    text: 'Query Image',
+    font: 'Arial',
+    units: undefined, 
+    pos: [(- 0.5), 0.45], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -8.0 
+  });
+  
   // Initialize components for Routine "blank500"
   blank500Clock = new util.Clock();
   text = new visual.TextStim({
@@ -342,12 +313,108 @@ async function experimentInit() {
   });
   buttonAdvance.clock = new util.Clock();
   
+  // Initialize components for Routine "trialGrayscale"
+  trialGrayscaleClock = new util.Clock();
+  mouse_3 = new core.Mouse({
+    win: psychoJS.window,
+  });
+  mouse_3.mouseClock = new util.Clock();
+  queryImage_2 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'queryImage_2', units : undefined, 
+    image : 'default.png', mask : undefined,
+    anchor : 'center',
+    ori : 0.0, 
+    pos : [(- 0.5), 0.2], 
+    draggable: false,
+    size : [0.71, 0.4],
+    color : new util.Color([1,1,1]), opacity : undefined,
+    flipHoriz : false, flipVert : false,
+    texRes : 128.0, interpolate : true, depth : -1.0 
+  });
+  image1_3 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image1_3', units : undefined, 
+    image : 'default.png', mask : undefined,
+    anchor : 'center',
+    ori : 0.0, 
+    pos : [(- 0.4), (- 0.2)], 
+    draggable: false,
+    size : [0.445, 0.25],
+    color : new util.Color([1,1,1]), opacity : undefined,
+    flipHoriz : false, flipVert : false,
+    texRes : 128.0, interpolate : true, depth : -2.0 
+  });
+  image2_3 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image2_3', units : undefined, 
+    image : 'default.png', mask : undefined,
+    anchor : 'center',
+    ori : 0.0, 
+    pos : [0.1, 0.1], 
+    draggable: false,
+    size : [0.445, 0.25],
+    color : new util.Color([1,1,1]), opacity : undefined,
+    flipHoriz : false, flipVert : false,
+    texRes : 128.0, interpolate : true, depth : -3.0 
+  });
+  image3_3 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image3_3', units : undefined, 
+    image : 'default.png', mask : undefined,
+    anchor : 'center',
+    ori : 0.0, 
+    pos : [0.6, 0.1], 
+    draggable: false,
+    size : [0.445, 0.25],
+    color : new util.Color([1,1,1]), opacity : undefined,
+    flipHoriz : false, flipVert : false,
+    texRes : 128.0, interpolate : true, depth : -4.0 
+  });
+  image4_3 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image4_3', units : undefined, 
+    image : 'default.png', mask : undefined,
+    anchor : 'center',
+    ori : 0.0, 
+    pos : [0.1, (- 0.2)], 
+    draggable: false,
+    size : [0.445, 0.25],
+    color : new util.Color([1,1,1]), opacity : undefined,
+    flipHoriz : false, flipVert : false,
+    texRes : 128.0, interpolate : true, depth : -5.0 
+  });
+  image5_3 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image5_3', units : undefined, 
+    image : 'default.png', mask : undefined,
+    anchor : 'center',
+    ori : 0.0, 
+    pos : [0.6, (- 0.2)], 
+    draggable: false,
+    size : [0.445, 0.25],
+    color : new util.Color([1,1,1]), opacity : undefined,
+    flipHoriz : false, flipVert : false,
+    texRes : 128.0, interpolate : true, depth : -6.0 
+  });
+  queryCaption_gray = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'queryCaption_gray',
+    text: 'Query Image',
+    font: 'Arial',
+    units: undefined, 
+    pos: [(- 0.5), 0.45], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -8.0 
+  });
+  
   // Initialize components for Routine "NextScreen"
   NextScreenClock = new util.Clock();
   textNextScreen = new visual.TextStim({
     win: psychoJS.window,
     name: 'textNextScreen',
-    text: "Next Set of Images\n\nUse the Button to change between color and grayscale\n\nPress 'SPACE' to continue",
+    text: "\nUse the Button to change between color and grayscale\n\nPress 'SPACE' to continue",
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
@@ -358,8 +425,8 @@ async function experimentInit() {
   
   key_NextScreen = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
-  // Initialize components for Routine "trialGrayscale"
-  trialGrayscaleClock = new util.Clock();
+  // Initialize components for Routine "trialColor_Gray"
+  trialColor_GrayClock = new util.Clock();
   mouse_2 = new core.Mouse({
     win: psychoJS.window,
   });
@@ -370,9 +437,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.5), 0], 
+    pos : [(- 0.5), 0.2], 
     draggable: false,
-    size : [0.5, 0.5],
+    size : [0.71, 0.4],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
@@ -383,9 +450,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0, 0.2], 
+    pos : [(- 0.4), (- 0.2)], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -2.0 
@@ -396,9 +463,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.3, 0.2], 
+    pos : [0.1, 0.1], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
@@ -409,9 +476,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, 0.2], 
+    pos : [0.6, 0.1], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -4.0 
@@ -422,9 +489,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0, (- 0.2)], 
+    pos : [0.1, (- 0.2)], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -5.0 
@@ -435,9 +502,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.3, (- 0.2)], 
+    pos : [0.6, (- 0.2)], 
     draggable: false,
-    size : [0.25, 0.25],
+    size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -6.0 
@@ -466,6 +533,18 @@ async function experimentInit() {
   });
   toggle_button.clock = new util.Clock();
   
+  queryCaption_GC = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'queryCaption_GC',
+    text: 'Query Image',
+    font: 'Arial',
+    units: undefined, 
+    pos: [(- 0.5), 0.45], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -9.0 
+  });
+  
   // Initialize components for Routine "EndScreen"
   EndScreenClock = new util.Clock();
   textEndMessage = new visual.TextStim({
@@ -487,15 +566,6 @@ async function experimentInit() {
   return Scheduler.Event.NEXT;
 }
 
-
-var t;
-var frameN;
-var continueRoutine;
-var routineForceEnded;
-var WelcomeScreenMaxDurationReached;
-var _key_Continue_allKeys;
-var WelcomeScreenMaxDuration;
-var WelcomeScreenComponents;
 function WelcomeScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -526,7 +596,6 @@ function WelcomeScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function WelcomeScreenRoutineEachFrame() {
   return async function () {
@@ -603,7 +672,6 @@ function WelcomeScreenRoutineEachFrame() {
   };
 }
 
-
 function WelcomeScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'WelcomeScreen' ---
@@ -636,8 +704,39 @@ function WelcomeScreenRoutineEnd(snapshot) {
   }
 }
 
+function colorBlockLoopBegin(colorBlockLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    colorBlock = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1 if group in ['color_only'] else 0, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: undefined,
+      seed: undefined, name: 'colorBlock'
+    });
+    psychoJS.experiment.addLoop(colorBlock); // add the loop to the experiment
+    currentLoop = colorBlock;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    for (const thisColorBlock of colorBlock) {
+      snapshot = colorBlock.getSnapshot();
+      colorBlockLoopScheduler.add(importConditions(snapshot));
+      const trialsColorLoopScheduler = new Scheduler(psychoJS);
+      colorBlockLoopScheduler.add(trialsColorLoopBegin(trialsColorLoopScheduler, snapshot));
+      colorBlockLoopScheduler.add(trialsColorLoopScheduler);
+      colorBlockLoopScheduler.add(trialsColorLoopEnd);
+      colorBlockLoopScheduler.add(confidenceScreenRoutineBegin(snapshot));
+      colorBlockLoopScheduler.add(confidenceScreenRoutineEachFrame());
+      colorBlockLoopScheduler.add(confidenceScreenRoutineEnd(snapshot));
+      colorBlockLoopScheduler.add(colorBlockLoopEndIteration(colorBlockLoopScheduler, snapshot));
+    }
+    
+    return Scheduler.Event.NEXT;
+  }
+}
 
-var trialsColor;
 function trialsColorLoopBegin(trialsColorLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -647,7 +746,7 @@ function trialsColorLoopBegin(trialsColorLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'queryImages.xlsx',
+      trialList: 'hotel_color.xlsx',
       seed: undefined, name: 'trialsColor'
     });
     psychoJS.experiment.addLoop(trialsColor); // add the loop to the experiment
@@ -670,7 +769,6 @@ function trialsColorLoopBegin(trialsColorLoopScheduler, snapshot) {
   }
 }
 
-
 async function trialsColorLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(trialsColor);
@@ -681,7 +779,6 @@ async function trialsColorLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function trialsColorLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -702,44 +799,9 @@ function trialsColorLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
-var trialsGrayscale;
-function trialsGrayscaleLoopBegin(trialsGrayscaleLoopScheduler, snapshot) {
-  return async function() {
-    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
-    
-    // set up handler to look after randomisation of conditions etc
-    trialsGrayscale = new TrialHandler({
-      psychoJS: psychoJS,
-      nReps: 1, method: TrialHandler.Method.RANDOM,
-      extraInfo: expInfo, originPath: undefined,
-      trialList: 'queryImages.xlsx',
-      seed: undefined, name: 'trialsGrayscale'
-    });
-    psychoJS.experiment.addLoop(trialsGrayscale); // add the loop to the experiment
-    currentLoop = trialsGrayscale;  // we're now the current loop
-    
-    // Schedule all the trials in the trialList:
-    for (const thisTrialsGrayscale of trialsGrayscale) {
-      snapshot = trialsGrayscale.getSnapshot();
-      trialsGrayscaleLoopScheduler.add(importConditions(snapshot));
-      trialsGrayscaleLoopScheduler.add(trialGrayscaleRoutineBegin(snapshot));
-      trialsGrayscaleLoopScheduler.add(trialGrayscaleRoutineEachFrame());
-      trialsGrayscaleLoopScheduler.add(trialGrayscaleRoutineEnd(snapshot));
-      trialsGrayscaleLoopScheduler.add(blank500RoutineBegin(snapshot));
-      trialsGrayscaleLoopScheduler.add(blank500RoutineEachFrame());
-      trialsGrayscaleLoopScheduler.add(blank500RoutineEnd(snapshot));
-      trialsGrayscaleLoopScheduler.add(trialsGrayscaleLoopEndIteration(trialsGrayscaleLoopScheduler, snapshot));
-    }
-    
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-async function trialsGrayscaleLoopEnd() {
+async function colorBlockLoopEnd() {
   // terminate loop
-  psychoJS.experiment.removeLoop(trialsGrayscale);
+  psychoJS.experiment.removeLoop(colorBlock);
   // update the current loop from the ExperimentHandler
   if (psychoJS.experiment._unfinishedLoops.length>0)
     currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
@@ -748,8 +810,100 @@ async function trialsGrayscaleLoopEnd() {
   return Scheduler.Event.NEXT;
 }
 
+function colorBlockLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
 
-function trialsGrayscaleLoopEndIteration(scheduler, snapshot) {
+function grayBlockLoopBegin(grayBlockLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    grayBlock = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1 if group in ['gray_only'] else 0, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: undefined,
+      seed: undefined, name: 'grayBlock'
+    });
+    psychoJS.experiment.addLoop(grayBlock); // add the loop to the experiment
+    currentLoop = grayBlock;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    for (const thisGrayBlock of grayBlock) {
+      snapshot = grayBlock.getSnapshot();
+      grayBlockLoopScheduler.add(importConditions(snapshot));
+      const trialsGrayLoopScheduler = new Scheduler(psychoJS);
+      grayBlockLoopScheduler.add(trialsGrayLoopBegin(trialsGrayLoopScheduler, snapshot));
+      grayBlockLoopScheduler.add(trialsGrayLoopScheduler);
+      grayBlockLoopScheduler.add(trialsGrayLoopEnd);
+      grayBlockLoopScheduler.add(confidenceScreenRoutineBegin(snapshot));
+      grayBlockLoopScheduler.add(confidenceScreenRoutineEachFrame());
+      grayBlockLoopScheduler.add(confidenceScreenRoutineEnd(snapshot));
+      grayBlockLoopScheduler.add(grayBlockLoopEndIteration(grayBlockLoopScheduler, snapshot));
+    }
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+function trialsGrayLoopBegin(trialsGrayLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    trialsGray = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: 'hotel_color.xlsx',
+      seed: undefined, name: 'trialsGray'
+    });
+    psychoJS.experiment.addLoop(trialsGray); // add the loop to the experiment
+    currentLoop = trialsGray;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    for (const thisTrialsGray of trialsGray) {
+      snapshot = trialsGray.getSnapshot();
+      trialsGrayLoopScheduler.add(importConditions(snapshot));
+      trialsGrayLoopScheduler.add(trialGrayscaleRoutineBegin(snapshot));
+      trialsGrayLoopScheduler.add(trialGrayscaleRoutineEachFrame());
+      trialsGrayLoopScheduler.add(trialGrayscaleRoutineEnd(snapshot));
+      trialsGrayLoopScheduler.add(blank500RoutineBegin(snapshot));
+      trialsGrayLoopScheduler.add(blank500RoutineEachFrame());
+      trialsGrayLoopScheduler.add(blank500RoutineEnd(snapshot));
+      trialsGrayLoopScheduler.add(trialsGrayLoopEndIteration(trialsGrayLoopScheduler, snapshot));
+    }
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+async function trialsGrayLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(trialsGray);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+function trialsGrayLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
   return async function () {
     if (typeof snapshot !== 'undefined') {
@@ -768,11 +922,160 @@ function trialsGrayscaleLoopEndIteration(scheduler, snapshot) {
   };
 }
 
+async function grayBlockLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(grayBlock);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
 
-var trialColorMaxDurationReached;
-var gotValidClick;
-var trialColorMaxDuration;
-var trialColorComponents;
+function grayBlockLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function bothBlockLoopBegin(bothBlockLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    bothBlock = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1 if group in ['both_blocks'] else 0, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: undefined,
+      seed: undefined, name: 'bothBlock'
+    });
+    psychoJS.experiment.addLoop(bothBlock); // add the loop to the experiment
+    currentLoop = bothBlock;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    for (const thisBothBlock of bothBlock) {
+      snapshot = bothBlock.getSnapshot();
+      bothBlockLoopScheduler.add(importConditions(snapshot));
+      bothBlockLoopScheduler.add(NextScreenRoutineBegin(snapshot));
+      bothBlockLoopScheduler.add(NextScreenRoutineEachFrame());
+      bothBlockLoopScheduler.add(NextScreenRoutineEnd(snapshot));
+      const trialsGray_ColorLoopScheduler = new Scheduler(psychoJS);
+      bothBlockLoopScheduler.add(trialsGray_ColorLoopBegin(trialsGray_ColorLoopScheduler, snapshot));
+      bothBlockLoopScheduler.add(trialsGray_ColorLoopScheduler);
+      bothBlockLoopScheduler.add(trialsGray_ColorLoopEnd);
+      bothBlockLoopScheduler.add(confidenceScreenRoutineBegin(snapshot));
+      bothBlockLoopScheduler.add(confidenceScreenRoutineEachFrame());
+      bothBlockLoopScheduler.add(confidenceScreenRoutineEnd(snapshot));
+      bothBlockLoopScheduler.add(bothBlockLoopEndIteration(bothBlockLoopScheduler, snapshot));
+    }
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+function trialsGray_ColorLoopBegin(trialsGray_ColorLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    trialsGray_Color = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: 'hotel_color.xlsx',
+      seed: undefined, name: 'trialsGray_Color'
+    });
+    psychoJS.experiment.addLoop(trialsGray_Color); // add the loop to the experiment
+    currentLoop = trialsGray_Color;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    for (const thisTrialsGray_Color of trialsGray_Color) {
+      snapshot = trialsGray_Color.getSnapshot();
+      trialsGray_ColorLoopScheduler.add(importConditions(snapshot));
+      trialsGray_ColorLoopScheduler.add(trialColor_GrayRoutineBegin(snapshot));
+      trialsGray_ColorLoopScheduler.add(trialColor_GrayRoutineEachFrame());
+      trialsGray_ColorLoopScheduler.add(trialColor_GrayRoutineEnd(snapshot));
+      trialsGray_ColorLoopScheduler.add(blank500RoutineBegin(snapshot));
+      trialsGray_ColorLoopScheduler.add(blank500RoutineEachFrame());
+      trialsGray_ColorLoopScheduler.add(blank500RoutineEnd(snapshot));
+      trialsGray_ColorLoopScheduler.add(trialsGray_ColorLoopEndIteration(trialsGray_ColorLoopScheduler, snapshot));
+    }
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+async function trialsGray_ColorLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(trialsGray_Color);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+function trialsGray_ColorLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+async function bothBlockLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(bothBlock);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+function bothBlockLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
 function trialColorRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -795,10 +1098,9 @@ function trialColorRoutineBegin(snapshot) {
     mouse.midButton = [];
     mouse.rightButton = [];
     mouse.time = [];
-    mouse.corr = [];
     mouse.clicked_name = [];
     gotValidClick = false; // until a click is received
-    imageQuery.setImage(query_image);
+    imageQuery.setImage(hotel_query);
     image1.setImage(choice1);
     image2.setImage(choice2);
     image3.setImage(choice3);
@@ -815,6 +1117,7 @@ function trialColorRoutineBegin(snapshot) {
     trialColorComponents.push(image3);
     trialColorComponents.push(image4);
     trialColorComponents.push(image5);
+    trialColorComponents.push(queryCaption);
     
     for (const thisComponent of trialColorComponents)
       if ('status' in thisComponent)
@@ -823,12 +1126,6 @@ function trialColorRoutineBegin(snapshot) {
   }
 }
 
-
-var prevButtonState;
-var _mouseButtons;
-var corr;
-var corrAns;
-var _mouseXYs;
 function trialColorRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'trialColor' ---
@@ -870,17 +1167,6 @@ function trialColorRoutineEachFrame() {
           if (!gotValidClick) {
               mouse.clicked_name.push(null);
           }
-          // check whether click was in correct object
-          if (gotValidClick) {
-              corr = 0;
-              corrAns = eval( correct_answer);
-              for (let obj of [corrAns]) {
-                  if (obj.contains(mouse)) {
-                      corr = 1;
-                  };
-              };
-              mouse.corr.push(corr);
-          };
           _mouseXYs = mouse.getPos();
           mouse.x.push(_mouseXYs[0]);
           mouse.y.push(_mouseXYs[1]);
@@ -984,6 +1270,35 @@ function trialColorRoutineEachFrame() {
     if (image5.status === PsychoJS.Status.STARTED) {
     }
     
+    // Run 'Each Frame' code from colorCorrect
+    clickable_objects = [image1, image2, image3, image4, image5];
+    for (var obj, _pj_c = 0, _pj_a = clickable_objects, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        obj = _pj_a[_pj_c];
+        if ((obj.contains(mouse) && mouse.getPressed()[0])) {
+            clicked_img = obj.image;
+            psychoJS.experiment.addData("clicked_image", clicked_img);
+            psychoJS.experiment.addData("correct_answer", correct_answer);
+            psychoJS.experiment.addData("isCorrect", Number.parseInt((clicked_img === correct_answer)));
+            continueRoutine = false;
+            break;
+        }
+    }
+    
+    
+    // *queryCaption* updates
+    if (t >= 0.0 && queryCaption.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      queryCaption.tStart = t;  // (not accounting for frame time here)
+      queryCaption.frameNStart = frameN;  // exact frame index
+      
+      queryCaption.setAutoDraw(true);
+    }
+    
+    
+    // if queryCaption is active this frame...
+    if (queryCaption.status === PsychoJS.Status.STARTED) {
+    }
+    
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -1011,7 +1326,6 @@ function trialColorRoutineEachFrame() {
   };
 }
 
-
 function trialColorRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'trialColor' ---
@@ -1028,7 +1342,6 @@ function trialColorRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse.midButton', mouse.midButton);
     psychoJS.experiment.addData('mouse.rightButton', mouse.rightButton);
     psychoJS.experiment.addData('mouse.time', mouse.time);
-    psychoJS.experiment.addData('mouse.corr', mouse.corr);
     psychoJS.experiment.addData('mouse.clicked_name', mouse.clicked_name);
     
     // the Routine "trialColor" was not non-slip safe, so reset the non-slip timer
@@ -1042,10 +1355,6 @@ function trialColorRoutineEnd(snapshot) {
   }
 }
 
-
-var blank500MaxDurationReached;
-var blank500MaxDuration;
-var blank500Components;
 function blank500RoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1073,8 +1382,6 @@ function blank500RoutineBegin(snapshot) {
   }
 }
 
-
-var frameRemains;
 function blank500RoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'blank500' ---
@@ -1134,7 +1441,6 @@ function blank500RoutineEachFrame() {
   };
 }
 
-
 function blank500RoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'blank500' ---
@@ -1158,10 +1464,6 @@ function blank500RoutineEnd(snapshot) {
   }
 }
 
-
-var confidenceScreenMaxDurationReached;
-var confidenceScreenMaxDuration;
-var confidenceScreenComponents;
 function confidenceScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1193,7 +1495,6 @@ function confidenceScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function confidenceScreenRoutineEachFrame() {
   return async function () {
@@ -1303,7 +1604,6 @@ function confidenceScreenRoutineEachFrame() {
   };
 }
 
-
 function confidenceScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'confidenceScreen' ---
@@ -1329,11 +1629,285 @@ function confidenceScreenRoutineEnd(snapshot) {
   }
 }
 
+function trialGrayscaleRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'trialGrayscale' ---
+    t = 0;
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // keep track of whether this Routine was forcibly ended
+    routineForceEnded = false;
+    trialGrayscaleClock.reset();
+    routineTimer.reset();
+    trialGrayscaleMaxDurationReached = false;
+    // update component parameters for each repeat
+    // setup some python lists for storing info about the mouse_3
+    // current position of the mouse:
+    mouse_3.x = [];
+    mouse_3.y = [];
+    mouse_3.leftButton = [];
+    mouse_3.midButton = [];
+    mouse_3.rightButton = [];
+    mouse_3.time = [];
+    mouse_3.clicked_name = [];
+    gotValidClick = false; // until a click is received
+    queryImage_2.setImage(hotel_query);
+    image1_3.setImage(gray1);
+    image2_3.setImage(gray2);
+    image3_3.setImage(gray3);
+    image4_3.setImage(gray4);
+    image5_3.setImage(gray5);
+    psychoJS.experiment.addData('trialGrayscale.started', globalClock.getTime());
+    trialGrayscaleMaxDuration = null
+    // keep track of which components have finished
+    trialGrayscaleComponents = [];
+    trialGrayscaleComponents.push(mouse_3);
+    trialGrayscaleComponents.push(queryImage_2);
+    trialGrayscaleComponents.push(image1_3);
+    trialGrayscaleComponents.push(image2_3);
+    trialGrayscaleComponents.push(image3_3);
+    trialGrayscaleComponents.push(image4_3);
+    trialGrayscaleComponents.push(image5_3);
+    trialGrayscaleComponents.push(queryCaption_gray);
+    
+    for (const thisComponent of trialGrayscaleComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
 
-var NextScreenMaxDurationReached;
-var _key_NextScreen_allKeys;
-var NextScreenMaxDuration;
-var NextScreenComponents;
+function trialGrayscaleRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'trialGrayscale' ---
+    // get current time
+    t = trialGrayscaleClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    // *mouse_3* updates
+    if (t >= 0.0 && mouse_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      mouse_3.tStart = t;  // (not accounting for frame time here)
+      mouse_3.frameNStart = frameN;  // exact frame index
+      
+      mouse_3.status = PsychoJS.Status.STARTED;
+      mouse_3.mouseClock.reset();
+      prevButtonState = mouse_3.getPressed();  // if button is down already this ISN'T a new click
+    }
+    
+    // if mouse_3 is active this frame...
+    if (mouse_3.status === PsychoJS.Status.STARTED) {
+      _mouseButtons = mouse_3.getPressed();
+      if (!_mouseButtons.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
+        prevButtonState = _mouseButtons;
+        if (_mouseButtons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+          // check if the mouse was inside our 'clickable' objects
+          gotValidClick = false;
+          mouse_3.clickableObjects = eval([image1, image2, image3, image4, image5])
+          ;// make sure the mouse's clickable objects are an array
+          if (!Array.isArray(mouse_3.clickableObjects)) {
+              mouse_3.clickableObjects = [mouse_3.clickableObjects];
+          }
+          // iterate through clickable objects and check each
+          for (const obj of mouse_3.clickableObjects) {
+              if (obj.contains(mouse_3)) {
+                  gotValidClick = true;
+                  mouse_3.clicked_name.push(obj.name);
+              }
+          }
+          if (!gotValidClick) {
+              mouse_3.clicked_name.push(null);
+          }
+          _mouseXYs = mouse_3.getPos();
+          mouse_3.x.push(_mouseXYs[0]);
+          mouse_3.y.push(_mouseXYs[1]);
+          mouse_3.leftButton.push(_mouseButtons[0]);
+          mouse_3.midButton.push(_mouseButtons[1]);
+          mouse_3.rightButton.push(_mouseButtons[2]);
+          mouse_3.time.push(mouse_3.mouseClock.getTime());
+          if (gotValidClick === true) { // end routine on response
+            continueRoutine = false;
+          }
+        }
+      }
+    }
+    
+    // *queryImage_2* updates
+    if (t >= 0.0 && queryImage_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      queryImage_2.tStart = t;  // (not accounting for frame time here)
+      queryImage_2.frameNStart = frameN;  // exact frame index
+      
+      queryImage_2.setAutoDraw(true);
+    }
+    
+    
+    // if queryImage_2 is active this frame...
+    if (queryImage_2.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // *image1_3* updates
+    if (t >= 0.0 && image1_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      image1_3.tStart = t;  // (not accounting for frame time here)
+      image1_3.frameNStart = frameN;  // exact frame index
+      
+      image1_3.setAutoDraw(true);
+    }
+    
+    
+    // if image1_3 is active this frame...
+    if (image1_3.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // *image2_3* updates
+    if (t >= 0.0 && image2_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      image2_3.tStart = t;  // (not accounting for frame time here)
+      image2_3.frameNStart = frameN;  // exact frame index
+      
+      image2_3.setAutoDraw(true);
+    }
+    
+    
+    // if image2_3 is active this frame...
+    if (image2_3.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // *image3_3* updates
+    if (t >= 0.0 && image3_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      image3_3.tStart = t;  // (not accounting for frame time here)
+      image3_3.frameNStart = frameN;  // exact frame index
+      
+      image3_3.setAutoDraw(true);
+    }
+    
+    
+    // if image3_3 is active this frame...
+    if (image3_3.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // *image4_3* updates
+    if (t >= 0.0 && image4_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      image4_3.tStart = t;  // (not accounting for frame time here)
+      image4_3.frameNStart = frameN;  // exact frame index
+      
+      image4_3.setAutoDraw(true);
+    }
+    
+    
+    // if image4_3 is active this frame...
+    if (image4_3.status === PsychoJS.Status.STARTED) {
+    }
+    
+    
+    // *image5_3* updates
+    if (t >= 0.0 && image5_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      image5_3.tStart = t;  // (not accounting for frame time here)
+      image5_3.frameNStart = frameN;  // exact frame index
+      
+      image5_3.setAutoDraw(true);
+    }
+    
+    
+    // if image5_3 is active this frame...
+    if (image5_3.status === PsychoJS.Status.STARTED) {
+    }
+    
+    // Run 'Each Frame' code from grayCorrect
+    clickable_objects = [image1_3, image2_3, image3_3, image4_3, image5_3];
+    for (var obj, _pj_c = 0, _pj_a = clickable_objects, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        obj = _pj_a[_pj_c];
+        if ((obj.contains(mouse) && mouse.getPressed()[0])) {
+            clicked_img = obj.image;
+            psychoJS.experiment.addData("clicked_image", clicked_img);
+            psychoJS.experiment.addData("correct_answer", correct_answer);
+            psychoJS.experiment.addData("isCorrect", Number.parseInt((clicked_img === correct_answer)));
+            continueRoutine = false;
+            break;
+        }
+    }
+    
+    
+    // *queryCaption_gray* updates
+    if (t >= 0.0 && queryCaption_gray.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      queryCaption_gray.tStart = t;  // (not accounting for frame time here)
+      queryCaption_gray.frameNStart = frameN;  // exact frame index
+      
+      queryCaption_gray.setAutoDraw(true);
+    }
+    
+    
+    // if queryCaption_gray is active this frame...
+    if (queryCaption_gray.status === PsychoJS.Status.STARTED) {
+    }
+    
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      routineForceEnded = true;
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of trialGrayscaleComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function trialGrayscaleRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'trialGrayscale' ---
+    for (const thisComponent of trialGrayscaleComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    psychoJS.experiment.addData('trialGrayscale.stopped', globalClock.getTime());
+    // store data for psychoJS.experiment (ExperimentHandler)
+    psychoJS.experiment.addData('mouse_3.x', mouse_3.x);
+    psychoJS.experiment.addData('mouse_3.y', mouse_3.y);
+    psychoJS.experiment.addData('mouse_3.leftButton', mouse_3.leftButton);
+    psychoJS.experiment.addData('mouse_3.midButton', mouse_3.midButton);
+    psychoJS.experiment.addData('mouse_3.rightButton', mouse_3.rightButton);
+    psychoJS.experiment.addData('mouse_3.time', mouse_3.time);
+    psychoJS.experiment.addData('mouse_3.clicked_name', mouse_3.clicked_name);
+    
+    // the Routine "trialGrayscale" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
 function NextScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1364,7 +1938,6 @@ function NextScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function NextScreenRoutineEachFrame() {
   return async function () {
@@ -1441,7 +2014,6 @@ function NextScreenRoutineEachFrame() {
   };
 }
 
-
 function NextScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'NextScreen' ---
@@ -1474,25 +2046,19 @@ function NextScreenRoutineEnd(snapshot) {
   }
 }
 
-
-var trialGrayscaleMaxDurationReached;
-var color_paths;
-var grayscale_paths;
-var trialGrayscaleMaxDuration;
-var trialGrayscaleComponents;
-function trialGrayscaleRoutineBegin(snapshot) {
+function trialColor_GrayRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
-    //--- Prepare to start Routine 'trialGrayscale' ---
+    //--- Prepare to start Routine 'trialColor_Gray' ---
     t = 0;
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     // keep track of whether this Routine was forcibly ended
     routineForceEnded = false;
-    trialGrayscaleClock.reset();
+    trialColor_GrayClock.reset();
     routineTimer.reset();
-    trialGrayscaleMaxDurationReached = false;
+    trialColor_GrayMaxDurationReached = false;
     // update component parameters for each repeat
     // setup some python lists for storing info about the mouse_2
     // current position of the mouse:
@@ -1502,16 +2068,15 @@ function trialGrayscaleRoutineBegin(snapshot) {
     mouse_2.midButton = [];
     mouse_2.rightButton = [];
     mouse_2.time = [];
-    mouse_2.corr = [];
     mouse_2.clicked_name = [];
     gotValidClick = false; // until a click is received
-    imageQuery_2.setImage(query_image);
+    imageQuery_2.setImage(hotel_query);
     image1_2.setImage(choice1);
     image2_2.setImage(choice2);
     image3_2.setImage(choice3);
     image4_2.setImage(choice4);
     image5_2.setImage(choice5);
-    // Run 'Begin Routine' code from code
+    // Run 'Begin Routine' code from toggleGray
     color_paths = [choice1, choice2, choice3, choice4, choice5];
     grayscale_paths = [gray1, gray2, gray3, gray4, gray5];
     toggle_button.toggleGray = false;
@@ -1523,32 +2088,32 @@ function trialGrayscaleRoutineBegin(snapshot) {
     
     // reset toggle_button to account for continued clicks & clear times on/off
     toggle_button.reset()
-    psychoJS.experiment.addData('trialGrayscale.started', globalClock.getTime());
-    trialGrayscaleMaxDuration = null
+    psychoJS.experiment.addData('trialColor_Gray.started', globalClock.getTime());
+    trialColor_GrayMaxDuration = null
     // keep track of which components have finished
-    trialGrayscaleComponents = [];
-    trialGrayscaleComponents.push(mouse_2);
-    trialGrayscaleComponents.push(imageQuery_2);
-    trialGrayscaleComponents.push(image1_2);
-    trialGrayscaleComponents.push(image2_2);
-    trialGrayscaleComponents.push(image3_2);
-    trialGrayscaleComponents.push(image4_2);
-    trialGrayscaleComponents.push(image5_2);
-    trialGrayscaleComponents.push(toggle_button);
+    trialColor_GrayComponents = [];
+    trialColor_GrayComponents.push(mouse_2);
+    trialColor_GrayComponents.push(imageQuery_2);
+    trialColor_GrayComponents.push(image1_2);
+    trialColor_GrayComponents.push(image2_2);
+    trialColor_GrayComponents.push(image3_2);
+    trialColor_GrayComponents.push(image4_2);
+    trialColor_GrayComponents.push(image5_2);
+    trialColor_GrayComponents.push(toggle_button);
+    trialColor_GrayComponents.push(queryCaption_GC);
     
-    for (const thisComponent of trialGrayscaleComponents)
+    for (const thisComponent of trialColor_GrayComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
     return Scheduler.Event.NEXT;
   }
 }
 
-
-function trialGrayscaleRoutineEachFrame() {
+function trialColor_GrayRoutineEachFrame() {
   return async function () {
-    //--- Loop for each frame of Routine 'trialGrayscale' ---
+    //--- Loop for each frame of Routine 'trialColor_Gray' ---
     // get current time
-    t = trialGrayscaleClock.getTime();
+    t = trialColor_GrayClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // *mouse_2* updates
@@ -1585,17 +2150,6 @@ function trialGrayscaleRoutineEachFrame() {
           if (!gotValidClick) {
               mouse_2.clicked_name.push(null);
           }
-          // check whether click was in correct object
-          if (gotValidClick) {
-              corr = 0;
-              corrAns = eval( correct_answer);
-              for (let obj of [corrAns]) {
-                  if (obj.contains(mouse_2)) {
-                      corr = 1;
-                  };
-              };
-              mouse_2.corr.push(corr);
-          };
           _mouseXYs = mouse_2.getPos();
           mouse_2.x.push(_mouseXYs[0]);
           mouse_2.y.push(_mouseXYs[1]);
@@ -1699,6 +2253,20 @@ function trialGrayscaleRoutineEachFrame() {
     if (image5_2.status === PsychoJS.Status.STARTED) {
     }
     
+    // Run 'Each Frame' code from toggleGray
+    clickable_objects = [image1_2, image2_2, image3_2, image4_2, image5_2];
+    for (var obj, _pj_c = 0, _pj_a = clickable_objects, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+        obj = _pj_a[_pj_c];
+        if ((obj.contains(mouse) && mouse.getPressed()[0])) {
+            clicked_img = obj.image;
+            psychoJS.experiment.addData("clicked_image", clicked_img);
+            psychoJS.experiment.addData("correct_answer", correct_answer);
+            psychoJS.experiment.addData("isCorrect", Number.parseInt((clicked_img === correct_answer)));
+            continueRoutine = false;
+            break;
+        }
+    }
+    
     
     // *toggle_button* updates
     if (t >= 0 && toggle_button.status === PsychoJS.Status.NOT_STARTED) {
@@ -1756,6 +2324,21 @@ function trialGrayscaleRoutineEachFrame() {
       // if toggle_button is clicked next frame, it is a new click
       toggle_button.wasClicked = false;
     }
+    
+    // *queryCaption_GC* updates
+    if (t >= 0.0 && queryCaption_GC.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      queryCaption_GC.tStart = t;  // (not accounting for frame time here)
+      queryCaption_GC.frameNStart = frameN;  // exact frame index
+      
+      queryCaption_GC.setAutoDraw(true);
+    }
+    
+    
+    // if queryCaption_GC is active this frame...
+    if (queryCaption_GC.status === PsychoJS.Status.STARTED) {
+    }
+    
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -1768,7 +2351,7 @@ function trialGrayscaleRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of trialGrayscaleComponents)
+    for (const thisComponent of trialColor_GrayComponents)
       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
         continueRoutine = true;
         break;
@@ -1783,16 +2366,15 @@ function trialGrayscaleRoutineEachFrame() {
   };
 }
 
-
-function trialGrayscaleRoutineEnd(snapshot) {
+function trialColor_GrayRoutineEnd(snapshot) {
   return async function () {
-    //--- Ending Routine 'trialGrayscale' ---
-    for (const thisComponent of trialGrayscaleComponents) {
+    //--- Ending Routine 'trialColor_Gray' ---
+    for (const thisComponent of trialColor_GrayComponents) {
       if (typeof thisComponent.setAutoDraw === 'function') {
         thisComponent.setAutoDraw(false);
       }
     }
-    psychoJS.experiment.addData('trialGrayscale.stopped', globalClock.getTime());
+    psychoJS.experiment.addData('trialColor_Gray.stopped', globalClock.getTime());
     // store data for psychoJS.experiment (ExperimentHandler)
     psychoJS.experiment.addData('mouse_2.x', mouse_2.x);
     psychoJS.experiment.addData('mouse_2.y', mouse_2.y);
@@ -1800,13 +2382,12 @@ function trialGrayscaleRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse_2.midButton', mouse_2.midButton);
     psychoJS.experiment.addData('mouse_2.rightButton', mouse_2.rightButton);
     psychoJS.experiment.addData('mouse_2.time', mouse_2.time);
-    psychoJS.experiment.addData('mouse_2.corr', mouse_2.corr);
     psychoJS.experiment.addData('mouse_2.clicked_name', mouse_2.clicked_name);
     
     psychoJS.experiment.addData('toggle_button.numClicks', toggle_button.numClicks);
     psychoJS.experiment.addData('toggle_button.timesOn', toggle_button.timesOn);
     psychoJS.experiment.addData('toggle_button.timesOff', toggle_button.timesOff);
-    // the Routine "trialGrayscale" was not non-slip safe, so reset the non-slip timer
+    // the Routine "trialColor_Gray" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
     // Routines running outside a loop should always advance the datafile row
@@ -1817,10 +2398,6 @@ function trialGrayscaleRoutineEnd(snapshot) {
   }
 }
 
-
-var EndScreenMaxDurationReached;
-var EndScreenMaxDuration;
-var EndScreenComponents;
 function EndScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1847,7 +2424,6 @@ function EndScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function EndScreenRoutineEachFrame() {
   return async function () {
@@ -1908,7 +2484,6 @@ function EndScreenRoutineEachFrame() {
   };
 }
 
-
 function EndScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'EndScreen' ---
@@ -1932,14 +2507,12 @@ function EndScreenRoutineEnd(snapshot) {
   }
 }
 
-
 function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
     return Scheduler.Event.NEXT;
     };
 }
-
 
 async function quitPsychoJS(message, isCompleted) {
   // Check for and save orphaned data
