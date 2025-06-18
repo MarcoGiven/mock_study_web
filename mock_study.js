@@ -361,11 +361,12 @@ async function experimentInit() {
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
   // Run 'Begin Experiment' code from grouping
+  
   const groups = ["color_only", "grayscale_only", "both_blocks"];
   const group = groups[Math.floor(Math.random() * groups.length)];
   
   psychoJS.experiment.addData("assigned_group", group);
-  
+  console.log("Assigned group:", group);
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
   mouse = new core.Mouse({
