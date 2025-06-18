@@ -1265,7 +1265,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="False" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1 if group in ['color_only'] else 0" valType="num"/>
+      <Param name="nReps" updates="None" val="$ (group === 'color_only') ? 1 : 0 " valType="num"/>
       <Param name="name" updates="None" val="colorBlock" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -1292,7 +1292,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="False" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1 if group in ['gray_only'] else 0" valType="num"/>
+      <Param name="nReps" updates="None" val="(group === 'gray_only') ? 1 : 0 " valType="num"/>
       <Param name="name" updates="None" val="grayBlock" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -1319,7 +1319,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="False" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1 if group in ['both_blocks'] else 0" valType="num"/>
+      <Param name="nReps" updates="None" val="(group === 'both_blocks') ? 1 : 0 " valType="num"/>
       <Param name="name" updates="None" val="bothBlock" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
