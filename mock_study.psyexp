@@ -68,7 +68,7 @@
     <Param val="1000" valType="num" updates="None" name="plPupilRemoteTimeoutMs"/>
     <Param val="False" valType="bool" updates="None" name="plPupillometryOnly"/>
     <Param val="psychopy_iohub_surface" valType="str" updates="None" name="plSurfaceName"/>
-    <Param val="1" valType="code" updates="None" name="runMode"/>
+    <Param val="0" valType="code" updates="None" name="runMode"/>
     <Param val="False" valType="bool" updates="None" name="rush"/>
     <Param val="time" valType="str" updates="None" name="sortColumns"/>
     <Param val="" valType="str" updates="None" name="tbLicenseFile"/>
@@ -142,23 +142,6 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="False" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
-      <CodeComponent name="grouping" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="import random&amp;#10;import time&amp;#10;&amp;#10;random.seed(time.time())&amp;#10;&amp;#10;# group = random.choice(['color_only', 'grayscale_only', 'both_blocks'])&amp;#10;&amp;#10;# group = 'color_only'&amp;#10;# group = 'gray_only&amp;#10;group = 'both_blocks'&amp;#10;&amp;#10;thisExp.addData(&quot;assigned_group&quot;, group)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="&amp;#10;const groups = [&quot;color_only&quot;, &quot;grayscale_only&quot;, &quot;both_blocks&quot;];&amp;#10;const group = groups[Math.floor(Math.random() * groups.length)];&amp;#10;&amp;#10;psychoJS.experiment.addData(&quot;assigned_group&quot;, group);&amp;#10;console.log(&quot;Assigned group:&quot;, group);" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Both" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="grouping" valType="code" updates="None" name="name"/>
-      </CodeComponent>
     </Routine>
     <Routine name="EndScreen">
       <RoutineSettingsComponent name="EndScreen" plugin="None">
@@ -197,13 +180,30 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Thank you for completing!" valType="str" updates="constant" name="text"/>
+        <Param val="Thank you for completing!&amp;#10;&amp;#10;Please wait while we save your results..." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
+      <CodeComponent name="code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="// Disable downloading results to browser&amp;#10;psychoJS.saveResults = 0;&amp;#10;&amp;#10;// Generate filename for results&amp;#10;let filename = psychoJS._experiment._experimentName + '_' + +psychoJS._experiment._datetime + '.csv';&amp;#10;&amp;#10;// Extract data object from experiment&amp;#10;let dataObj = psychoJS._experiment._trialsData;&amp;#10;&amp;#10;// Convert data object to CSV&amp;#10;let data = [Object.keys(dataObj[0])].concat(dataObj).map(it =&gt; {&amp;#10;    return Object.values(it).toString()&amp;#10;}).join('\n')&amp;#10;&amp;#10;// Send data to OSF via DataPipe&amp;#10;console.log('Saving data...')&amp;#10;fetch('https://pipe.jspsych.org/api/data', {&amp;#10;    method: 'POST',&amp;#10;    headers: {&amp;#10;        'Content-Type': 'application/json',&amp;#10;        Accept: '*/*',&amp;#10;    },&amp;#10;    body: JSON.stringify({&amp;#10;        experimentID: 'a2JT7mrQMM51',&amp;#10;        filename: filename,&amp;#10;        data: data,&amp;#10;    }),&amp;#10;}).then(response =&gt; response.json()).then(data =&gt; {&amp;#10;    // Log response and force experiment end&amp;#10;    console.log(data);&amp;#10;    quitPsychoJS();&amp;#10;})" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="blank500">
       <RoutineSettingsComponent name="blank500" plugin="None">
@@ -466,9 +466,9 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="clicked_img = undefined;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="clicked_img = None" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="clickable_objects = [image1, image2, image3, image4, image5]&amp;#10;&amp;#10;for obj in clickable_objects:&amp;#10;    if obj.contains(mouse) and mouse.getPressed()[0]:&amp;#10;        clicked_img = obj.image  # This gives the filename like 'images/hotel2_sample4.png'&amp;#10;        thisExp.addData(&quot;clicked_image&quot;, clicked_img)&amp;#10;        thisExp.addData(&quot;correct_answer&quot;, correct_answer)&amp;#10;        thisExp.addData(&quot;isCorrect&quot;, int(clicked_img == correct_answer))&amp;#10;        continueRoutine = False&amp;#10;        break&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="clickable_objects = [image1, image2, image3, image4, image5];&amp;#10;for (var obj, _pj_c = 0, _pj_a = clickable_objects, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    obj = _pj_a[_pj_c];&amp;#10;    if ((obj.contains(mouse) &amp;&amp; mouse.getPressed()[0])) {&amp;#10;        clicked_img = obj.image;&amp;#10;        psychoJS.experiment.addData(&quot;clicked_image&quot;, clicked_img);&amp;#10;        psychoJS.experiment.addData(&quot;correct_answer&quot;, correct_answer);&amp;#10;        psychoJS.experiment.addData(&quot;isCorrect&quot;, Number.parseInt((clicked_img === correct_answer)));&amp;#10;        continueRoutine = false;&amp;#10;        break;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
@@ -1345,17 +1345,6 @@
   </Routines>
   <Flow>
     <Routine name="WelcomeScreen"/>
-    <LoopInitiator loopType="TrialHandler" name="colorBlock">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="file"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="False" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1 if group == 'color_only' else 1" valType="num"/>
-      <Param name="name" updates="None" val="colorBlock" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <LoopInitiator loopType="TrialHandler" name="trialsColor">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="[{'hotel_query': 'images/hotel1_query.jpg', 'choice1': 'images/hotel1_sample1.jpg', 'choice2': 'images/hotel1_sample2.jpeg', 'choice3': 'images/hotel1_sample3.jpg', 'choice4': 'images/hotel1_correct.jpg', 'choice5': 'images/hotel1_sample4.jpg', 'correct_answer': 'images/hotel1_correct.jpg', 'gray1': 'images/hotel1_gray1.jpg', 'gray2': 'images/hotel1_gray2.jpeg', 'gray3': 'images/hotel1_gray3.jpg', 'gray4': 'images/hotel1_correctGray.jpg', 'gray5': 'images/hotel1_gray4.jpg'}, {'hotel_query': 'images/hotel2_query.jpg', 'choice1': 'images/hotel2_sample1.JPEG', 'choice2': 'images/hotel2_correct.jpg', 'choice3': 'images/hotel2_sample2.jpg', 'choice4': 'images/hotel2_sample3.jpg', 'choice5': 'images/hotel2_sample4.jpeg', 'correct_answer': 'images/hotel2_correct.jpg', 'gray1': 'images/hotel2_gray1.JPEG', 'gray2': 'images/hotel2_correctGray.jpg', 'gray3': 'images/hotel2_gray2.jpg', 'gray4': 'images/hotel2_gray3.jpg', 'gray5': 'images/hotel2_gray4.jpeg'}, {'hotel_query': 'images/hotel3_query.jpg', 'choice1': 'images/hotel3_correct.jpg', 'choice2': 'images/hotel3_sample1.jpg', 'choice3': 'images/hotel3_sample2.jpeg', 'choice4': 'images/hotel3_sample3.jpg', 'choice5': 'images/hotel3_sample4.jpg', 'correct_answer': 'images/hotel3_correct.jpg', 'gray1': 'images/hotel3_correctGray.jpg', 'gray2': 'images/hotel3_gray1.jpg', 'gray3': 'images/hotel3_gray2.jpeg', 'gray4': 'images/hotel3_gray3.jpg', 'gray5': 'images/hotel3_gray4.jpg'}, {'hotel_query': 'images/hotel4_query.jpg', 'choice1': 'images/hotel4_sample1.jpg', 'choice2': 'images/hotel4_sample2.jpg', 'choice3': 'images/hotel4_sample3.jpg', 'choice4': 'images/hotel4_sample4.jpg', 'choice5': 'images/hotel4_correct.jpg', 'correct_answer': 'images/hotel4_correct.jpg', 'gray1': 'images/hotel4_gray1.jpg', 'gray2': 'images/hotel4_gray2.jpg', 'gray3': 'images/hotel4_gray3.jpg', 'gray4': 'images/hotel4_gray4.jpg', 'gray5': 'images/hotel4_correctGray.jpg'}, {'hotel_query': 'images/hotel5_query.jpg', 'choice1': 'images/hotel5_sample1.jpg', 'choice2': 'images/hotel5_sample2.jpg', 'choice3': 'images/hotel5_correct.jpg', 'choice4': 'images/hotel5_sample3.png', 'choice5': 'images/hotel5_sample4.jpg', 'correct_answer': 'images/hotel5_correct.jpg', 'gray1': 'images/hotel5_gray1.jpg', 'gray2': 'images/hotel5_gray2.jpg', 'gray3': 'images/hotel5_correctGray.jpg', 'gray4': 'images/hotel5_gray3.png', 'gray5': 'images/hotel5_gray4.jpg'}]" valType="str"/>
@@ -1371,21 +1360,9 @@
     <Routine name="blank500"/>
     <LoopTerminator name="trialsColor"/>
     <Routine name="confidenceScreen"/>
-    <LoopTerminator name="colorBlock"/>
-    <LoopInitiator loopType="TrialHandler" name="grayBlock">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="file"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="False" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1 if group == 'gray_only' else 1" valType="num"/>
-      <Param name="name" updates="None" val="grayBlock" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <LoopInitiator loopType="TrialHandler" name="trialsGray">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'hotel_query': 'images/hotel1_query', 'choice1': 'images/hotel1_sample1', 'choice2': 'images/hotel1_sample2', 'choice3': 'images/hotel1_sample3', 'choice4': 'images/hotel1_correct', 'choice5': 'images/hotel1_sample4', 'correct_answer': 'images/hotel1_correct', 'gray1': 'images/hotel1_gray1', 'gray2': 'images/hotel1_gray2', 'gray3': 'images/hotel1_gray3', 'gray4': 'images/hotel1_correctGray', 'gray5': 'images/hotel1_gray4'}, {'hotel_query': 'images/hotel2_query', 'choice1': 'images/hotel2_sample1', 'choice2': 'images/hotel2_correct', 'choice3': 'images/hotel2_sample2', 'choice4': 'images/hotel2_sample3', 'choice5': 'images/hotel2_sample4', 'correct_answer': 'images/hotel2_correct', 'gray1': 'images/hotel2_gray1', 'gray2': 'images/hotel2_correctGray', 'gray3': 'images/hotel2_gray2', 'gray4': 'images/hotel2_gray3', 'gray5': 'images/hotel2_gray4'}, {'hotel_query': 'images/hotel3_query', 'choice1': 'images/hotel3_correct', 'choice2': 'images/hotel3_sample1', 'choice3': 'images/hotel3_sample2', 'choice4': 'images/hotel3_sample3', 'choice5': 'images/hotel3_sample4', 'correct_answer': 'images/hotel3_correct', 'gray1': 'images/hotel3_correctGray', 'gray2': 'images/hotel3_gray1', 'gray3': 'images/hotel3_gray2', 'gray4': 'images/hotel3_gray3', 'gray5': 'images/hotel3_gray4'}, {'hotel_query': 'images/hotel4_query', 'choice1': 'images/hotel4_sample1', 'choice2': 'images/hotel4_sample2', 'choice3': 'images/hotel4_sample3', 'choice4': 'images/hotel4_sample4', 'choice5': 'images/hotel4_correct', 'correct_answer': 'images/hotel4_correct', 'gray1': 'images/hotel4_gray1', 'gray2': 'images/hotel4_gray2', 'gray3': 'images/hotel4_gray3', 'gray4': 'images/hotel4_gray4', 'gray5': 'images/hotel4_correctGray'}, {'hotel_query': 'images/hotel5_query', 'choice1': 'images/hotel5_sample1', 'choice2': 'images/hotel5_sample2', 'choice3': 'images/hotel5_correct', 'choice4': 'images/hotel5_sample3', 'choice5': 'images/hotel5_sample4', 'correct_answer': 'images/hotel5_correct', 'gray1': 'images/hotel5_gray1', 'gray2': 'images/hotel5_gray2', 'gray3': 'images/hotel5_correctGray', 'gray4': 'images/hotel5_gray3', 'gray5': 'images/hotel5_gray4'}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'hotel_query': 'images/hotel1_query.jpg', 'choice1': 'images/hotel1_sample1.jpg', 'choice2': 'images/hotel1_sample2.jpeg', 'choice3': 'images/hotel1_sample3.jpg', 'choice4': 'images/hotel1_correct.jpg', 'choice5': 'images/hotel1_sample4.jpg', 'correct_answer': 'images/hotel1_correct.jpg', 'gray1': 'images/hotel1_gray1.jpg', 'gray2': 'images/hotel1_gray2.jpeg', 'gray3': 'images/hotel1_gray3.jpg', 'gray4': 'images/hotel1_correctGray.jpg', 'gray5': 'images/hotel1_gray4.jpg'}, {'hotel_query': 'images/hotel2_query.jpg', 'choice1': 'images/hotel2_sample1.JPEG', 'choice2': 'images/hotel2_correct.jpg', 'choice3': 'images/hotel2_sample2.jpg', 'choice4': 'images/hotel2_sample3.jpg', 'choice5': 'images/hotel2_sample4.jpeg', 'correct_answer': 'images/hotel2_correct.jpg', 'gray1': 'images/hotel2_gray1.JPEG', 'gray2': 'images/hotel2_correctGray.jpg', 'gray3': 'images/hotel2_gray2.jpg', 'gray4': 'images/hotel2_gray3.jpg', 'gray5': 'images/hotel2_gray4.jpeg'}, {'hotel_query': 'images/hotel3_query.jpg', 'choice1': 'images/hotel3_correct.jpg', 'choice2': 'images/hotel3_sample1.jpg', 'choice3': 'images/hotel3_sample2.jpeg', 'choice4': 'images/hotel3_sample3.jpg', 'choice5': 'images/hotel3_sample4.jpg', 'correct_answer': 'images/hotel3_correct.jpg', 'gray1': 'images/hotel3_correctGray.jpg', 'gray2': 'images/hotel3_gray1.jpg', 'gray3': 'images/hotel3_gray2.jpeg', 'gray4': 'images/hotel3_gray3.jpg', 'gray5': 'images/hotel3_gray4.jpg'}, {'hotel_query': 'images/hotel4_query.jpg', 'choice1': 'images/hotel4_sample1.jpg', 'choice2': 'images/hotel4_sample2.jpg', 'choice3': 'images/hotel4_sample3.jpg', 'choice4': 'images/hotel4_sample4.jpg', 'choice5': 'images/hotel4_correct.jpg', 'correct_answer': 'images/hotel4_correct.jpg', 'gray1': 'images/hotel4_gray1.jpg', 'gray2': 'images/hotel4_gray2.jpg', 'gray3': 'images/hotel4_gray3.jpg', 'gray4': 'images/hotel4_gray4.jpg', 'gray5': 'images/hotel4_correctGray.jpg'}, {'hotel_query': 'images/hotel5_query.jpg', 'choice1': 'images/hotel5_sample1.jpg', 'choice2': 'images/hotel5_sample2.jpg', 'choice3': 'images/hotel5_correct.jpg', 'choice4': 'images/hotel5_sample3.png', 'choice5': 'images/hotel5_sample4.jpg', 'correct_answer': 'images/hotel5_correct.jpg', 'gray1': 'images/hotel5_gray1.jpg', 'gray2': 'images/hotel5_gray2.jpg', 'gray3': 'images/hotel5_correctGray.jpg', 'gray4': 'images/hotel5_gray3.png', 'gray5': 'images/hotel5_gray4.jpg'}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="hotel_color.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
@@ -1398,18 +1375,6 @@
     <Routine name="blank500"/>
     <LoopTerminator name="trialsGray"/>
     <Routine name="confidenceScreen"/>
-    <LoopTerminator name="grayBlock"/>
-    <LoopInitiator loopType="TrialHandler" name="bothBlock">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="file"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="False" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1 if group == 'both_blocks' else 1" valType="num"/>
-      <Param name="name" updates="None" val="bothBlock" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <Routine name="NextScreen"/>
     <LoopInitiator loopType="TrialHandler" name="trialsGray_Color">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
@@ -1426,7 +1391,6 @@
     <Routine name="blank500"/>
     <LoopTerminator name="trialsGray_Color"/>
     <Routine name="confidenceScreen"/>
-    <LoopTerminator name="bothBlock"/>
     <Routine name="EndScreen"/>
   </Flow>
 </PsychoPy2experiment>
