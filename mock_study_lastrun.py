@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Thu Jun 19 10:45:07 2025
+    on Thu Jun 19 11:49:04 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -393,7 +393,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='imageQuery', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.48, 0.257),
+        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -401,7 +401,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image1', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.35, -0.3), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.35, -0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-2.0)
@@ -409,7 +409,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0.3), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-3.0)
@@ -417,7 +417,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0.3), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-4.0)
@@ -425,7 +425,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image4', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-5.0)
@@ -433,7 +433,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image5', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-6.0)
@@ -444,6 +444,13 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-8.0);
+    divider = visual.Line(
+        win=win, name='divider',
+        size=(0, 0.8),
+        ori=0.0, pos=(-0.225, 0), draggable=False, anchor='center',
+        lineWidth=3.25,
+        colorSpace='rgb', lineColor='white', fillColor='white',
+        opacity=None, depth=-9.0, interpolate=True)
     
     # --- Initialize components for Routine "blank500" ---
     text = visual.TextStim(win=win, name='text',
@@ -495,7 +502,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='queryImage_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.48, 0.257),
+        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -503,7 +510,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image1_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.35, -0.3), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.35, -0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-2.0)
@@ -511,7 +518,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image2_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0.3), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-3.0)
@@ -519,7 +526,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image3_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0.3), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-4.0)
@@ -527,7 +534,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image4_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-5.0)
@@ -535,7 +542,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image5_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-6.0)
@@ -546,6 +553,13 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-8.0);
+    divider_2 = visual.Line(
+        win=win, name='divider_2',
+        size=(0, 0.8),
+        ori=0.0, pos=(-0.225, 0), draggable=False, anchor='center',
+        lineWidth=3.25,
+        colorSpace='rgb', lineColor='white', fillColor='white',
+        opacity=None, depth=-9.0, interpolate=True)
     
     # --- Initialize components for Routine "blank500" ---
     text = visual.TextStim(win=win, name='text',
@@ -653,7 +667,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         texRes=128.0, interpolate=True, depth=-6.0)
     toggle_button = visual.ButtonStim(win, 
         text='Toggle Color/Grayscale', font='Arvo',
-        pos=(-0.55, -0.3),
+        pos=(-0.55, -0.25),
         letterHeight=0.025,
         size=(0.45, 0.125), 
         ori=0.0
@@ -675,6 +689,13 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-9.0);
+    divider_3 = visual.Line(
+        win=win, name='divider_3',
+        size=(0, 0.8),
+        ori=0.0, pos=(-0.225, 0), draggable=False, anchor='center',
+        lineWidth=3.25,
+        colorSpace='rgb', lineColor='white', fillColor='white',
+        opacity=None, depth=-10.0, interpolate=True)
     
     # --- Initialize components for Routine "blank500" ---
     text = visual.TextStim(win=win, name='text',
@@ -772,7 +793,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     WelcomeScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     WelcomeScreen.tStart = globalClock.getTime(format='float')
     WelcomeScreen.status = STARTED
-    thisExp.addData('WelcomeScreen.started', WelcomeScreen.tStart)
     WelcomeScreen.maxDuration = None
     # keep track of which components have finished
     WelcomeScreenComponents = WelcomeScreen.components
@@ -807,8 +827,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             textWelcomeMessage.tStart = t  # local t and not account for scr refresh
             textWelcomeMessage.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(textWelcomeMessage, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'textWelcomeMessage.started')
             # update status
             textWelcomeMessage.status = STARTED
             textWelcomeMessage.setAutoDraw(True)
@@ -819,24 +837,19 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             pass
         
         # *key_Continue* updates
-        waitOnFlip = False
         
         # if key_Continue is starting this frame...
-        if key_Continue.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        if key_Continue.status == NOT_STARTED and t >= 0.0-frameTolerance:
             # keep track of start time/frame for later
             key_Continue.frameNStart = frameN  # exact frame index
             key_Continue.tStart = t  # local t and not account for scr refresh
             key_Continue.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(key_Continue, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'key_Continue.started')
             # update status
             key_Continue.status = STARTED
             # keyboard checking is just starting
-            waitOnFlip = True
-            win.callOnFlip(key_Continue.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(key_Continue.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if key_Continue.status == STARTED and not waitOnFlip:
+            key_Continue.clock.reset()  # now t=0
+        if key_Continue.status == STARTED:
             theseKeys = key_Continue.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
             _key_Continue_allKeys.extend(theseKeys)
             if len(_key_Continue_allKeys):
@@ -884,14 +897,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # store stop times for WelcomeScreen
     WelcomeScreen.tStop = globalClock.getTime(format='float')
     WelcomeScreen.tStopRefresh = tThisFlipGlobal
-    thisExp.addData('WelcomeScreen.stopped', WelcomeScreen.tStop)
-    # check responses
-    if key_Continue.keys in ['', [], None]:  # No response was made
-        key_Continue.keys = None
-    thisExp.addData('key_Continue.keys',key_Continue.keys)
-    if key_Continue.keys != None:  # we had a response
-        thisExp.addData('key_Continue.rt', key_Continue.rt)
-        thisExp.addData('key_Continue.duration', key_Continue.duration)
     thisExp.nextEntry()
     # the Routine "WelcomeScreen" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
@@ -899,7 +904,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     colorBlock = data.TrialHandler2(
         name='colorBlock',
-        nReps=1 if group == 'color_only' else 0 , 
+        nReps=1 if group == 'color_only' else 1, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -962,7 +967,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # create an object to store info about Routine trialColor
             trialColor = data.Routine(
                 name='trialColor',
-                components=[mouse, imageQuery, image1, image2, image3, image4, image5, queryCaption],
+                components=[mouse, imageQuery, image1, image2, image3, image4, image5, queryCaption, divider],
             )
             trialColor.status = NOT_STARTED
             continueRoutine = True
@@ -976,6 +981,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             mouse.time = []
             mouse.clicked_name = []
             gotValidClick = False  # until a click is received
+            mouse.mouseClock.reset()
             imageQuery.setImage(hotel_query)
             image1.setImage(choice1)
             image2.setImage(choice2)
@@ -986,7 +992,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             trialColor.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             trialColor.tStart = globalClock.getTime(format='float')
             trialColor.status = STARTED
-            thisExp.addData('trialColor.started', trialColor.tStart)
             trialColor.maxDuration = None
             # keep track of which components have finished
             trialColorComponents = trialColor.components
@@ -1023,11 +1028,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     mouse.tStart = t  # local t and not account for scr refresh
                     mouse.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(mouse, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.addData('mouse.started', t)
                     # update status
                     mouse.status = STARTED
-                    mouse.mouseClock.reset()
                     prevButtonState = mouse.getPressed()  # if button is down already this ISN'T a new click
                 if mouse.status == STARTED:  # only update if started and not finished!
                     buttons = mouse.getPressed()
@@ -1042,16 +1044,16 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                                 if obj.contains(mouse):
                                     gotValidClick = True
                                     mouse.clicked_name.append(obj.name)
-                            if not gotValidClick:
-                                mouse.clicked_name.append(None)
-                            x, y = mouse.getPos()
-                            mouse.x.append(x)
-                            mouse.y.append(y)
-                            buttons = mouse.getPressed()
-                            mouse.leftButton.append(buttons[0])
-                            mouse.midButton.append(buttons[1])
-                            mouse.rightButton.append(buttons[2])
-                            mouse.time.append(mouse.mouseClock.getTime())
+                                    mouse.clicked_name.append(obj.name)
+                            if gotValidClick:
+                                x, y = mouse.getPos()
+                                mouse.x.append(x)
+                                mouse.y.append(y)
+                                buttons = mouse.getPressed()
+                                mouse.leftButton.append(buttons[0])
+                                mouse.midButton.append(buttons[1])
+                                mouse.rightButton.append(buttons[2])
+                                mouse.time.append(mouse.mouseClock.getTime())
                             if gotValidClick:
                                 continueRoutine = False  # end routine on response
                 
@@ -1064,8 +1066,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     imageQuery.tStart = t  # local t and not account for scr refresh
                     imageQuery.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(imageQuery, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'imageQuery.started')
                     # update status
                     imageQuery.status = STARTED
                     imageQuery.setAutoDraw(True)
@@ -1084,8 +1084,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image1.tStart = t  # local t and not account for scr refresh
                     image1.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image1, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image1.started')
                     # update status
                     image1.status = STARTED
                     image1.setAutoDraw(True)
@@ -1104,8 +1102,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image2.tStart = t  # local t and not account for scr refresh
                     image2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image2.started')
                     # update status
                     image2.status = STARTED
                     image2.setAutoDraw(True)
@@ -1124,8 +1120,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image3.tStart = t  # local t and not account for scr refresh
                     image3.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image3.started')
                     # update status
                     image3.status = STARTED
                     image3.setAutoDraw(True)
@@ -1144,8 +1138,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image4.tStart = t  # local t and not account for scr refresh
                     image4.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image4, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image4.started')
                     # update status
                     image4.status = STARTED
                     image4.setAutoDraw(True)
@@ -1164,8 +1156,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image5.tStart = t  # local t and not account for scr refresh
                     image5.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image5, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image5.started')
                     # update status
                     image5.status = STARTED
                     image5.setAutoDraw(True)
@@ -1196,14 +1186,30 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     queryCaption.tStart = t  # local t and not account for scr refresh
                     queryCaption.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(queryCaption, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'queryCaption.started')
                     # update status
                     queryCaption.status = STARTED
                     queryCaption.setAutoDraw(True)
                 
                 # if queryCaption is active this frame...
                 if queryCaption.status == STARTED:
+                    # update params
+                    pass
+                
+                # *divider* updates
+                
+                # if divider is starting this frame...
+                if divider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    divider.frameNStart = frameN  # exact frame index
+                    divider.tStart = t  # local t and not account for scr refresh
+                    divider.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(divider, 'tStartRefresh')  # time at next scr refresh
+                    # update status
+                    divider.status = STARTED
+                    divider.setAutoDraw(True)
+                
+                # if divider is active this frame...
+                if divider.status == STARTED:
                     # update params
                     pass
                 
@@ -1245,7 +1251,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # store stop times for trialColor
             trialColor.tStop = globalClock.getTime(format='float')
             trialColor.tStopRefresh = tThisFlipGlobal
-            thisExp.addData('trialColor.stopped', trialColor.tStop)
             # store data for trialsColor (TrialHandler)
             trialsColor.addData('mouse.x', mouse.x)
             trialsColor.addData('mouse.y', mouse.y)
@@ -1270,7 +1275,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             blank500.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             blank500.tStart = globalClock.getTime(format='float')
             blank500.status = STARTED
-            thisExp.addData('blank500.started', blank500.tStart)
             blank500.maxDuration = None
             # keep track of which components have finished
             blank500Components = blank500.components
@@ -1308,8 +1312,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     text.tStart = t  # local t and not account for scr refresh
                     text.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'text.started')
                     # update status
                     text.status = STARTED
                     text.setAutoDraw(True)
@@ -1327,8 +1329,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                         text.tStop = t  # not accounting for scr refresh
                         text.tStopRefresh = tThisFlipGlobal  # on global time
                         text.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'text.stopped')
                         # update status
                         text.status = FINISHED
                         text.setAutoDraw(False)
@@ -1371,7 +1371,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # store stop times for blank500
             blank500.tStop = globalClock.getTime(format='float')
             blank500.tStopRefresh = tThisFlipGlobal
-            thisExp.addData('blank500.stopped', blank500.tStop)
             # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
             if blank500.maxDurationReached:
                 routineTimer.addTime(-blank500.maxDuration)
@@ -1417,7 +1416,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         confidenceScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         confidenceScreen.tStart = globalClock.getTime(format='float')
         confidenceScreen.status = STARTED
-        thisExp.addData('confidenceScreen.started', confidenceScreen.tStart)
         confidenceScreen.maxDuration = None
         # keep track of which components have finished
         confidenceScreenComponents = confidenceScreen.components
@@ -1455,8 +1453,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 text_confidenceQuestion.tStart = t  # local t and not account for scr refresh
                 text_confidenceQuestion.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(text_confidenceQuestion, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'text_confidenceQuestion.started')
                 # update status
                 text_confidenceQuestion.status = STARTED
                 text_confidenceQuestion.setAutoDraw(True)
@@ -1475,8 +1471,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 slider.tStart = t  # local t and not account for scr refresh
                 slider.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(slider, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'slider.started')
                 # update status
                 slider.status = STARTED
                 slider.setAutoDraw(True)
@@ -1494,8 +1488,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 buttonAdvance.tStart = t  # local t and not account for scr refresh
                 buttonAdvance.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(buttonAdvance, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'buttonAdvance.started')
                 # update status
                 buttonAdvance.status = STARTED
                 win.callOnFlip(buttonAdvance.buttonClock.reset)
@@ -1509,11 +1501,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 if buttonAdvance.isClicked:
                     if not buttonAdvance.wasClicked:
                         # if this is a new click, store time of first click and clicked until
-                        buttonAdvance.timesOn.append(buttonAdvance.buttonClock.getTime())
-                        buttonAdvance.timesOff.append(buttonAdvance.buttonClock.getTime())
+                        buttonAdvance.timesOn.append(routineTimer.getTime())
+                        buttonAdvance.timesOff.append(routineTimer.getTime())
                     elif len(buttonAdvance.timesOff):
                         # if click is continuing from last frame, update time of clicked until
-                        buttonAdvance.timesOff[-1] = buttonAdvance.buttonClock.getTime()
+                        buttonAdvance.timesOff[-1] = routineTimer.getTime()
                     if not buttonAdvance.wasClicked:
                         # end routine when buttonAdvance is clicked
                         continueRoutine = False
@@ -1561,16 +1553,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # store stop times for confidenceScreen
         confidenceScreen.tStop = globalClock.getTime(format='float')
         confidenceScreen.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('confidenceScreen.stopped', confidenceScreen.tStop)
         colorBlock.addData('slider.response', slider.getRating())
         colorBlock.addData('slider.rt', slider.getRT())
-        colorBlock.addData('buttonAdvance.numClicks', buttonAdvance.numClicks)
-        if buttonAdvance.numClicks:
-           colorBlock.addData('buttonAdvance.timesOn', buttonAdvance.timesOn)
-           colorBlock.addData('buttonAdvance.timesOff', buttonAdvance.timesOff)
-        else:
-           colorBlock.addData('buttonAdvance.timesOn', "")
-           colorBlock.addData('buttonAdvance.timesOff', "")
+        colorBlock.addData('slider.history', slider.getHistory())
         # the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         # mark thisColorBlock as finished
@@ -1586,14 +1571,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             )
             # once done pausing, restore running status
             colorBlock.status = STARTED
-    # completed 1 if group == 'color_only' else 0  repeats of 'colorBlock'
+    # completed 1 if group == 'color_only' else 1 repeats of 'colorBlock'
     colorBlock.status = FINISHED
     
     
     # set up handler to look after randomisation of conditions etc
     grayBlock = data.TrialHandler2(
         name='grayBlock',
-        nReps=1 if group == 'gray_only' else 0 , 
+        nReps=1 if group == 'gray_only' else 1, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1656,7 +1641,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # create an object to store info about Routine trialGrayscale
             trialGrayscale = data.Routine(
                 name='trialGrayscale',
-                components=[mouse_3, queryImage_2, image1_3, image2_3, image3_3, image4_3, image5_3, queryCaption_gray],
+                components=[mouse_3, queryImage_2, image1_3, image2_3, image3_3, image4_3, image5_3, queryCaption_gray, divider_2],
             )
             trialGrayscale.status = NOT_STARTED
             continueRoutine = True
@@ -1670,6 +1655,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             mouse_3.time = []
             mouse_3.clicked_name = []
             gotValidClick = False  # until a click is received
+            mouse_3.mouseClock.reset()
             queryImage_2.setImage(hotel_query)
             image1_3.setImage(gray1)
             image2_3.setImage(gray2)
@@ -1680,7 +1666,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             trialGrayscale.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             trialGrayscale.tStart = globalClock.getTime(format='float')
             trialGrayscale.status = STARTED
-            thisExp.addData('trialGrayscale.started', trialGrayscale.tStart)
             trialGrayscale.maxDuration = None
             # keep track of which components have finished
             trialGrayscaleComponents = trialGrayscale.components
@@ -1717,11 +1702,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     mouse_3.tStart = t  # local t and not account for scr refresh
                     mouse_3.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(mouse_3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.addData('mouse_3.started', t)
                     # update status
                     mouse_3.status = STARTED
-                    mouse_3.mouseClock.reset()
                     prevButtonState = mouse_3.getPressed()  # if button is down already this ISN'T a new click
                 if mouse_3.status == STARTED:  # only update if started and not finished!
                     buttons = mouse_3.getPressed()
@@ -1736,16 +1718,16 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                                 if obj.contains(mouse_3):
                                     gotValidClick = True
                                     mouse_3.clicked_name.append(obj.name)
-                            if not gotValidClick:
-                                mouse_3.clicked_name.append(None)
-                            x, y = mouse_3.getPos()
-                            mouse_3.x.append(x)
-                            mouse_3.y.append(y)
-                            buttons = mouse_3.getPressed()
-                            mouse_3.leftButton.append(buttons[0])
-                            mouse_3.midButton.append(buttons[1])
-                            mouse_3.rightButton.append(buttons[2])
-                            mouse_3.time.append(mouse_3.mouseClock.getTime())
+                                    mouse_3.clicked_name.append(obj.name)
+                            if gotValidClick:
+                                x, y = mouse_3.getPos()
+                                mouse_3.x.append(x)
+                                mouse_3.y.append(y)
+                                buttons = mouse_3.getPressed()
+                                mouse_3.leftButton.append(buttons[0])
+                                mouse_3.midButton.append(buttons[1])
+                                mouse_3.rightButton.append(buttons[2])
+                                mouse_3.time.append(mouse_3.mouseClock.getTime())
                             if gotValidClick:
                                 continueRoutine = False  # end routine on response
                 
@@ -1758,8 +1740,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     queryImage_2.tStart = t  # local t and not account for scr refresh
                     queryImage_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(queryImage_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'queryImage_2.started')
                     # update status
                     queryImage_2.status = STARTED
                     queryImage_2.setAutoDraw(True)
@@ -1778,8 +1758,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image1_3.tStart = t  # local t and not account for scr refresh
                     image1_3.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image1_3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image1_3.started')
                     # update status
                     image1_3.status = STARTED
                     image1_3.setAutoDraw(True)
@@ -1798,8 +1776,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image2_3.tStart = t  # local t and not account for scr refresh
                     image2_3.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image2_3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image2_3.started')
                     # update status
                     image2_3.status = STARTED
                     image2_3.setAutoDraw(True)
@@ -1838,8 +1814,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image4_3.tStart = t  # local t and not account for scr refresh
                     image4_3.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image4_3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image4_3.started')
                     # update status
                     image4_3.status = STARTED
                     image4_3.setAutoDraw(True)
@@ -1858,8 +1832,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image5_3.tStart = t  # local t and not account for scr refresh
                     image5_3.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image5_3, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image5_3.started')
                     # update status
                     image5_3.status = STARTED
                     image5_3.setAutoDraw(True)
@@ -1890,14 +1862,30 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     queryCaption_gray.tStart = t  # local t and not account for scr refresh
                     queryCaption_gray.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(queryCaption_gray, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'queryCaption_gray.started')
                     # update status
                     queryCaption_gray.status = STARTED
                     queryCaption_gray.setAutoDraw(True)
                 
                 # if queryCaption_gray is active this frame...
                 if queryCaption_gray.status == STARTED:
+                    # update params
+                    pass
+                
+                # *divider_2* updates
+                
+                # if divider_2 is starting this frame...
+                if divider_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    divider_2.frameNStart = frameN  # exact frame index
+                    divider_2.tStart = t  # local t and not account for scr refresh
+                    divider_2.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(divider_2, 'tStartRefresh')  # time at next scr refresh
+                    # update status
+                    divider_2.status = STARTED
+                    divider_2.setAutoDraw(True)
+                
+                # if divider_2 is active this frame...
+                if divider_2.status == STARTED:
                     # update params
                     pass
                 
@@ -1939,7 +1927,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # store stop times for trialGrayscale
             trialGrayscale.tStop = globalClock.getTime(format='float')
             trialGrayscale.tStopRefresh = tThisFlipGlobal
-            thisExp.addData('trialGrayscale.stopped', trialGrayscale.tStop)
             # store data for trialsGray (TrialHandler)
             trialsGray.addData('mouse_3.x', mouse_3.x)
             trialsGray.addData('mouse_3.y', mouse_3.y)
@@ -1964,7 +1951,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             blank500.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             blank500.tStart = globalClock.getTime(format='float')
             blank500.status = STARTED
-            thisExp.addData('blank500.started', blank500.tStart)
             blank500.maxDuration = None
             # keep track of which components have finished
             blank500Components = blank500.components
@@ -2002,8 +1988,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     text.tStart = t  # local t and not account for scr refresh
                     text.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'text.started')
                     # update status
                     text.status = STARTED
                     text.setAutoDraw(True)
@@ -2021,8 +2005,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                         text.tStop = t  # not accounting for scr refresh
                         text.tStopRefresh = tThisFlipGlobal  # on global time
                         text.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'text.stopped')
                         # update status
                         text.status = FINISHED
                         text.setAutoDraw(False)
@@ -2065,7 +2047,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # store stop times for blank500
             blank500.tStop = globalClock.getTime(format='float')
             blank500.tStopRefresh = tThisFlipGlobal
-            thisExp.addData('blank500.stopped', blank500.tStop)
             # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
             if blank500.maxDurationReached:
                 routineTimer.addTime(-blank500.maxDuration)
@@ -2111,7 +2092,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         confidenceScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         confidenceScreen.tStart = globalClock.getTime(format='float')
         confidenceScreen.status = STARTED
-        thisExp.addData('confidenceScreen.started', confidenceScreen.tStart)
         confidenceScreen.maxDuration = None
         # keep track of which components have finished
         confidenceScreenComponents = confidenceScreen.components
@@ -2149,8 +2129,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 text_confidenceQuestion.tStart = t  # local t and not account for scr refresh
                 text_confidenceQuestion.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(text_confidenceQuestion, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'text_confidenceQuestion.started')
                 # update status
                 text_confidenceQuestion.status = STARTED
                 text_confidenceQuestion.setAutoDraw(True)
@@ -2169,8 +2147,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 slider.tStart = t  # local t and not account for scr refresh
                 slider.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(slider, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'slider.started')
                 # update status
                 slider.status = STARTED
                 slider.setAutoDraw(True)
@@ -2188,8 +2164,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 buttonAdvance.tStart = t  # local t and not account for scr refresh
                 buttonAdvance.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(buttonAdvance, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'buttonAdvance.started')
                 # update status
                 buttonAdvance.status = STARTED
                 win.callOnFlip(buttonAdvance.buttonClock.reset)
@@ -2203,11 +2177,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 if buttonAdvance.isClicked:
                     if not buttonAdvance.wasClicked:
                         # if this is a new click, store time of first click and clicked until
-                        buttonAdvance.timesOn.append(buttonAdvance.buttonClock.getTime())
-                        buttonAdvance.timesOff.append(buttonAdvance.buttonClock.getTime())
+                        buttonAdvance.timesOn.append(routineTimer.getTime())
+                        buttonAdvance.timesOff.append(routineTimer.getTime())
                     elif len(buttonAdvance.timesOff):
                         # if click is continuing from last frame, update time of clicked until
-                        buttonAdvance.timesOff[-1] = buttonAdvance.buttonClock.getTime()
+                        buttonAdvance.timesOff[-1] = routineTimer.getTime()
                     if not buttonAdvance.wasClicked:
                         # end routine when buttonAdvance is clicked
                         continueRoutine = False
@@ -2255,16 +2229,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # store stop times for confidenceScreen
         confidenceScreen.tStop = globalClock.getTime(format='float')
         confidenceScreen.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('confidenceScreen.stopped', confidenceScreen.tStop)
         grayBlock.addData('slider.response', slider.getRating())
         grayBlock.addData('slider.rt', slider.getRT())
-        grayBlock.addData('buttonAdvance.numClicks', buttonAdvance.numClicks)
-        if buttonAdvance.numClicks:
-           grayBlock.addData('buttonAdvance.timesOn', buttonAdvance.timesOn)
-           grayBlock.addData('buttonAdvance.timesOff', buttonAdvance.timesOff)
-        else:
-           grayBlock.addData('buttonAdvance.timesOn', "")
-           grayBlock.addData('buttonAdvance.timesOff', "")
+        grayBlock.addData('slider.history', slider.getHistory())
         # the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         # mark thisGrayBlock as finished
@@ -2280,14 +2247,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             )
             # once done pausing, restore running status
             grayBlock.status = STARTED
-    # completed 1 if group == 'gray_only' else 0  repeats of 'grayBlock'
+    # completed 1 if group == 'gray_only' else 1 repeats of 'grayBlock'
     grayBlock.status = FINISHED
     
     
     # set up handler to look after randomisation of conditions etc
     bothBlock = data.TrialHandler2(
         name='bothBlock',
-        nReps=1 if group == 'both_blocks' else 0, 
+        nReps=1 if group == 'both_blocks' else 1, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -2329,7 +2296,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         NextScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         NextScreen.tStart = globalClock.getTime(format='float')
         NextScreen.status = STARTED
-        thisExp.addData('NextScreen.started', NextScreen.tStart)
         NextScreen.maxDuration = None
         # keep track of which components have finished
         NextScreenComponents = NextScreen.components
@@ -2367,8 +2333,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 textNextScreen.tStart = t  # local t and not account for scr refresh
                 textNextScreen.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(textNextScreen, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'textNextScreen.started')
                 # update status
                 textNextScreen.status = STARTED
                 textNextScreen.setAutoDraw(True)
@@ -2379,24 +2343,19 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 pass
             
             # *key_NextScreen* updates
-            waitOnFlip = False
             
             # if key_NextScreen is starting this frame...
-            if key_NextScreen.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            if key_NextScreen.status == NOT_STARTED and t >= 0.0-frameTolerance:
                 # keep track of start time/frame for later
                 key_NextScreen.frameNStart = frameN  # exact frame index
                 key_NextScreen.tStart = t  # local t and not account for scr refresh
                 key_NextScreen.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(key_NextScreen, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'key_NextScreen.started')
                 # update status
                 key_NextScreen.status = STARTED
                 # keyboard checking is just starting
-                waitOnFlip = True
-                win.callOnFlip(key_NextScreen.clock.reset)  # t=0 on next screen flip
-                win.callOnFlip(key_NextScreen.clearEvents, eventType='keyboard')  # clear events on next screen flip
-            if key_NextScreen.status == STARTED and not waitOnFlip:
+                key_NextScreen.clock.reset()  # now t=0
+            if key_NextScreen.status == STARTED:
                 theseKeys = key_NextScreen.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
                 _key_NextScreen_allKeys.extend(theseKeys)
                 if len(_key_NextScreen_allKeys):
@@ -2444,14 +2403,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # store stop times for NextScreen
         NextScreen.tStop = globalClock.getTime(format='float')
         NextScreen.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('NextScreen.stopped', NextScreen.tStop)
-        # check responses
-        if key_NextScreen.keys in ['', [], None]:  # No response was made
-            key_NextScreen.keys = None
-        bothBlock.addData('key_NextScreen.keys',key_NextScreen.keys)
-        if key_NextScreen.keys != None:  # we had a response
-            bothBlock.addData('key_NextScreen.rt', key_NextScreen.rt)
-            bothBlock.addData('key_NextScreen.duration', key_NextScreen.duration)
         # the Routine "NextScreen" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
@@ -2493,7 +2444,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # create an object to store info about Routine trialColor_Gray
             trialColor_Gray = data.Routine(
                 name='trialColor_Gray',
-                components=[mouse_2, imageQuery_2, image1_2, image2_2, image3_2, image4_2, image5_2, toggle_button, queryCaption_GC],
+                components=[mouse_2, imageQuery_2, image1_2, image2_2, image3_2, image4_2, image5_2, toggle_button, queryCaption_GC, divider_3],
             )
             trialColor_Gray.status = NOT_STARTED
             continueRoutine = True
@@ -2507,6 +2458,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             mouse_2.time = []
             mouse_2.clicked_name = []
             gotValidClick = False  # until a click is received
+            mouse_2.mouseClock.reset()
             imageQuery_2.setImage(hotel_query)
             image1_2.setImage(choice1)
             image2_2.setImage(choice2)
@@ -2533,7 +2485,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             trialColor_Gray.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             trialColor_Gray.tStart = globalClock.getTime(format='float')
             trialColor_Gray.status = STARTED
-            thisExp.addData('trialColor_Gray.started', trialColor_Gray.tStart)
             trialColor_Gray.maxDuration = None
             # keep track of which components have finished
             trialColor_GrayComponents = trialColor_Gray.components
@@ -2570,11 +2521,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     mouse_2.tStart = t  # local t and not account for scr refresh
                     mouse_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(mouse_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.addData('mouse_2.started', t)
                     # update status
                     mouse_2.status = STARTED
-                    mouse_2.mouseClock.reset()
                     prevButtonState = mouse_2.getPressed()  # if button is down already this ISN'T a new click
                 if mouse_2.status == STARTED:  # only update if started and not finished!
                     buttons = mouse_2.getPressed()
@@ -2583,22 +2531,22 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                         if sum(buttons) > 0:  # state changed to a new click
                             # check if the mouse was inside our 'clickable' objects
                             gotValidClick = False
-                            clickableList = environmenttools.getFromNames([image1, image2, image3, image4, image5], namespace=locals())
+                            clickableList = environmenttools.getFromNames([image1, image2, image3, image4, image5,], namespace=locals())
                             for obj in clickableList:
                                 # is this object clicked on?
                                 if obj.contains(mouse_2):
                                     gotValidClick = True
                                     mouse_2.clicked_name.append(obj.name)
-                            if not gotValidClick:
-                                mouse_2.clicked_name.append(None)
-                            x, y = mouse_2.getPos()
-                            mouse_2.x.append(x)
-                            mouse_2.y.append(y)
-                            buttons = mouse_2.getPressed()
-                            mouse_2.leftButton.append(buttons[0])
-                            mouse_2.midButton.append(buttons[1])
-                            mouse_2.rightButton.append(buttons[2])
-                            mouse_2.time.append(mouse_2.mouseClock.getTime())
+                                    mouse_2.clicked_name.append(obj.name)
+                            if gotValidClick:
+                                x, y = mouse_2.getPos()
+                                mouse_2.x.append(x)
+                                mouse_2.y.append(y)
+                                buttons = mouse_2.getPressed()
+                                mouse_2.leftButton.append(buttons[0])
+                                mouse_2.midButton.append(buttons[1])
+                                mouse_2.rightButton.append(buttons[2])
+                                mouse_2.time.append(mouse_2.mouseClock.getTime())
                             if gotValidClick:
                                 continueRoutine = False  # end routine on response
                 
@@ -2611,8 +2559,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     imageQuery_2.tStart = t  # local t and not account for scr refresh
                     imageQuery_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(imageQuery_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'imageQuery_2.started')
                     # update status
                     imageQuery_2.status = STARTED
                     imageQuery_2.setAutoDraw(True)
@@ -2631,8 +2577,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image1_2.tStart = t  # local t and not account for scr refresh
                     image1_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image1_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image1_2.started')
                     # update status
                     image1_2.status = STARTED
                     image1_2.setAutoDraw(True)
@@ -2651,8 +2595,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image2_2.tStart = t  # local t and not account for scr refresh
                     image2_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image2_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image2_2.started')
                     # update status
                     image2_2.status = STARTED
                     image2_2.setAutoDraw(True)
@@ -2671,8 +2613,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image3_2.tStart = t  # local t and not account for scr refresh
                     image3_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image3_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image3_2.started')
                     # update status
                     image3_2.status = STARTED
                     image3_2.setAutoDraw(True)
@@ -2691,8 +2631,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image4_2.tStart = t  # local t and not account for scr refresh
                     image4_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image4_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image4_2.started')
                     # update status
                     image4_2.status = STARTED
                     image4_2.setAutoDraw(True)
@@ -2711,8 +2649,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     image5_2.tStart = t  # local t and not account for scr refresh
                     image5_2.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(image5_2, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'image5_2.started')
                     # update status
                     image5_2.status = STARTED
                     image5_2.setAutoDraw(True)
@@ -2742,8 +2678,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     toggle_button.tStart = t  # local t and not account for scr refresh
                     toggle_button.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(toggle_button, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'toggle_button.started')
                     # update status
                     toggle_button.status = STARTED
                     win.callOnFlip(toggle_button.buttonClock.reset)
@@ -2757,11 +2691,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     if toggle_button.isClicked:
                         if not toggle_button.wasClicked:
                             # if this is a new click, store time of first click and clicked until
-                            toggle_button.timesOn.append(toggle_button.buttonClock.getTime())
-                            toggle_button.timesOff.append(toggle_button.buttonClock.getTime())
+                            toggle_button.timesOn.append(routineTimer.getTime())
+                            toggle_button.timesOff.append(routineTimer.getTime())
                         elif len(toggle_button.timesOff):
                             # if click is continuing from last frame, update time of clicked until
-                            toggle_button.timesOff[-1] = toggle_button.buttonClock.getTime()
+                            toggle_button.timesOff[-1] = routineTimer.getTime()
                         if not toggle_button.wasClicked:
                             # run callback code when toggle_button is clicked
                             
@@ -2799,14 +2733,30 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     queryCaption_GC.tStart = t  # local t and not account for scr refresh
                     queryCaption_GC.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(queryCaption_GC, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'queryCaption_GC.started')
                     # update status
                     queryCaption_GC.status = STARTED
                     queryCaption_GC.setAutoDraw(True)
                 
                 # if queryCaption_GC is active this frame...
                 if queryCaption_GC.status == STARTED:
+                    # update params
+                    pass
+                
+                # *divider_3* updates
+                
+                # if divider_3 is starting this frame...
+                if divider_3.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                    # keep track of start time/frame for later
+                    divider_3.frameNStart = frameN  # exact frame index
+                    divider_3.tStart = t  # local t and not account for scr refresh
+                    divider_3.tStartRefresh = tThisFlipGlobal  # on global time
+                    win.timeOnFlip(divider_3, 'tStartRefresh')  # time at next scr refresh
+                    # update status
+                    divider_3.status = STARTED
+                    divider_3.setAutoDraw(True)
+                
+                # if divider_3 is active this frame...
+                if divider_3.status == STARTED:
                     # update params
                     pass
                 
@@ -2848,7 +2798,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # store stop times for trialColor_Gray
             trialColor_Gray.tStop = globalClock.getTime(format='float')
             trialColor_Gray.tStopRefresh = tThisFlipGlobal
-            thisExp.addData('trialColor_Gray.stopped', trialColor_Gray.tStop)
             # store data for trialsGray_Color (TrialHandler)
             trialsGray_Color.addData('mouse_2.x', mouse_2.x)
             trialsGray_Color.addData('mouse_2.y', mouse_2.y)
@@ -2880,7 +2829,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             blank500.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             blank500.tStart = globalClock.getTime(format='float')
             blank500.status = STARTED
-            thisExp.addData('blank500.started', blank500.tStart)
             blank500.maxDuration = None
             # keep track of which components have finished
             blank500Components = blank500.components
@@ -2918,8 +2866,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     text.tStart = t  # local t and not account for scr refresh
                     text.tStartRefresh = tThisFlipGlobal  # on global time
                     win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'text.started')
                     # update status
                     text.status = STARTED
                     text.setAutoDraw(True)
@@ -2937,8 +2883,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                         text.tStop = t  # not accounting for scr refresh
                         text.tStopRefresh = tThisFlipGlobal  # on global time
                         text.frameNStop = frameN  # exact frame index
-                        # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'text.stopped')
                         # update status
                         text.status = FINISHED
                         text.setAutoDraw(False)
@@ -2981,7 +2925,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # store stop times for blank500
             blank500.tStop = globalClock.getTime(format='float')
             blank500.tStopRefresh = tThisFlipGlobal
-            thisExp.addData('blank500.stopped', blank500.tStop)
             # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
             if blank500.maxDurationReached:
                 routineTimer.addTime(-blank500.maxDuration)
@@ -3027,7 +2970,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         confidenceScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         confidenceScreen.tStart = globalClock.getTime(format='float')
         confidenceScreen.status = STARTED
-        thisExp.addData('confidenceScreen.started', confidenceScreen.tStart)
         confidenceScreen.maxDuration = None
         # keep track of which components have finished
         confidenceScreenComponents = confidenceScreen.components
@@ -3065,8 +3007,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 text_confidenceQuestion.tStart = t  # local t and not account for scr refresh
                 text_confidenceQuestion.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(text_confidenceQuestion, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'text_confidenceQuestion.started')
                 # update status
                 text_confidenceQuestion.status = STARTED
                 text_confidenceQuestion.setAutoDraw(True)
@@ -3085,8 +3025,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 slider.tStart = t  # local t and not account for scr refresh
                 slider.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(slider, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'slider.started')
                 # update status
                 slider.status = STARTED
                 slider.setAutoDraw(True)
@@ -3104,8 +3042,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 buttonAdvance.tStart = t  # local t and not account for scr refresh
                 buttonAdvance.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(buttonAdvance, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'buttonAdvance.started')
                 # update status
                 buttonAdvance.status = STARTED
                 win.callOnFlip(buttonAdvance.buttonClock.reset)
@@ -3119,11 +3055,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 if buttonAdvance.isClicked:
                     if not buttonAdvance.wasClicked:
                         # if this is a new click, store time of first click and clicked until
-                        buttonAdvance.timesOn.append(buttonAdvance.buttonClock.getTime())
-                        buttonAdvance.timesOff.append(buttonAdvance.buttonClock.getTime())
+                        buttonAdvance.timesOn.append(routineTimer.getTime())
+                        buttonAdvance.timesOff.append(routineTimer.getTime())
                     elif len(buttonAdvance.timesOff):
                         # if click is continuing from last frame, update time of clicked until
-                        buttonAdvance.timesOff[-1] = buttonAdvance.buttonClock.getTime()
+                        buttonAdvance.timesOff[-1] = routineTimer.getTime()
                     if not buttonAdvance.wasClicked:
                         # end routine when buttonAdvance is clicked
                         continueRoutine = False
@@ -3171,16 +3107,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # store stop times for confidenceScreen
         confidenceScreen.tStop = globalClock.getTime(format='float')
         confidenceScreen.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('confidenceScreen.stopped', confidenceScreen.tStop)
         bothBlock.addData('slider.response', slider.getRating())
         bothBlock.addData('slider.rt', slider.getRT())
-        bothBlock.addData('buttonAdvance.numClicks', buttonAdvance.numClicks)
-        if buttonAdvance.numClicks:
-           bothBlock.addData('buttonAdvance.timesOn', buttonAdvance.timesOn)
-           bothBlock.addData('buttonAdvance.timesOff', buttonAdvance.timesOff)
-        else:
-           bothBlock.addData('buttonAdvance.timesOn', "")
-           bothBlock.addData('buttonAdvance.timesOff', "")
+        bothBlock.addData('slider.history', slider.getHistory())
         # the Routine "confidenceScreen" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         # mark thisBothBlock as finished
@@ -3196,7 +3125,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             )
             # once done pausing, restore running status
             bothBlock.status = STARTED
-    # completed 1 if group == 'both_blocks' else 0 repeats of 'bothBlock'
+    # completed 1 if group == 'both_blocks' else 1 repeats of 'bothBlock'
     bothBlock.status = FINISHED
     
     
@@ -3213,7 +3142,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     EndScreen.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     EndScreen.tStart = globalClock.getTime(format='float')
     EndScreen.status = STARTED
-    thisExp.addData('EndScreen.started', EndScreen.tStart)
     EndScreen.maxDuration = None
     # keep track of which components have finished
     EndScreenComponents = EndScreen.components
@@ -3248,8 +3176,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             textEndMessage.tStart = t  # local t and not account for scr refresh
             textEndMessage.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(textEndMessage, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'textEndMessage.started')
             # update status
             textEndMessage.status = STARTED
             textEndMessage.setAutoDraw(True)
@@ -3267,8 +3193,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 textEndMessage.tStop = t  # not accounting for scr refresh
                 textEndMessage.tStopRefresh = tThisFlipGlobal  # on global time
                 textEndMessage.frameNStop = frameN  # exact frame index
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'textEndMessage.stopped')
                 # update status
                 textEndMessage.status = FINISHED
                 textEndMessage.setAutoDraw(False)
@@ -3311,7 +3235,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # store stop times for EndScreen
     EndScreen.tStop = globalClock.getTime(format='float')
     EndScreen.tStopRefresh = tThisFlipGlobal
-    thisExp.addData('EndScreen.stopped', EndScreen.tStop)
     # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
     if EndScreen.maxDurationReached:
         routineTimer.addTime(-EndScreen.maxDuration)
