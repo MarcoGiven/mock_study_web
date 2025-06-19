@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Wed Jun 18 15:55:50 2025
+    on Thu Jun 19 10:45:07 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -377,11 +377,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     random.seed(time.time())
     
-    group = random.choice(['color_only', 'grayscale_only', 'both_blocks'])
+    # group = random.choice(['color_only', 'grayscale_only', 'both_blocks'])
     
     # group = 'color_only'
     # group = 'gray_only
-    # group = 'both_blocks'
+    group = 'both_blocks'
     
     thisExp.addData("assigned_group", group)
     
@@ -393,7 +393,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='imageQuery', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.5, 0.2), draggable=False, size=(0.71, 0.4),
+        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.48, 0.257),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -401,7 +401,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image1', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.4, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.35, -0.3), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-2.0)
@@ -409,7 +409,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0.1), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0.3), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-3.0)
@@ -417,7 +417,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0.1), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0.3), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-4.0)
@@ -425,7 +425,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image4', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-5.0)
@@ -433,14 +433,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image5', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-6.0)
     queryCaption = visual.TextStim(win=win, name='queryCaption',
         text='Query Image',
         font='Arial',
-        pos=(-0.5, 0.45), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        pos=(-0.55, 0.2), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-8.0);
@@ -495,7 +495,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='queryImage_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.5, 0.2), draggable=False, size=(0.71, 0.4),
+        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.48, 0.257),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -503,7 +503,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image1_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.4, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.35, -0.3), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-2.0)
@@ -511,7 +511,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image2_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0.1), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0.3), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-3.0)
@@ -519,7 +519,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image3_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0.1), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0.3), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-4.0)
@@ -527,7 +527,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image4_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-5.0)
@@ -535,14 +535,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image5_3', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.445, 0.25),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-6.0)
     queryCaption_gray = visual.TextStim(win=win, name='queryCaption_gray',
         text='Query Image',
         font='Arial',
-        pos=(-0.5, 0.45), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        pos=(-0.55, 0.2), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-8.0);
@@ -607,7 +607,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='imageQuery_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.5, 0.2), draggable=False, size=(0.71, 0.4),
+        ori=0.0, pos=(-0.55, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-1.0)
@@ -615,7 +615,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image1_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(-0.4, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.35, -0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-2.0)
@@ -623,7 +623,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image2_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, 0.1), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-3.0)
@@ -631,7 +631,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image3_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, 0.1), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0.25), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-4.0)
@@ -639,7 +639,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image4_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.1, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.1, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-5.0)
@@ -647,13 +647,13 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         win=win,
         name='image5_2', 
         image='default.png', mask=None, anchor='center',
-        ori=0.0, pos=(0.6, -0.2), draggable=False, size=(0.445, 0.25),
+        ori=0.0, pos=(0.6, 0), draggable=False, size=(0.4984, 0.28),
         color=[1,1,1], colorSpace='rgb', opacity=None,
         flipHoriz=False, flipVert=False,
         texRes=128.0, interpolate=True, depth=-6.0)
     toggle_button = visual.ButtonStim(win, 
         text='Toggle Color/Grayscale', font='Arvo',
-        pos=(-0.5, -0.4),
+        pos=(-0.55, -0.3),
         letterHeight=0.025,
         size=(0.45, 0.125), 
         ori=0.0
@@ -671,7 +671,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     queryCaption_GC = visual.TextStim(win=win, name='queryCaption_GC',
         text='Query Image',
         font='Arial',
-        pos=(-0.5, 0.45), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        pos=(-0.55, 0.2), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-9.0);
@@ -899,7 +899,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     colorBlock = data.TrialHandler2(
         name='colorBlock',
-        nReps=1 if group in ['color_only'] else 0, 
+        nReps=1 if group == 'color_only' else 0 , 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1586,14 +1586,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             )
             # once done pausing, restore running status
             colorBlock.status = STARTED
-    # completed 1 if group in ['color_only'] else 0 repeats of 'colorBlock'
+    # completed 1 if group == 'color_only' else 0  repeats of 'colorBlock'
     colorBlock.status = FINISHED
     
     
     # set up handler to look after randomisation of conditions etc
     grayBlock = data.TrialHandler2(
         name='grayBlock',
-        nReps=1 if group in ['gray_only'] else 0, 
+        nReps=1 if group == 'gray_only' else 0 , 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -2280,14 +2280,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             )
             # once done pausing, restore running status
             grayBlock.status = STARTED
-    # completed 1 if group in ['gray_only'] else 0 repeats of 'grayBlock'
+    # completed 1 if group == 'gray_only' else 0  repeats of 'grayBlock'
     grayBlock.status = FINISHED
     
     
     # set up handler to look after randomisation of conditions etc
     bothBlock = data.TrialHandler2(
         name='bothBlock',
-        nReps=1 if group in ['both_blocks'] else 0, 
+        nReps=1 if group == 'both_blocks' else 0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -3196,7 +3196,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             )
             # once done pausing, restore running status
             bothBlock.status = STARTED
-    # completed 1 if group in ['both_blocks'] else 0 repeats of 'bothBlock'
+    # completed 1 if group == 'both_blocks' else 0 repeats of 'bothBlock'
     bothBlock.status = FINISHED
     
     

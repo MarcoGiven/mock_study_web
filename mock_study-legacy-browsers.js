@@ -260,9 +260,6 @@ psychoJS.start({
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.DATA);
 
-
-var currentLoop;
-var frameDur;
 async function updateInfo() {
   currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
@@ -290,51 +287,6 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
-
-var WelcomeScreenClock;
-var textWelcomeMessage;
-var key_Continue;
-var trialColorClock;
-var mouse;
-var imageQuery;
-var image1;
-var image2;
-var image3;
-var image4;
-var image5;
-var queryCaption;
-var blank500Clock;
-var text;
-var confidenceScreenClock;
-var text_confidenceQuestion;
-var slider;
-var buttonAdvance;
-var trialGrayscaleClock;
-var mouse_3;
-var queryImage_2;
-var image1_3;
-var image2_3;
-var image3_3;
-var image4_3;
-var image5_3;
-var queryCaption_gray;
-var NextScreenClock;
-var textNextScreen;
-var key_NextScreen;
-var trialColor_GrayClock;
-var mouse_2;
-var imageQuery_2;
-var image1_2;
-var image2_2;
-var image3_2;
-var image4_2;
-var image5_2;
-var toggle_button;
-var queryCaption_GC;
-var EndScreenClock;
-var textEndMessage;
-var globalClock;
-var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "WelcomeScreen"
   WelcomeScreenClock = new util.Clock();
@@ -371,9 +323,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.5), 0.2], 
+    pos : [(- 0.55), 0], 
     draggable: false,
-    size : [0.71, 0.4],
+    size : [0.48, 0.257],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
@@ -384,7 +336,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.4), (- 0.2)], 
+    pos : [0.35, (- 0.3)], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -397,7 +349,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.1, 0.1], 
+    pos : [0.1, 0.3], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -410,7 +362,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, 0.1], 
+    pos : [0.6, 0.3], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -423,7 +375,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.1, (- 0.2)], 
+    pos : [0.1, 0], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -436,7 +388,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, (- 0.2)], 
+    pos : [0.6, 0], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -449,7 +401,7 @@ async function experimentInit() {
     text: 'Query Image',
     font: 'Arial',
     units: undefined, 
-    pos: [(- 0.5), 0.45], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.55), 0.2], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -8.0 
@@ -530,9 +482,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.5), 0.2], 
+    pos : [(- 0.55), 0], 
     draggable: false,
-    size : [0.71, 0.4],
+    size : [0.48, 0.257],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
@@ -543,7 +495,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.4), (- 0.2)], 
+    pos : [0.35, (- 0.3)], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -556,7 +508,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.1, 0.1], 
+    pos : [0.1, 0.3], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -569,7 +521,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, 0.1], 
+    pos : [0.6, 0.3], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -582,7 +534,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.1, (- 0.2)], 
+    pos : [0.1, 0], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -595,7 +547,7 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, (- 0.2)], 
+    pos : [0.6, 0], 
     draggable: false,
     size : [0.445, 0.25],
     color : new util.Color([1,1,1]), opacity : undefined,
@@ -608,7 +560,7 @@ async function experimentInit() {
     text: 'Query Image',
     font: 'Arial',
     units: undefined, 
-    pos: [(- 0.5), 0.45], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.55), 0.2], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -8.0 
@@ -642,9 +594,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.5), 0.2], 
+    pos : [(- 0.55), 0], 
     draggable: false,
-    size : [0.71, 0.4],
+    size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
@@ -655,9 +607,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [(- 0.4), (- 0.2)], 
+    pos : [0.35, (- 0.25)], 
     draggable: false,
-    size : [0.445, 0.25],
+    size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -2.0 
@@ -668,9 +620,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.1, 0.1], 
+    pos : [0.1, 0.25], 
     draggable: false,
-    size : [0.445, 0.25],
+    size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
@@ -681,9 +633,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, 0.1], 
+    pos : [0.6, 0.25], 
     draggable: false,
-    size : [0.445, 0.25],
+    size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -4.0 
@@ -694,9 +646,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.1, (- 0.2)], 
+    pos : [0.1, 0], 
     draggable: false,
-    size : [0.445, 0.25],
+    size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -5.0 
@@ -707,9 +659,9 @@ async function experimentInit() {
     image : 'default.png', mask : undefined,
     anchor : 'center',
     ori : 0.0, 
-    pos : [0.6, (- 0.2)], 
+    pos : [0.6, 0], 
     draggable: false,
-    size : [0.445, 0.25],
+    size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -6.0 
@@ -719,7 +671,7 @@ async function experimentInit() {
     name: 'toggle_button',
     text: 'Toggle Color/Grayscale',
     font: 'Arvo',
-    pos: [(- 0.5), (- 0.4)],
+    pos: [(- 0.55), (- 0.25)],
     size: [0.45, 0.125],
     padding: null,
     anchor: 'center',
@@ -744,7 +696,7 @@ async function experimentInit() {
     text: 'Query Image',
     font: 'Arial',
     units: undefined, 
-    pos: [(- 0.5), 0.45], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.55), 0.2], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -9.0 
@@ -771,15 +723,6 @@ async function experimentInit() {
   return Scheduler.Event.NEXT;
 }
 
-
-var t;
-var frameN;
-var continueRoutine;
-var routineForceEnded;
-var WelcomeScreenMaxDurationReached;
-var _key_Continue_allKeys;
-var WelcomeScreenMaxDuration;
-var WelcomeScreenComponents;
 function WelcomeScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -811,7 +754,6 @@ function WelcomeScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function WelcomeScreenRoutineEachFrame() {
   return async function () {
@@ -888,7 +830,6 @@ function WelcomeScreenRoutineEachFrame() {
   };
 }
 
-
 function WelcomeScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'WelcomeScreen' ---
@@ -921,8 +862,6 @@ function WelcomeScreenRoutineEnd(snapshot) {
   }
 }
 
-
-var colorBlock;
 function colorBlockLoopBegin(colorBlockLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -930,7 +869,7 @@ function colorBlockLoopBegin(colorBlockLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     colorBlock = new TrialHandler({
       psychoJS: psychoJS,
-      nReps:  (group === 'color_only') ? 1 : 0 , method: TrialHandler.Method.RANDOM,
+      nReps: 1 if group == 'color_only' else 0 , method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'colorBlock'
@@ -957,8 +896,6 @@ function colorBlockLoopBegin(colorBlockLoopScheduler, snapshot) {
   }
 }
 
-
-var trialsColor;
 function trialsColorLoopBegin(trialsColorLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -992,7 +929,6 @@ function trialsColorLoopBegin(trialsColorLoopScheduler, snapshot) {
   }
 }
 
-
 async function trialsColorLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(trialsColor);
@@ -1003,7 +939,6 @@ async function trialsColorLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function trialsColorLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1024,7 +959,6 @@ function trialsColorLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
 async function colorBlockLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(colorBlock);
@@ -1035,7 +969,6 @@ async function colorBlockLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function colorBlockLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1054,8 +987,6 @@ function colorBlockLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
-var grayBlock;
 function grayBlockLoopBegin(grayBlockLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1063,7 +994,7 @@ function grayBlockLoopBegin(grayBlockLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     grayBlock = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: (group === 'gray_only') ? 1 : 0 , method: TrialHandler.Method.RANDOM,
+      nReps: 1 if group == 'gray_only' else 0 , method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'grayBlock'
@@ -1090,8 +1021,6 @@ function grayBlockLoopBegin(grayBlockLoopScheduler, snapshot) {
   }
 }
 
-
-var trialsGray;
 function trialsGrayLoopBegin(trialsGrayLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1125,7 +1054,6 @@ function trialsGrayLoopBegin(trialsGrayLoopScheduler, snapshot) {
   }
 }
 
-
 async function trialsGrayLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(trialsGray);
@@ -1136,7 +1064,6 @@ async function trialsGrayLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function trialsGrayLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1157,7 +1084,6 @@ function trialsGrayLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
 async function grayBlockLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(grayBlock);
@@ -1168,7 +1094,6 @@ async function grayBlockLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function grayBlockLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1187,8 +1112,6 @@ function grayBlockLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
-var bothBlock;
 function bothBlockLoopBegin(bothBlockLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1196,7 +1119,7 @@ function bothBlockLoopBegin(bothBlockLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     bothBlock = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: (group === 'both_blocks') ? 1 : 0 , method: TrialHandler.Method.RANDOM,
+      nReps: 1 if group == 'both_blocks' else 0, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'bothBlock'
@@ -1226,8 +1149,6 @@ function bothBlockLoopBegin(bothBlockLoopScheduler, snapshot) {
   }
 }
 
-
-var trialsGray_Color;
 function trialsGray_ColorLoopBegin(trialsGray_ColorLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1261,7 +1182,6 @@ function trialsGray_ColorLoopBegin(trialsGray_ColorLoopScheduler, snapshot) {
   }
 }
 
-
 async function trialsGray_ColorLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(trialsGray_Color);
@@ -1272,7 +1192,6 @@ async function trialsGray_ColorLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function trialsGray_ColorLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1293,7 +1212,6 @@ function trialsGray_ColorLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
 async function bothBlockLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(bothBlock);
@@ -1304,7 +1222,6 @@ async function bothBlockLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
-
 
 function bothBlockLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1323,11 +1240,6 @@ function bothBlockLoopEndIteration(scheduler, snapshot) {
   };
 }
 
-
-var trialColorMaxDurationReached;
-var gotValidClick;
-var trialColorMaxDuration;
-var trialColorComponents;
 function trialColorRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1379,11 +1291,6 @@ function trialColorRoutineBegin(snapshot) {
   }
 }
 
-
-var prevButtonState;
-var _mouseButtons;
-var _mouseXYs;
-var clickable_objects;
 function trialColorRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'trialColor' ---
@@ -1584,7 +1491,6 @@ function trialColorRoutineEachFrame() {
   };
 }
 
-
 function trialColorRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'trialColor' ---
@@ -1614,10 +1520,6 @@ function trialColorRoutineEnd(snapshot) {
   }
 }
 
-
-var blank500MaxDurationReached;
-var blank500MaxDuration;
-var blank500Components;
 function blank500RoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1646,8 +1548,6 @@ function blank500RoutineBegin(snapshot) {
   }
 }
 
-
-var frameRemains;
 function blank500RoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'blank500' ---
@@ -1707,7 +1607,6 @@ function blank500RoutineEachFrame() {
   };
 }
 
-
 function blank500RoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'blank500' ---
@@ -1731,10 +1630,6 @@ function blank500RoutineEnd(snapshot) {
   }
 }
 
-
-var confidenceScreenMaxDurationReached;
-var confidenceScreenMaxDuration;
-var confidenceScreenComponents;
 function confidenceScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1767,7 +1662,6 @@ function confidenceScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function confidenceScreenRoutineEachFrame() {
   return async function () {
@@ -1877,7 +1771,6 @@ function confidenceScreenRoutineEachFrame() {
   };
 }
 
-
 function confidenceScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'confidenceScreen' ---
@@ -1903,10 +1796,6 @@ function confidenceScreenRoutineEnd(snapshot) {
   }
 }
 
-
-var trialGrayscaleMaxDurationReached;
-var trialGrayscaleMaxDuration;
-var trialGrayscaleComponents;
 function trialGrayscaleRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1957,7 +1846,6 @@ function trialGrayscaleRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function trialGrayscaleRoutineEachFrame() {
   return async function () {
@@ -2159,7 +2047,6 @@ function trialGrayscaleRoutineEachFrame() {
   };
 }
 
-
 function trialGrayscaleRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'trialGrayscale' ---
@@ -2189,11 +2076,6 @@ function trialGrayscaleRoutineEnd(snapshot) {
   }
 }
 
-
-var NextScreenMaxDurationReached;
-var _key_NextScreen_allKeys;
-var NextScreenMaxDuration;
-var NextScreenComponents;
 function NextScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2225,7 +2107,6 @@ function NextScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function NextScreenRoutineEachFrame() {
   return async function () {
@@ -2302,7 +2183,6 @@ function NextScreenRoutineEachFrame() {
   };
 }
 
-
 function NextScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'NextScreen' ---
@@ -2335,12 +2215,6 @@ function NextScreenRoutineEnd(snapshot) {
   }
 }
 
-
-var trialColor_GrayMaxDurationReached;
-var color_paths;
-var grayscale_paths;
-var trialColor_GrayMaxDuration;
-var trialColor_GrayComponents;
 function trialColor_GrayRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2404,7 +2278,6 @@ function trialColor_GrayRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function trialColor_GrayRoutineEachFrame() {
   return async function () {
@@ -2663,7 +2536,6 @@ function trialColor_GrayRoutineEachFrame() {
   };
 }
 
-
 function trialColor_GrayRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'trialColor_Gray' ---
@@ -2696,10 +2568,6 @@ function trialColor_GrayRoutineEnd(snapshot) {
   }
 }
 
-
-var EndScreenMaxDurationReached;
-var EndScreenMaxDuration;
-var EndScreenComponents;
 function EndScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2727,7 +2595,6 @@ function EndScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-
 
 function EndScreenRoutineEachFrame() {
   return async function () {
@@ -2788,7 +2655,6 @@ function EndScreenRoutineEachFrame() {
   };
 }
 
-
 function EndScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'EndScreen' ---
@@ -2812,14 +2678,12 @@ function EndScreenRoutineEnd(snapshot) {
   }
 }
 
-
 function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
     return Scheduler.Event.NEXT;
     };
 }
-
 
 async function quitPsychoJS(message, isCompleted) {
   // Check for and save orphaned data
