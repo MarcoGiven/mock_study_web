@@ -12,6 +12,9 @@ let expInfo = {
 let PILOTING = util.getUrlParameters().has('__pilotToken');
 
 // Start code blocks for 'Before Experiment'
+// Run 'Before Experiment' code from csv
+psychoJS.saveResults = false;
+
 // init psychoJS:
 const psychoJS = new PsychoJS({
   debug: true
@@ -2613,7 +2616,7 @@ function EndScreenRoutineBegin(snapshot) {
     EndScreenMaxDurationReached = false;
     // update component parameters for each repeat
     // Prevent default browser CSV download
-    psychoJS._saveResults = 0;
+    psychoJS.saveResults = false;
     
     // Generate filename for results
     let filename = psychoJS._experiment._experimentName + '_' + psychoJS._experiment._datetime + '.csv';
