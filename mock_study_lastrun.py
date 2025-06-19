@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Thu Jun 19 15:41:40 2025
+    on Thu Jun 19 17:07:05 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -371,6 +371,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=0.0);
     key_Continue = keyboard.Keyboard(deviceName='key_Continue')
+    # Run 'Begin Experiment' code from csv
+    psychoJS.saveResults = false;
     
     # --- Initialize components for Routine "trialColor" ---
     mouse = event.Mouse(win=win)
@@ -895,7 +897,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
-        trialList=data.importConditions('hotel_color.xlsx'), 
+        trialList=data.importConditions('resources/hotel_color.csv'), 
         seed=None, 
     )
     thisExp.addLoop(trialsColor)  # add the loop to the experiment
@@ -1525,7 +1527,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
-        trialList=data.importConditions('hotel_color.xlsx'), 
+        trialList=data.importConditions('resources/hotel_color.csv'), 
         seed=None, 
     )
     thisExp.addLoop(trialsGray)  # add the loop to the experiment
@@ -2280,7 +2282,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
-        trialList=data.importConditions('hotel_color.xlsx'), 
+        trialList=data.importConditions('resources/hotel_color.csv'), 
         seed=None, 
     )
     thisExp.addLoop(trialsGray_Color)  # add the loop to the experiment
