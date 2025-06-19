@@ -88,7 +88,7 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
     // resources:
-    {'name': 'hotel_color.xlsx', 'path': 'hotel_color.xlsx'},
+    {'name': 'hotel_color.csv', 'path': 'hotel_color.csv'},
     {'name': 'images/hotel1_query.jpg', 'path': 'images/hotel1_query.jpg'},
     {'name': 'images/hotel1_sample1.jpg', 'path': 'images/hotel1_sample1.jpg'},
     {'name': 'images/hotel1_sample2.jpeg', 'path': 'images/hotel1_sample2.jpeg'},
@@ -144,7 +144,7 @@ psychoJS.start({
     {'name': 'images/hotel5_correctGray.jpg', 'path': 'images/hotel5_correctGray.jpg'},
     {'name': 'images/hotel5_gray3.png', 'path': 'images/hotel5_gray3.png'},
     {'name': 'images/hotel5_gray4.jpg', 'path': 'images/hotel5_gray4.jpg'},
-    {'name': 'hotel_color.xlsx', 'path': 'hotel_color.xlsx'},
+    {'name': 'hotel_color.csv', 'path': 'hotel_color.csv'},
     {'name': 'images/hotel1_query.jpg', 'path': 'images/hotel1_query.jpg'},
     {'name': 'images/hotel1_sample1.jpg', 'path': 'images/hotel1_sample1.jpg'},
     {'name': 'images/hotel1_sample2.jpeg', 'path': 'images/hotel1_sample2.jpeg'},
@@ -200,7 +200,7 @@ psychoJS.start({
     {'name': 'images/hotel5_correctGray.jpg', 'path': 'images/hotel5_correctGray.jpg'},
     {'name': 'images/hotel5_gray3.png', 'path': 'images/hotel5_gray3.png'},
     {'name': 'images/hotel5_gray4.jpg', 'path': 'images/hotel5_gray4.jpg'},
-    {'name': 'hotel_color.xlsx', 'path': 'hotel_color.xlsx'},
+    {'name': 'hotel_color.csv', 'path': 'hotel_color.csv'},
     {'name': 'images/hotel1_query.jpg', 'path': 'images/hotel1_query.jpg'},
     {'name': 'images/hotel1_sample1.jpg', 'path': 'images/hotel1_sample1.jpg'},
     {'name': 'images/hotel1_sample2.jpeg', 'path': 'images/hotel1_sample2.jpeg'},
@@ -964,7 +964,7 @@ function trialsColorLoopBegin(trialsColorLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'hotel_color.xlsx',
+      trialList: 'hotel_color.csv',
       seed: undefined, name: 'trialsColor'
     });
     psychoJS.experiment.addLoop(trialsColor); // add the loop to the experiment
@@ -1031,7 +1031,7 @@ function trialsGrayLoopBegin(trialsGrayLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'hotel_color.xlsx',
+      trialList: 'hotel_color.csv',
       seed: undefined, name: 'trialsGray'
     });
     psychoJS.experiment.addLoop(trialsGray); // add the loop to the experiment
@@ -1098,7 +1098,7 @@ function trialsGray_ColorLoopBegin(trialsGray_ColorLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'hotel_color.xlsx',
+      trialList: 'hotel_color.csv',
       seed: undefined, name: 'trialsGray_Color'
     });
     psychoJS.experiment.addLoop(trialsGray_Color); // add the loop to the experiment

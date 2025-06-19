@@ -1,0 +1,3 @@
+﻿hotel_query,choice1,choice2,choice3,choice4,choice5,correct_answer,gray1,gray2,gray3,gray4,gray5,thisN,thisTrialN,thisRepN,trialsColor.thisRepN,trialsColor.thisTrialN,trialsColor.thisN,trialsColor.thisIndex,thisRow.t,notes,participant,session,date,expName,expVersion,psychopyVersion,expStart,
+,,,,,,,,,,,,,,,,,,,,,pilot,001,2025-06-19_15h39.14.474,mock_study,,2025.1.1,2025-06-19 15h39.17.694529 -0400,
+images/hotel3_query.jpg,images/hotel3_correct.jpg,images/hotel3_sample1.jpg,images/hotel3_sample2.jpeg,images/hotel3_sample3.jpg,images/hotel3_sample4.jpg,images/hotel3_correct.jpg,images/hotel3_correctGray.jpg,images/hotel3_gray1.jpg,images/hotel3_gray2.jpeg,images/hotel3_gray3.jpg,images/hotel3_gray4.jpg,0,0,0,0,0,0,2,9.355050667072646,,,,,,,,,
