@@ -2613,40 +2613,46 @@ function EndScreenRoutineBegin(snapshot) {
     routineTimer.reset();
     EndScreenMaxDurationReached = false;
     // update component parameters for each repeat
-    // Ensure trialsData exists
-    let trials = psychoJS._experiment._trialsData;
+    try {
+        let trials = psychoJS._experiment._trialsData;
     
-    if (!trials || trials.length === 0) {
-        console.warn("No trial data to upload.");
+        if (!trials || trials.length === 0) {
+            console.warn("No trial data to upload.");
+            quitPsychoJS();
+        } else {
+            let filename = psychoJS._experiment._experimentName + "_" + psychoJS._experiment._datetime + ".csv";
+    
+            let csv = [Object.keys(trials[0])]
+                .concat(trials.map(row => Object.values(row).join(",")))
+                .join("\n");
+    
+            console.log("Saving data to DataPipe...");
+    
+            fetch("https://pipe.jspsych.org/api/data", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "*/*",
+                },
+                body: JSON.stringify({
+                    experimentID: "a2JT7mrQMM51",
+                    filename: filename,
+                    data: csv,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Upload successful:", data);
+                quitPsychoJS();
+            })
+            .catch(error => {
+                console.error("Upload failed:", error);
+                quitPsychoJS();
+            });
+        }
+    } catch (e) {
+        console.error("Upload routine failed during init:", e);
         quitPsychoJS();
-    } else {
-        let filename = psychoJS._experiment._experimentName + "_" + psychoJS._experiment._datetime + ".csv";
-    
-        let csv = [Object.keys(trials[0])].concat(trials.map(row => Object.values(row).join(","))).join("\n");
-    
-        console.log("Saving data to DataPipe...");
-    
-        fetch("https://pipe.jspsych.org/api/data", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "*/*",
-            },
-            body: JSON.stringify({
-                experimentID: "a2JT7mrQMM51",  // Confirm this is your actual DataPipe ID
-                filename: filename,
-                data: csv,
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Upload successful:", data);
-            quitPsychoJS();
-        })
-        .catch(error => {
-            console.error("Upload failed:", error);
-            quitPsychoJS();
-        });
     }
     
     EndScreenMaxDuration = null
