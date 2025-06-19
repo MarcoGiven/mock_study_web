@@ -12,8 +12,6 @@ let expInfo = {
 let PILOTING = util.getUrlParameters().has('__pilotToken');
 
 // Start code blocks for 'Before Experiment'
-// Prevent default browser CSV download
-psychoJS._saveResults = false;
 // init psychoJS:
 const psychoJS = new PsychoJS({
   debug: true
