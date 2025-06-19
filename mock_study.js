@@ -2611,7 +2611,7 @@ function EndScreenRoutineBegin(snapshot) {
     EndScreenMaxDurationReached = false;
     // update component parameters for each repeat
     // Prevent default browser CSV download
-    psychoJS.saveResults = false;
+    psychoJS._saveResults = 0;
     
     // Generate filename for results
     let filename = psychoJS._experiment._experimentName + '_' + psychoJS._experiment._datetime + '.csv';
