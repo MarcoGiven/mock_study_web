@@ -297,6 +297,7 @@ var WelcomeScreenClock;
 var textWelcomeMessage;
 var key_Continue;
 var trialColorClock;
+var divider;
 var mouse;
 var imageQuery;
 var image1;
@@ -305,7 +306,6 @@ var image3;
 var image4;
 var image5;
 var queryCaption;
-var divider;
 var blank500Clock;
 var text;
 var confidenceScreenClock;
@@ -313,6 +313,7 @@ var text_confidenceQuestion;
 var slider;
 var buttonAdvance;
 var trialGrayscaleClock;
+var divider_2;
 var mouse_3;
 var queryImage_2;
 var image1_3;
@@ -321,11 +322,11 @@ var image3_3;
 var image4_3;
 var image5_3;
 var queryCaption_gray;
-var divider_2;
 var NextScreenClock;
 var textNextScreen;
 var key_NextScreen;
 var trialColor_GrayClock;
+var divider_3;
 var mouse_2;
 var imageQuery_2;
 var image1_2;
@@ -335,7 +336,6 @@ var image4_2;
 var image5_2;
 var toggle_button;
 var queryCaption_GC;
-var divider_3;
 var EndScreenClock;
 var textEndMessage;
 var globalClock;
@@ -359,6 +359,22 @@ async function experimentInit() {
   
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
+  divider = new visual.Rect ({
+    win: psychoJS.window, name: 'divider', units : 'height', 
+    width: [0.001, 0.8][0], height: [0.001, 0.8][1],
+    ori: 0.0, 
+    pos: [(- 0.225), 0], 
+    draggable: false, 
+    anchor: 'center', 
+    lineWidth: 2.0, 
+    lineColor: new util.Color('white'), 
+    fillColor: new util.Color('white'), 
+    colorSpace: 'rgb', 
+    opacity: 1.0, 
+    depth: 0, 
+    interpolate: true, 
+  });
+  
   mouse = new core.Mouse({
     win: psychoJS.window,
   });
@@ -374,7 +390,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -1.0 
+    texRes : 128.0, interpolate : true, depth : -2.0 
   });
   image1 = new visual.ImageStim({
     win : psychoJS.window,
@@ -387,7 +403,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -2.0 
+    texRes : 128.0, interpolate : true, depth : -3.0 
   });
   image2 = new visual.ImageStim({
     win : psychoJS.window,
@@ -400,7 +416,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -3.0 
+    texRes : 128.0, interpolate : true, depth : -4.0 
   });
   image3 = new visual.ImageStim({
     win : psychoJS.window,
@@ -413,7 +429,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -4.0 
+    texRes : 128.0, interpolate : true, depth : -5.0 
   });
   image4 = new visual.ImageStim({
     win : psychoJS.window,
@@ -426,7 +442,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -5.0 
+    texRes : 128.0, interpolate : true, depth : -6.0 
   });
   image5 = new visual.ImageStim({
     win : psychoJS.window,
@@ -439,7 +455,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -6.0 
+    texRes : 128.0, interpolate : true, depth : -7.0 
   });
   queryCaption = new visual.TextStim({
     win: psychoJS.window,
@@ -450,23 +466,7 @@ async function experimentInit() {
     pos: [(- 0.55), 0.2], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: -8.0 
-  });
-  
-  divider = new visual.ShapeStim ({
-    win: psychoJS.window, name: 'divider', 
-    vertices: [[-[0, 0.8][0]/2.0, 0], [+[0, 0.8][0]/2.0, 0]],
-    ori: 0.0, 
-    pos: [(- 0.225), 0], 
-    draggable: false, 
-    anchor: 'center', 
-    lineWidth: 3.25, 
-    lineColor: new util.Color('white'), 
-    fillColor: new util.Color('white'), 
-    colorSpace: 'rgb', 
-    opacity: undefined, 
-    depth: -9, 
-    interpolate: true, 
+    depth: -9.0 
   });
   
   // Initialize components for Routine "blank500"
@@ -534,6 +534,22 @@ async function experimentInit() {
   
   // Initialize components for Routine "trialGrayscale"
   trialGrayscaleClock = new util.Clock();
+  divider_2 = new visual.Rect ({
+    win: psychoJS.window, name: 'divider_2', units : 'height', 
+    width: [0.001, 0.8][0], height: [0.001, 0.8][1],
+    ori: 0.0, 
+    pos: [(- 0.225), 0], 
+    draggable: false, 
+    anchor: 'center', 
+    lineWidth: 2.0, 
+    lineColor: new util.Color('white'), 
+    fillColor: new util.Color('white'), 
+    colorSpace: 'rgb', 
+    opacity: 1.0, 
+    depth: 0, 
+    interpolate: true, 
+  });
+  
   mouse_3 = new core.Mouse({
     win: psychoJS.window,
   });
@@ -549,7 +565,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -1.0 
+    texRes : 128.0, interpolate : true, depth : -2.0 
   });
   image1_3 = new visual.ImageStim({
     win : psychoJS.window,
@@ -562,7 +578,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -2.0 
+    texRes : 128.0, interpolate : true, depth : -3.0 
   });
   image2_3 = new visual.ImageStim({
     win : psychoJS.window,
@@ -575,7 +591,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -3.0 
+    texRes : 128.0, interpolate : true, depth : -4.0 
   });
   image3_3 = new visual.ImageStim({
     win : psychoJS.window,
@@ -588,7 +604,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -4.0 
+    texRes : 128.0, interpolate : true, depth : -5.0 
   });
   image4_3 = new visual.ImageStim({
     win : psychoJS.window,
@@ -601,7 +617,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -5.0 
+    texRes : 128.0, interpolate : true, depth : -6.0 
   });
   image5_3 = new visual.ImageStim({
     win : psychoJS.window,
@@ -614,7 +630,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -6.0 
+    texRes : 128.0, interpolate : true, depth : -7.0 
   });
   queryCaption_gray = new visual.TextStim({
     win: psychoJS.window,
@@ -625,23 +641,7 @@ async function experimentInit() {
     pos: [(- 0.55), 0.2], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: -8.0 
-  });
-  
-  divider_2 = new visual.ShapeStim ({
-    win: psychoJS.window, name: 'divider_2', 
-    vertices: [[-[0, 0.8][0]/2.0, 0], [+[0, 0.8][0]/2.0, 0]],
-    ori: 0.0, 
-    pos: [(- 0.225), 0], 
-    draggable: false, 
-    anchor: 'center', 
-    lineWidth: 3.25, 
-    lineColor: new util.Color('white'), 
-    fillColor: new util.Color('white'), 
-    colorSpace: 'rgb', 
-    opacity: undefined, 
-    depth: -9, 
-    interpolate: true, 
+    depth: -9.0 
   });
   
   // Initialize components for Routine "NextScreen"
@@ -662,6 +662,22 @@ async function experimentInit() {
   
   // Initialize components for Routine "trialColor_Gray"
   trialColor_GrayClock = new util.Clock();
+  divider_3 = new visual.Rect ({
+    win: psychoJS.window, name: 'divider_3', units : 'height', 
+    width: [0.001, 0.8][0], height: [0.001, 0.8][1],
+    ori: 0.0, 
+    pos: [(- 0.225), 0], 
+    draggable: false, 
+    anchor: 'center', 
+    lineWidth: 2.0, 
+    lineColor: new util.Color('white'), 
+    fillColor: new util.Color('white'), 
+    colorSpace: 'rgb', 
+    opacity: 1.0, 
+    depth: 0, 
+    interpolate: true, 
+  });
+  
   mouse_2 = new core.Mouse({
     win: psychoJS.window,
   });
@@ -677,7 +693,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -1.0 
+    texRes : 128.0, interpolate : true, depth : -2.0 
   });
   image1_2 = new visual.ImageStim({
     win : psychoJS.window,
@@ -690,7 +706,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -2.0 
+    texRes : 128.0, interpolate : true, depth : -3.0 
   });
   image2_2 = new visual.ImageStim({
     win : psychoJS.window,
@@ -703,7 +719,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -3.0 
+    texRes : 128.0, interpolate : true, depth : -4.0 
   });
   image3_2 = new visual.ImageStim({
     win : psychoJS.window,
@@ -716,7 +732,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -4.0 
+    texRes : 128.0, interpolate : true, depth : -5.0 
   });
   image4_2 = new visual.ImageStim({
     win : psychoJS.window,
@@ -729,7 +745,7 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -5.0 
+    texRes : 128.0, interpolate : true, depth : -6.0 
   });
   image5_2 = new visual.ImageStim({
     win : psychoJS.window,
@@ -742,26 +758,26 @@ async function experimentInit() {
     size : [0.4984, 0.28],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
-    texRes : 128.0, interpolate : true, depth : -6.0 
+    texRes : 128.0, interpolate : true, depth : -7.0 
   });
   toggle_button = new visual.ButtonStim({
     win: psychoJS.window,
     name: 'toggle_button',
     text: 'Toggle Color/Grayscale',
-    font: 'Arvo',
+    font: 'Arial',
     pos: [(- 0.55), (- 0.25)],
     size: [0.45, 0.125],
     padding: null,
     anchor: 'center',
     ori: 0.0,
-    units: psychoJS.window.units,
+    units: 'height',
     color: 'white',
-    fillColor: 'darkgrey',
-    borderColor: [0.9608, 0.8431, 0.6863],
+    fillColor: [0.5, 0.5, 0.5],
+    borderColor: [0.0, 0.0, 0.0],
     colorSpace: 'rgb',
-    borderWidth: 0.1,
-    opacity: null,
-    depth: -8,
+    borderWidth: 0.0,
+    opacity: 1.0,
+    depth: -9,
     letterHeight: 0.025,
     bold: true,
     italic: false,
@@ -777,23 +793,7 @@ async function experimentInit() {
     pos: [(- 0.55), 0.2], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: -9.0 
-  });
-  
-  divider_3 = new visual.ShapeStim ({
-    win: psychoJS.window, name: 'divider_3', 
-    vertices: [[-[0, 0.8][0]/2.0, 0], [+[0, 0.8][0]/2.0, 0]],
-    ori: 0.0, 
-    pos: [(- 0.225), 0], 
-    draggable: false, 
-    anchor: 'center', 
-    lineWidth: 3.25, 
-    lineColor: new util.Color('white'), 
-    fillColor: new util.Color('white'), 
-    colorSpace: 'rgb', 
-    opacity: undefined, 
-    depth: -10, 
-    interpolate: true, 
+    depth: -10.0 
   });
   
   // Initialize components for Routine "EndScreen"
@@ -1196,6 +1196,7 @@ function trialColorRoutineBegin(snapshot) {
     trialColorMaxDuration = null
     // keep track of which components have finished
     trialColorComponents = [];
+    trialColorComponents.push(divider);
     trialColorComponents.push(mouse);
     trialColorComponents.push(imageQuery);
     trialColorComponents.push(image1);
@@ -1204,7 +1205,6 @@ function trialColorRoutineBegin(snapshot) {
     trialColorComponents.push(image4);
     trialColorComponents.push(image5);
     trialColorComponents.push(queryCaption);
-    trialColorComponents.push(divider);
     
     trialColorComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -1226,6 +1226,21 @@ function trialColorRoutineEachFrame() {
     t = trialColorClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    
+    // *divider* updates
+    if (t >= 0.0 && divider.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      divider.tStart = t;  // (not accounting for frame time here)
+      divider.frameNStart = frameN;  // exact frame index
+      
+      divider.setAutoDraw(true);
+    }
+    
+    
+    // if divider is active this frame...
+    if (divider.status === PsychoJS.Status.STARTED) {
+    }
+    
     // *mouse* updates
     if (t >= 0.0 && mouse.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -1402,21 +1417,6 @@ function trialColorRoutineEachFrame() {
     
     // if queryCaption is active this frame...
     if (queryCaption.status === PsychoJS.Status.STARTED) {
-    }
-    
-    
-    // *divider* updates
-    if (t >= 0.0 && divider.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      divider.tStart = t;  // (not accounting for frame time here)
-      divider.frameNStart = frameN;  // exact frame index
-      
-      divider.setAutoDraw(true);
-    }
-    
-    
-    // if divider is active this frame...
-    if (divider.status === PsychoJS.Status.STARTED) {
     }
     
     // check for quit (typically the Esc key)
@@ -1799,6 +1799,7 @@ function trialGrayscaleRoutineBegin(snapshot) {
     trialGrayscaleMaxDuration = null
     // keep track of which components have finished
     trialGrayscaleComponents = [];
+    trialGrayscaleComponents.push(divider_2);
     trialGrayscaleComponents.push(mouse_3);
     trialGrayscaleComponents.push(queryImage_2);
     trialGrayscaleComponents.push(image1_3);
@@ -1807,7 +1808,6 @@ function trialGrayscaleRoutineBegin(snapshot) {
     trialGrayscaleComponents.push(image4_3);
     trialGrayscaleComponents.push(image5_3);
     trialGrayscaleComponents.push(queryCaption_gray);
-    trialGrayscaleComponents.push(divider_2);
     
     trialGrayscaleComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -1825,6 +1825,21 @@ function trialGrayscaleRoutineEachFrame() {
     t = trialGrayscaleClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    
+    // *divider_2* updates
+    if (t >= 0.0 && divider_2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      divider_2.tStart = t;  // (not accounting for frame time here)
+      divider_2.frameNStart = frameN;  // exact frame index
+      
+      divider_2.setAutoDraw(true);
+    }
+    
+    
+    // if divider_2 is active this frame...
+    if (divider_2.status === PsychoJS.Status.STARTED) {
+    }
+    
     // *mouse_3* updates
     if (t >= 0.0 && mouse_3.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -2001,21 +2016,6 @@ function trialGrayscaleRoutineEachFrame() {
     
     // if queryCaption_gray is active this frame...
     if (queryCaption_gray.status === PsychoJS.Status.STARTED) {
-    }
-    
-    
-    // *divider_2* updates
-    if (t >= 0.0 && divider_2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      divider_2.tStart = t;  // (not accounting for frame time here)
-      divider_2.frameNStart = frameN;  // exact frame index
-      
-      divider_2.setAutoDraw(true);
-    }
-    
-    
-    // if divider_2 is active this frame...
-    if (divider_2.status === PsychoJS.Status.STARTED) {
     }
     
     // check for quit (typically the Esc key)
@@ -2244,6 +2244,8 @@ function trialColor_GrayRoutineBegin(snapshot) {
     image4_2.setImage(choice4);
     image5_2.setImage(choice5);
     // Run 'Begin Routine' code from toggleGray
+    document.querySelector('button').style.borderRadius = '0px';
+    
     color_paths = [choice1, choice2, choice3, choice4, choice5];
     grayscale_paths = [gray1, gray2, gray3, gray4, gray5];
     toggle_button.toggleGray = false;
@@ -2258,6 +2260,7 @@ function trialColor_GrayRoutineBegin(snapshot) {
     trialColor_GrayMaxDuration = null
     // keep track of which components have finished
     trialColor_GrayComponents = [];
+    trialColor_GrayComponents.push(divider_3);
     trialColor_GrayComponents.push(mouse_2);
     trialColor_GrayComponents.push(imageQuery_2);
     trialColor_GrayComponents.push(image1_2);
@@ -2267,7 +2270,6 @@ function trialColor_GrayRoutineBegin(snapshot) {
     trialColor_GrayComponents.push(image5_2);
     trialColor_GrayComponents.push(toggle_button);
     trialColor_GrayComponents.push(queryCaption_GC);
-    trialColor_GrayComponents.push(divider_3);
     
     trialColor_GrayComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -2285,6 +2287,21 @@ function trialColor_GrayRoutineEachFrame() {
     t = trialColor_GrayClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    
+    // *divider_3* updates
+    if (t >= 0.0 && divider_3.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      divider_3.tStart = t;  // (not accounting for frame time here)
+      divider_3.frameNStart = frameN;  // exact frame index
+      
+      divider_3.setAutoDraw(true);
+    }
+    
+    
+    // if divider_3 is active this frame...
+    if (divider_3.status === PsychoJS.Status.STARTED) {
+    }
+    
     // *mouse_2* updates
     if (t >= 0.0 && mouse_2.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -2518,21 +2535,6 @@ function trialColor_GrayRoutineEachFrame() {
     
     // if queryCaption_GC is active this frame...
     if (queryCaption_GC.status === PsychoJS.Status.STARTED) {
-    }
-    
-    
-    // *divider_3* updates
-    if (t >= 0.0 && divider_3.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      divider_3.tStart = t;  // (not accounting for frame time here)
-      divider_3.frameNStart = frameN;  // exact frame index
-      
-      divider_3.setAutoDraw(true);
-    }
-    
-    
-    // if divider_3 is active this frame...
-    if (divider_3.status === PsychoJS.Status.STARTED) {
     }
     
     // check for quit (typically the Esc key)

@@ -268,6 +268,35 @@
       </TextComponent>
     </Routine>
     <Routine name="trialColor">
+      <PolygonComponent name="divider" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="2" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="divider" valType="code" updates="None" name="name"/>
+        <Param val="1" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(-0.225, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="rectangle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.001, 0.8)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="height" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
       <RoutineSettingsComponent name="trialColor" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -522,35 +551,6 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <PolygonComponent name="divider" plugin="None">
-        <Param val="center" valType="str" updates="constant" name="anchor"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="white" valType="color" updates="constant" name="fillColor"/>
-        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
-        <Param val="white" valType="color" updates="constant" name="lineColor"/>
-        <Param val="2" valType="num" updates="constant" name="lineWidth"/>
-        <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="divider" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(-0.225, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="rectangle" valType="str" updates="None" name="shape"/>
-        <Param val="(0.001, 0.8)" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="height" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="list" updates="constant" name="vertices"/>
-      </PolygonComponent>
     </Routine>
     <Routine name="NextScreen">
       <RoutineSettingsComponent name="NextScreen" plugin="None">
@@ -754,6 +754,35 @@
       </RoutineSettingsComponent>
     </Routine>
     <Routine name="trialColor_Gray">
+      <PolygonComponent name="divider_3" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="white" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="white" valType="color" updates="constant" name="lineColor"/>
+        <Param val="2" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="divider_3" valType="code" updates="None" name="name"/>
+        <Param val="1" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(-0.225, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="rectangle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.001, 0.8)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="height" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
       <RoutineSettingsComponent name="trialColor_Gray" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -969,10 +998,10 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="color_paths = [choice1, choice2, choice3, choice4, choice5];&amp;#10;grayscale_paths = [gray1, gray2, gray3, gray4, gray5];&amp;#10;toggle_button.toggleGray = false;&amp;#10;image1_2.setImage(color_paths[0]);&amp;#10;image2_2.setImage(color_paths[1]);&amp;#10;image3_2.setImage(color_paths[2]);&amp;#10;image4_2.setImage(color_paths[3]);&amp;#10;image5_2.setImage(color_paths[4]);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="color_paths = [choice1, choice2, choice3, choice4, choice5]&amp;#10;grayscale_paths = [gray1, gray2, gray3, gray4, gray5]&amp;#10;&amp;#10;toggle_button.toggleGray = False  # Set the toggle state ON the button object&amp;#10;&amp;#10;image1_2.setImage(color_paths[0])&amp;#10;image2_2.setImage(color_paths[1])&amp;#10;image3_2.setImage(color_paths[2])&amp;#10;image4_2.setImage(color_paths[3])&amp;#10;image5_2.setImage(color_paths[4])&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="clickable_objects = [image1_2, image2_2, image3_2, image4_2, image5_2]&amp;#10;&amp;#10;for obj in clickable_objects:&amp;#10;    if obj.contains(mouse) and mouse.getPressed()[0]:&amp;#10;        clicked_img = obj.image  # This gives the filename like 'images/hotel2_sample4.png'&amp;#10;        thisExp.addData(&quot;clicked_image&quot;, clicked_img)&amp;#10;        thisExp.addData(&quot;correct_answer&quot;, correct_answer)&amp;#10;        thisExp.addData(&quot;isCorrect&quot;, int(clicked_img == correct_answer))&amp;#10;        continueRoutine = False&amp;#10;        break&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="document.querySelector('button').style.borderRadius = '0px';&amp;#10;&amp;#10;color_paths = [choice1, choice2, choice3, choice4, choice5];&amp;#10;grayscale_paths = [gray1, gray2, gray3, gray4, gray5];&amp;#10;toggle_button.toggleGray = false;&amp;#10;image1_2.setImage(color_paths[0]);&amp;#10;image2_2.setImage(color_paths[1]);&amp;#10;image3_2.setImage(color_paths[2]);&amp;#10;image4_2.setImage(color_paths[3]);&amp;#10;image5_2.setImage(color_paths[4]);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;color_paths = [choice1, choice2, choice3, choice4, choice5]&amp;#10;grayscale_paths = [gray1, gray2, gray3, gray4, gray5]&amp;#10;&amp;#10;toggle_button.toggleGray = False  # Set the toggle state ON the button object&amp;#10;&amp;#10;image1_2.setImage(color_paths[0])&amp;#10;image2_2.setImage(color_paths[1])&amp;#10;image3_2.setImage(color_paths[2])&amp;#10;image4_2.setImage(color_paths[3])&amp;#10;image5_2.setImage(color_paths[4])&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="&amp;#10;clickable_objects = [image1_2, image2_2, image3_2, image4_2, image5_2]&amp;#10;&amp;#10;for obj in clickable_objects:&amp;#10;    if obj.contains(mouse) and mouse.getPressed()[0]:&amp;#10;        clicked_img = obj.image  # This gives the filename like 'images/hotel2_sample4.png'&amp;#10;        thisExp.addData(&quot;clicked_image&quot;, clicked_img)&amp;#10;        thisExp.addData(&quot;correct_answer&quot;, correct_answer)&amp;#10;        thisExp.addData(&quot;isCorrect&quot;, int(clicked_img == correct_answer))&amp;#10;        continueRoutine = False&amp;#10;        break&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="clickable_objects = [image1_2, image2_2, image3_2, image4_2, image5_2];&amp;#10;for (var obj, _pj_c = 0, _pj_a = clickable_objects, _pj_b = _pj_a.length; (_pj_c &lt; _pj_b); _pj_c += 1) {&amp;#10;    obj = _pj_a[_pj_c];&amp;#10;    if ((obj.contains(mouse) &amp;&amp; mouse.getPressed()[0])) {&amp;#10;        clicked_img = obj.image;&amp;#10;        psychoJS.experiment.addData(&quot;clicked_image&quot;, clicked_img);&amp;#10;        psychoJS.experiment.addData(&quot;correct_answer&quot;, correct_answer);&amp;#10;        psychoJS.experiment.addData(&quot;isCorrect&quot;, Number.parseInt((clicked_img === correct_answer)));&amp;#10;        continueRoutine = false;&amp;#10;        break;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
@@ -984,22 +1013,22 @@
       <ButtonComponent name="toggle_button" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="True" valType="bool" updates="constant" name="bold"/>
-        <Param val="0.9608, 0.8431, 0.6863" valType="color" updates="constant" name="borderColor"/>
+        <Param val="0.0000, 0.0000, 0.0000" valType="color" updates="constant" name="borderColor"/>
         <Param val="0" valType="num" updates="constant" name="borderWidth"/>
         <Param val="&amp;#10;toggle_button.toggleGray = not toggle_button.toggleGray&amp;#10;&amp;#10;if toggle_button.toggleGray:&amp;#10;    image1_2.setImage(grayscale_paths[0])&amp;#10;    image2_2.setImage(grayscale_paths[1])&amp;#10;    image3_2.setImage(grayscale_paths[2])&amp;#10;    image4_2.setImage(grayscale_paths[3])&amp;#10;    image5_2.setImage(grayscale_paths[4])&amp;#10;&amp;#10;     # Change button background color to darker to indicate grayscale&amp;#10;    toggle_button.color = [0.5, 0.5, 0.5]  # RGB in 0–1 range (gray)&amp;#10;&amp;#10;else:&amp;#10;    image1_2.setImage(color_paths[0])&amp;#10;    image2_2.setImage(color_paths[1])&amp;#10;    image3_2.setImage(color_paths[2])&amp;#10;    image4_2.setImage(color_paths[3])&amp;#10;    image5_2.setImage(color_paths[4])&amp;#10;    &amp;#10;   # Change button background back to lighter&amp;#10;    toggle_button.color = [0.8, 0.8, 0.8]  # light gray&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="callback"/>
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="" valType="num" updates="constant" name="contrast"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="darkgrey" valType="color" updates="constant" name="fillColor"/>
-        <Param val="Arvo" valType="str" updates="constant" name="font"/>
+        <Param val="0.5, 0.5, 0.5" valType="color" updates="constant" name="fillColor"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
         <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="False" valType="bool" updates="constant" name="italic"/>
         <Param val="0.025" valType="num" updates="constant" name="letterHeight"/>
         <Param val="toggle_button" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="constant" name="oncePerClick"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="" valType="num" updates="constant" name="padding"/>
         <Param val="(-0.55, -0.25)" valType="list" updates="constant" name="pos"/>
@@ -1044,7 +1073,9 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <PolygonComponent name="divider_3" plugin="None">
+    </Routine>
+    <Routine name="trialGrayscale">
+      <PolygonComponent name="divider_2" plugin="None">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
@@ -1056,8 +1087,8 @@
         <Param val="white" valType="color" updates="constant" name="lineColor"/>
         <Param val="2" valType="num" updates="constant" name="lineWidth"/>
         <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="divider_3" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="divider_2" valType="code" updates="None" name="name"/>
+        <Param val="1" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(-0.225, 0)" valType="list" updates="constant" name="pos"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
@@ -1073,8 +1104,6 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
-    </Routine>
-    <Routine name="trialGrayscale">
       <RoutineSettingsComponent name="trialGrayscale" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -1329,35 +1358,6 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <PolygonComponent name="divider_2" plugin="None">
-        <Param val="center" valType="str" updates="constant" name="anchor"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="white" valType="color" updates="constant" name="fillColor"/>
-        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
-        <Param val="white" valType="color" updates="constant" name="lineColor"/>
-        <Param val="2" valType="num" updates="constant" name="lineWidth"/>
-        <Param val="4" valType="int" updates="constant" name="nVertices"/>
-        <Param val="divider_2" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(-0.225, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="rectangle" valType="str" updates="None" name="shape"/>
-        <Param val="(0.001, 0.8)" valType="list" updates="constant" name="size"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="height" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="list" updates="constant" name="vertices"/>
-      </PolygonComponent>
     </Routine>
   </Routines>
   <Flow>
