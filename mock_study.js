@@ -365,9 +365,6 @@ async function experimentInit() {
   
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
-  // Run 'Begin Experiment' code from csv
-  psychoJS.saveResults = false;
-  
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
   mouse = new core.Mouse({

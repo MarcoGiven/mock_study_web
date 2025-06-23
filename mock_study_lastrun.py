@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.1.1),
-    on Thu Jun 19 17:07:05 2025
+    on Mon Jun 23 16:21:13 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -371,8 +371,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=0.0);
     key_Continue = keyboard.Keyboard(deviceName='key_Continue')
-    # Run 'Begin Experiment' code from csv
-    psychoJS.saveResults = false;
     
     # --- Initialize components for Routine "trialColor" ---
     mouse = event.Mouse(win=win)
@@ -433,11 +431,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-8.0);
-    divider = visual.Line(
-        win=win, name='divider',
-        size=(0, 0.8),
+    divider = visual.Rect(
+        win=win, name='divider',units='height', 
+        width=(0.001, 0.8)[0], height=(0.001, 0.8)[1],
         ori=0.0, pos=(-0.225, 0), draggable=False, anchor='center',
-        lineWidth=3.25,
+        lineWidth=2.0,
         colorSpace='rgb', lineColor='white', fillColor='white',
         opacity=None, depth=-9.0, interpolate=True)
     
@@ -542,11 +540,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-8.0);
-    divider_2 = visual.Line(
-        win=win, name='divider_2',
-        size=(0, 0.8),
+    divider_2 = visual.Rect(
+        win=win, name='divider_2',units='height', 
+        width=(0.001, 0.8)[0], height=(0.001, 0.8)[1],
         ori=0.0, pos=(-0.225, 0), draggable=False, anchor='center',
-        lineWidth=3.25,
+        lineWidth=2.0,
         colorSpace='rgb', lineColor='white', fillColor='white',
         opacity=None, depth=-9.0, interpolate=True)
     
@@ -656,11 +654,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         texRes=128.0, interpolate=True, depth=-6.0)
     toggle_button = visual.ButtonStim(win, 
         text='Toggle Color/Grayscale', font='Arvo',
-        pos=(-0.55, -0.25),
+        pos=(-0.55, -0.25),units='height',
         letterHeight=0.025,
         size=(0.45, 0.125), 
         ori=0.0
-        ,borderWidth=0.1,
+        ,borderWidth=0.0,
         fillColor='darkgrey', borderColor=[0.9608, 0.8431, 0.6863],
         color='white', colorSpace='rgb',
         opacity=None,
@@ -678,11 +676,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-9.0);
-    divider_3 = visual.Line(
-        win=win, name='divider_3',
-        size=(0, 0.8),
+    divider_3 = visual.Rect(
+        win=win, name='divider_3',units='height', 
+        width=(0.001, 0.8)[0], height=(0.001, 0.8)[1],
         ori=0.0, pos=(-0.225, 0), draggable=False, anchor='center',
-        lineWidth=3.25,
+        lineWidth=2.0,
         colorSpace='rgb', lineColor='white', fillColor='white',
         opacity=None, depth=-10.0, interpolate=True)
     
@@ -1167,6 +1165,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 divider.tStart = t  # local t and not account for scr refresh
                 divider.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(divider, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'divider.started')
                 # update status
                 divider.status = STARTED
                 divider.setAutoDraw(True)
@@ -1797,6 +1797,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 divider_2.tStart = t  # local t and not account for scr refresh
                 divider_2.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(divider_2, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'divider_2.started')
                 # update status
                 divider_2.status = STARTED
                 divider_2.setAutoDraw(True)
@@ -2620,6 +2622,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 divider_3.tStart = t  # local t and not account for scr refresh
                 divider_3.tStartRefresh = tThisFlipGlobal  # on global time
                 win.timeOnFlip(divider_3, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'divider_3.started')
                 # update status
                 divider_3.status = STARTED
                 divider_3.setAutoDraw(True)
