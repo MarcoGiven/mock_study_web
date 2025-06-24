@@ -326,6 +326,8 @@ var image2_3;
 var image3_3;
 var image4_3;
 var image5_3;
+var trial_start;
+var clicked_img;
 var queryCaption_gray;
 var NextScreenClock;
 var textNextScreen;
@@ -640,6 +642,12 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -7.0 
   });
+<<<<<<< HEAD
+=======
+  // Run 'Begin Experiment' code from grayCorrect
+  trial_start = (new Date()).getTime();
+  clicked_img = undefined;
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
   queryCaption_gray = new visual.TextStim({
     win: psychoJS.window,
     name: 'queryCaption_gray',
@@ -1165,7 +1173,6 @@ function trialsGray_ColorLoopEndIteration(scheduler, snapshot) {
 
 var trialColorMaxDurationReached;
 var gotValidClick;
-var trial_start;
 var trialColorMaxDuration;
 var trialColorComponents;
 function trialColorRoutineBegin(snapshot) {
@@ -1190,7 +1197,10 @@ function trialColorRoutineBegin(snapshot) {
     mouse.midButton = [];
     mouse.rightButton = [];
     mouse.time = [];
+<<<<<<< HEAD
     mouse.corr = [];
+=======
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     mouse.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse.mouseClock.reset();
@@ -1201,8 +1211,12 @@ function trialColorRoutineBegin(snapshot) {
     image4.setImage(choice4);
     image5.setImage(choice5);
     trial_start = (new Date()).getTime();
+<<<<<<< HEAD
     psychoJS.experiment.addData("trial_type", "color");
     
+=======
+    clicked_img = undefined;
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     
     trialColorMaxDuration = null
     // keep track of which components have finished
@@ -1228,8 +1242,11 @@ function trialColorRoutineBegin(snapshot) {
 
 var prevButtonState;
 var _mouseButtons;
+<<<<<<< HEAD
 var corr;
 var corrAns;
+=======
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
 var _mouseXYs;
 function trialColorRoutineEachFrame() {
   return async function () {
@@ -1283,8 +1300,28 @@ function trialColorRoutineEachFrame() {
                   mouse.clicked_name.push(obj.name);
               }
           }
-          if (!gotValidClick) {
-              mouse.clicked_name.push(null);
+          // check if the mouse was inside our 'clickable' objects
+          gotValidClick = false;
+          mouse.clickableObjects = eval([image1, image2, image3, image4, image5])
+          ;// make sure the mouse's clickable objects are an array
+          if (!Array.isArray(mouse.clickableObjects)) {
+              mouse.clickableObjects = [mouse.clickableObjects];
+          }
+          // iterate through clickable objects and check each
+          for (const obj of mouse.clickableObjects) {
+              if (obj.contains(mouse)) {
+                  gotValidClick = true;
+                  mouse.clicked_name.push(obj.name);
+              }
+          }
+          if (gotValidClick === true) { 
+            _mouseXYs = mouse.getPos();
+            mouse.x.push(_mouseXYs[0]);
+            mouse.y.push(_mouseXYs[1]);
+            mouse.leftButton.push(_mouseButtons[0]);
+            mouse.midButton.push(_mouseButtons[1]);
+            mouse.rightButton.push(_mouseButtons[2]);
+            mouse.time.push(mouse.mouseClock.getTime());
           }
           // check whether click was in correct object
           if (gotValidClick) {
@@ -1400,12 +1437,37 @@ function trialColorRoutineEachFrame() {
     if (image5.status === PsychoJS.Status.STARTED) {
     }
     
+<<<<<<< HEAD
     if (mouse.clicked_name.length > 0) {
         let trial_end = (new Date()).getTime();
         let task_time = (trial_end - trial_start) / 1000;
         psychoJS.experiment.addData("task_time_sec", task_time);
-    }
+=======
+    // Run 'Each Frame' code from colorCorrect
+    let clickable_objects = [image1, image2, image3, image4, image5];
     
+    for(let obj of clickable_objects) {
+        if(obj.contains(mouse) && mouse.getPressed()[0]) {
+            clicked_img = obj.image;
+            
+            if(typeof clicked_img === "undefined") clicked_img = "undefined";
+            if(typeof correct_answer === "undefined") correct_answer = "undefined";
+            
+            psychoJS.experiment.addData("clicked_image", clicked_img);
+            psychoJS.experiment.addData("correct_answer", correct_answer);
+            psychoJS.experiment.addData("isCorrect", clicked_img === correct_answer ? 1 : 0);
+            
+            let trial_end = (new Date()).getTime();
+            let task_time = (trial_end - trial_start) / 1000 
+            psychoJS.experiment.addData("task_time_sec", task_time);
+            
+            continueRoutine = false;
+            break;
+            
+            
+        }   
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
+    }
     
     
     // *queryCaption* updates
@@ -1465,7 +1527,10 @@ function trialColorRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse.midButton', mouse.midButton);
     psychoJS.experiment.addData('mouse.rightButton', mouse.rightButton);
     psychoJS.experiment.addData('mouse.time', mouse.time);
+<<<<<<< HEAD
     psychoJS.experiment.addData('mouse.corr', mouse.corr);
+=======
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     psychoJS.experiment.addData('mouse.clicked_name', mouse.clicked_name);
     
     // the Routine "trialColor" was not non-slip safe, so reset the non-slip timer
@@ -1791,7 +1856,10 @@ function trialGrayscaleRoutineBegin(snapshot) {
     mouse_3.midButton = [];
     mouse_3.rightButton = [];
     mouse_3.time = [];
+<<<<<<< HEAD
     mouse_3.corr = [];
+=======
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     mouse_3.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse_3.mouseClock.reset();
@@ -1801,9 +1869,12 @@ function trialGrayscaleRoutineBegin(snapshot) {
     image3_3.setImage(gray3);
     image4_3.setImage(gray4);
     image5_3.setImage(gray5);
+<<<<<<< HEAD
     trial_start = (new Date()).getTime();
     psychoJS.experiment.addData("trial_type", "gray" /* or "color" */);
     
+=======
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     trialGrayscaleMaxDuration = null
     // keep track of which components have finished
     trialGrayscaleComponents = [];
@@ -1878,8 +1949,28 @@ function trialGrayscaleRoutineEachFrame() {
                   mouse_3.clicked_name.push(obj.name);
               }
           }
-          if (!gotValidClick) {
-              mouse_3.clicked_name.push(null);
+          // check if the mouse was inside our 'clickable' objects
+          gotValidClick = false;
+          mouse_3.clickableObjects = eval([image1, image2, image3, image4, image5])
+          ;// make sure the mouse's clickable objects are an array
+          if (!Array.isArray(mouse_3.clickableObjects)) {
+              mouse_3.clickableObjects = [mouse_3.clickableObjects];
+          }
+          // iterate through clickable objects and check each
+          for (const obj of mouse_3.clickableObjects) {
+              if (obj.contains(mouse_3)) {
+                  gotValidClick = true;
+                  mouse_3.clicked_name.push(obj.name);
+              }
+          }
+          if (gotValidClick === true) { 
+            _mouseXYs = mouse_3.getPos();
+            mouse_3.x.push(_mouseXYs[0]);
+            mouse_3.y.push(_mouseXYs[1]);
+            mouse_3.leftButton.push(_mouseButtons[0]);
+            mouse_3.midButton.push(_mouseButtons[1]);
+            mouse_3.rightButton.push(_mouseButtons[2]);
+            mouse_3.time.push(mouse_3.mouseClock.getTime());
           }
           // check whether click was in correct object
           if (gotValidClick) {
@@ -1995,10 +2086,36 @@ function trialGrayscaleRoutineEachFrame() {
     if (image5_3.status === PsychoJS.Status.STARTED) {
     }
     
+<<<<<<< HEAD
     if (mouse.clicked_name.length > 0) {
         let trial_end = (new Date()).getTime();
         let task_time = (trial_end - trial_start) / 1000;
         psychoJS.experiment.addData("task_time_sec", task_time);
+=======
+    // Run 'Each Frame' code from grayCorrect
+    let clickable_objects = [image1, image2, image3, image4, image5];
+    
+    for(let obj of clickable_objects) {
+        if(obj.contains(mouse) && mouse.getPressed()[0]) {
+            clicked_img = obj.image;
+            
+            if(typeof clicked_img === "undefined") clicked_img = "undefined";
+            if(typeof correct_answer === "undefined") correct_answer = "undefined";
+            
+            psychoJS.experiment.addData("clicked_image", clicked_img);
+            psychoJS.experiment.addData("correct_answer", correct_answer);
+            psychoJS.experiment.addData("isCorrect", clicked_img === correct_answer ? 1 : 0);
+            
+            let trial_end = (new Date()).getTime();
+            let task_time = (trial_end - trial_start) / 1000 
+            psychoJS.experiment.addData("task_time_sec", task_time);
+            
+            continueRoutine = false;
+            break;
+            
+            
+        }   
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     }
     
     // *queryCaption_gray* updates
@@ -2058,7 +2175,10 @@ function trialGrayscaleRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse_3.midButton', mouse_3.midButton);
     psychoJS.experiment.addData('mouse_3.rightButton', mouse_3.rightButton);
     psychoJS.experiment.addData('mouse_3.time', mouse_3.time);
+<<<<<<< HEAD
     psychoJS.experiment.addData('mouse_3.corr', mouse_3.corr);
+=======
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     psychoJS.experiment.addData('mouse_3.clicked_name', mouse_3.clicked_name);
     
     // the Routine "trialGrayscale" was not non-slip safe, so reset the non-slip timer
@@ -2243,9 +2363,13 @@ function trialColor_GrayRoutineBegin(snapshot) {
     image5_2.setImage(choice5);
     // Run 'Begin Routine' code from toggleGray
     trial_start = (new Date()).getTime();
+<<<<<<< HEAD
     psychoJS.experiment.addData("trial_type", "both" /* or "color" */);
     
     
+=======
+    clicked_img = undefined;
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     
     document.querySelector('button').style.borderRadius = '0px';
     
@@ -2442,6 +2566,7 @@ function trialColor_GrayRoutineEachFrame() {
     if (image5_2.status === PsychoJS.Status.STARTED) {
     }
     
+<<<<<<< HEAD
     if (mouse.clicked_name.length > 0) {
         let trial_end = (new Date()).getTime();
         let task_time = (trial_end - trial_start) / 1000;
@@ -2456,6 +2581,33 @@ function trialColor_GrayRoutineEachFrame() {
     psychoJS.experiment.addData("isCorrect", isCorrect);
     
     
+=======
+    // Run 'Each Frame' code from toggleGray
+    let clickable_objects = [image1, image2, image3, image4, image5];
+    
+    for(let obj of clickable_objects) {
+        if(obj.contains(mouse) && mouse.getPressed()[0]) {
+            clicked_img = obj.image;
+            
+            if(typeof clicked_img === "undefined") clicked_img = "undefined";
+            if(typeof correct_answer === "undefined") correct_answer = "undefined";
+            
+            psychoJS.experiment.addData("clicked_image", clicked_img);
+            psychoJS.experiment.addData("correct_answer", correct_answer);
+            psychoJS.experiment.addData("isCorrect", clicked_img === correct_answer ? 1 : 0);
+            
+            let trial_end = (new Date()).getTime();
+            let task_time = (trial_end - trial_start) / 1000 
+            psychoJS.experiment.addData("task_time_sec", task_time);
+            
+            continueRoutine = false;
+            break;
+            
+            
+        }   
+    }
+    
+>>>>>>> parent of 21f73e7 (Fix: Correct selection tracking across different sets, color, gray, both)
     // *toggle_button* updates
     if (t >= 0 && toggle_button.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
