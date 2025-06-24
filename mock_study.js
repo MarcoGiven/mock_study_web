@@ -1201,6 +1201,7 @@ function trialColorRoutineBegin(snapshot) {
     image4.setImage(choice4);
     image5.setImage(choice5);
     trial_start = (new Date()).getTime();
+    psychoJS.experiment.addData("trial_type", "color");
     
     
     trialColorMaxDuration = null
@@ -1786,6 +1787,8 @@ function trialGrayscaleRoutineBegin(snapshot) {
     image4_3.setImage(gray4);
     image5_3.setImage(gray5);
     trial_start = (new Date()).getTime();
+    psychoJS.experiment.addData("trial_type", "gray" /* or "color" */);
+    
     trialGrayscaleMaxDuration = null
     // keep track of which components have finished
     trialGrayscaleComponents = [];
@@ -2222,6 +2225,7 @@ function trialColor_GrayRoutineBegin(snapshot) {
     image5_2.setImage(choice5);
     // Run 'Begin Routine' code from toggleGray
     trial_start = (new Date()).getTime();
+    psychoJS.experiment.addData("trial_type", "both" /* or "color" */);
     
     
     
