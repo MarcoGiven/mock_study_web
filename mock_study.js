@@ -2231,7 +2231,6 @@ function trialColor_GrayRoutineBegin(snapshot) {
     mouse_2.midButton = [];
     mouse_2.rightButton = [];
     mouse_2.time = [];
-    mouse_2.corr = [];
     mouse_2.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse_2.mouseClock.reset();
@@ -2282,6 +2281,7 @@ function trialColor_GrayRoutineBegin(snapshot) {
 }
 
 
+var isCorrect;
 function trialColor_GrayRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'trialColor_Gray' ---
@@ -2337,17 +2337,6 @@ function trialColor_GrayRoutineEachFrame() {
           if (!gotValidClick) {
               mouse_2.clicked_name.push(null);
           }
-          // check whether click was in correct object
-          if (gotValidClick) {
-              corr = 0;
-              corrAns = eval( [correct_answer, correct_answer_gray]);
-              for (let obj of [corrAns]) {
-                  if (obj.contains(mouse_2)) {
-                      corr = 1;
-                  };
-              };
-              mouse_2.corr.push(corr);
-          };
           _mouseXYs = mouse_2.getPos();
           mouse_2.x.push(_mouseXYs[0]);
           mouse_2.y.push(_mouseXYs[1]);
@@ -2456,6 +2445,9 @@ function trialColor_GrayRoutineEachFrame() {
         let task_time = (trial_end - trial_start) / 1000;
         psychoJS.experiment.addData("task_time_sec", task_time);
     }
+    
+    isCorrect = (clicked_img === correct_answer || clicked_img === correct_answer_gray) ? 1 : 0;
+    psychoJS.experiment.addData("isCorrect", isCorrect);
     
     // *toggle_button* updates
     if (t >= 0 && toggle_button.status === PsychoJS.Status.NOT_STARTED) {
@@ -2571,7 +2563,6 @@ function trialColor_GrayRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse_2.midButton', mouse_2.midButton);
     psychoJS.experiment.addData('mouse_2.rightButton', mouse_2.rightButton);
     psychoJS.experiment.addData('mouse_2.time', mouse_2.time);
-    psychoJS.experiment.addData('mouse_2.corr', mouse_2.corr);
     psychoJS.experiment.addData('mouse_2.clicked_name', mouse_2.clicked_name);
     
     psychoJS.experiment.addData('toggle_button.numClicks', toggle_button.numClicks);
