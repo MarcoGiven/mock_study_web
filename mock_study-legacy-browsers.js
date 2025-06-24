@@ -117,11 +117,11 @@ psychoJS.start({
     {'name': 'resources/images/hotel2_gray3.jpg', 'path': 'resources/images/hotel2_gray3.jpg'},
     {'name': 'resources/images/hotel2_gray4.jpeg', 'path': 'resources/images/hotel2_gray4.jpeg'},
     {'name': 'resources/images/hotel3_query.jpg', 'path': 'resources/images/hotel3_query.jpg'},
+    {'name': 'resources/images/hotel3_correct.jpg', 'path': 'resources/images/hotel3_correct.jpg'},
     {'name': 'resources/images/hotel3_sample1.jpg', 'path': 'resources/images/hotel3_sample1.jpg'},
     {'name': 'resources/images/hotel3_sample2.jpeg', 'path': 'resources/images/hotel3_sample2.jpeg'},
     {'name': 'resources/images/hotel3_sample3.jpg', 'path': 'resources/images/hotel3_sample3.jpg'},
     {'name': 'resources/images/hotel3_sample4.jpg', 'path': 'resources/images/hotel3_sample4.jpg'},
-    {'name': 'resources/images/hotel3_correct.jpg', 'path': 'resources/images/hotel3_correct.jpg'},
     {'name': 'resources/images/hotel3_correctGray.jpg', 'path': 'resources/images/hotel3_correctGray.jpg'},
     {'name': 'resources/images/hotel3_gray1.jpg', 'path': 'resources/images/hotel3_gray1.jpg'},
     {'name': 'resources/images/hotel3_gray2.jpeg', 'path': 'resources/images/hotel3_gray2.jpeg'},
@@ -173,11 +173,11 @@ psychoJS.start({
     {'name': 'resources/images/hotel2_gray3.jpg', 'path': 'resources/images/hotel2_gray3.jpg'},
     {'name': 'resources/images/hotel2_gray4.jpeg', 'path': 'resources/images/hotel2_gray4.jpeg'},
     {'name': 'resources/images/hotel3_query.jpg', 'path': 'resources/images/hotel3_query.jpg'},
+    {'name': 'resources/images/hotel3_correct.jpg', 'path': 'resources/images/hotel3_correct.jpg'},
     {'name': 'resources/images/hotel3_sample1.jpg', 'path': 'resources/images/hotel3_sample1.jpg'},
     {'name': 'resources/images/hotel3_sample2.jpeg', 'path': 'resources/images/hotel3_sample2.jpeg'},
     {'name': 'resources/images/hotel3_sample3.jpg', 'path': 'resources/images/hotel3_sample3.jpg'},
     {'name': 'resources/images/hotel3_sample4.jpg', 'path': 'resources/images/hotel3_sample4.jpg'},
-    {'name': 'resources/images/hotel3_correct.jpg', 'path': 'resources/images/hotel3_correct.jpg'},
     {'name': 'resources/images/hotel3_correctGray.jpg', 'path': 'resources/images/hotel3_correctGray.jpg'},
     {'name': 'resources/images/hotel3_gray1.jpg', 'path': 'resources/images/hotel3_gray1.jpg'},
     {'name': 'resources/images/hotel3_gray2.jpeg', 'path': 'resources/images/hotel3_gray2.jpeg'},
@@ -229,11 +229,11 @@ psychoJS.start({
     {'name': 'resources/images/hotel2_gray3.jpg', 'path': 'resources/images/hotel2_gray3.jpg'},
     {'name': 'resources/images/hotel2_gray4.jpeg', 'path': 'resources/images/hotel2_gray4.jpeg'},
     {'name': 'resources/images/hotel3_query.jpg', 'path': 'resources/images/hotel3_query.jpg'},
+    {'name': 'resources/images/hotel3_correct.jpg', 'path': 'resources/images/hotel3_correct.jpg'},
     {'name': 'resources/images/hotel3_sample1.jpg', 'path': 'resources/images/hotel3_sample1.jpg'},
     {'name': 'resources/images/hotel3_sample2.jpeg', 'path': 'resources/images/hotel3_sample2.jpeg'},
     {'name': 'resources/images/hotel3_sample3.jpg', 'path': 'resources/images/hotel3_sample3.jpg'},
     {'name': 'resources/images/hotel3_sample4.jpg', 'path': 'resources/images/hotel3_sample4.jpg'},
-    {'name': 'resources/images/hotel3_correct.jpg', 'path': 'resources/images/hotel3_correct.jpg'},
     {'name': 'resources/images/hotel3_correctGray.jpg', 'path': 'resources/images/hotel3_correctGray.jpg'},
     {'name': 'resources/images/hotel3_gray1.jpg', 'path': 'resources/images/hotel3_gray1.jpg'},
     {'name': 'resources/images/hotel3_gray2.jpeg', 'path': 'resources/images/hotel3_gray2.jpeg'},
@@ -348,12 +348,7 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "WelcomeScreen"
   WelcomeScreenClock = new util.Clock();
-  var clicked_img = "none";
-  var correct_answer;
-  var correct_answer_gray;
-  var isCorrect = 0;
   var trial_start;
-  
   
   
   textWelcomeMessage = new visual.TextStim({
@@ -1188,6 +1183,14 @@ function trialColorRoutineBegin(snapshot) {
     trialColorMaxDurationReached = false;
     // update component parameters for each repeat
     // setup some python lists for storing info about the mouse
+    // current position of the mouse:
+    mouse.x = [];
+    mouse.y = [];
+    mouse.leftButton = [];
+    mouse.midButton = [];
+    mouse.rightButton = [];
+    mouse.time = [];
+    mouse.corr = [];
     mouse.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse.mouseClock.reset();
@@ -1225,6 +1228,9 @@ function trialColorRoutineBegin(snapshot) {
 
 var prevButtonState;
 var _mouseButtons;
+var corr;
+var corrAns;
+var _mouseXYs;
 function trialColorRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'trialColor' ---
@@ -1280,6 +1286,24 @@ function trialColorRoutineEachFrame() {
           if (!gotValidClick) {
               mouse.clicked_name.push(null);
           }
+          // check whether click was in correct object
+          if (gotValidClick) {
+              corr = 0;
+              corrAns = eval( correct_answer);
+              for (let obj of [corrAns]) {
+                  if (obj.contains(mouse)) {
+                      corr = 1;
+                  };
+              };
+              mouse.corr.push(corr);
+          };
+          _mouseXYs = mouse.getPos();
+          mouse.x.push(_mouseXYs[0]);
+          mouse.y.push(_mouseXYs[1]);
+          mouse.leftButton.push(_mouseButtons[0]);
+          mouse.midButton.push(_mouseButtons[1]);
+          mouse.rightButton.push(_mouseButtons[2]);
+          mouse.time.push(mouse.mouseClock.getTime());
           if (gotValidClick === true) { // end routine on response
             continueRoutine = false;
           }
@@ -1376,28 +1400,10 @@ function trialColorRoutineEachFrame() {
     if (image5.status === PsychoJS.Status.STARTED) {
     }
     
-    // Run 'Each Frame' code from colorCorrect
-    let clickable_objects = [image1, image2, image3, image4, image5];
-    
-    for (let obj of clickable_objects) {
-      if (obj.contains(mouse) && mouse.getPressed()[0]) {
-        clicked_img = obj.image;
-    
-        // Logging
-        psychoJS.experiment.addData("clicked_image", clicked_img);
-        psychoJS.experiment.addData("correct_answer", correct_answer);
-    
-        isCorrect = (clicked_img === correct_answer) ? 1 : 0;
-        psychoJS.experiment.addData("isCorrect", isCorrect);
-    
-        // Time
+    if (mouse.clicked_name.length > 0) {
         let trial_end = (new Date()).getTime();
         let task_time = (trial_end - trial_start) / 1000;
         psychoJS.experiment.addData("task_time_sec", task_time);
-    
-        continueRoutine = false;
-        break;
-      }
     }
     
     
@@ -1444,7 +1450,6 @@ function trialColorRoutineEachFrame() {
 }
 
 
-var _mouseXYs;
 function trialColorRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'trialColor' ---
@@ -1454,15 +1459,15 @@ function trialColorRoutineEnd(snapshot) {
       }
     });
     // store data for psychoJS.experiment (ExperimentHandler)
-    _mouseXYs = mouse.getPos();
-    _mouseButtons = mouse.getPressed();
-    psychoJS.experiment.addData('mouse.x', _mouseXYs[0]);
-    psychoJS.experiment.addData('mouse.y', _mouseXYs[1]);
-    psychoJS.experiment.addData('mouse.leftButton', _mouseButtons[0]);
-    psychoJS.experiment.addData('mouse.midButton', _mouseButtons[1]);
-    psychoJS.experiment.addData('mouse.rightButton', _mouseButtons[2]);
-    if (mouse.clicked_name.length > 0) {
-      psychoJS.experiment.addData('mouse.clicked_name', mouse.clicked_name[0]);}
+    psychoJS.experiment.addData('mouse.x', mouse.x);
+    psychoJS.experiment.addData('mouse.y', mouse.y);
+    psychoJS.experiment.addData('mouse.leftButton', mouse.leftButton);
+    psychoJS.experiment.addData('mouse.midButton', mouse.midButton);
+    psychoJS.experiment.addData('mouse.rightButton', mouse.rightButton);
+    psychoJS.experiment.addData('mouse.time', mouse.time);
+    psychoJS.experiment.addData('mouse.corr', mouse.corr);
+    psychoJS.experiment.addData('mouse.clicked_name', mouse.clicked_name);
+    
     // the Routine "trialColor" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -1779,6 +1784,14 @@ function trialGrayscaleRoutineBegin(snapshot) {
     trialGrayscaleMaxDurationReached = false;
     // update component parameters for each repeat
     // setup some python lists for storing info about the mouse_3
+    // current position of the mouse:
+    mouse_3.x = [];
+    mouse_3.y = [];
+    mouse_3.leftButton = [];
+    mouse_3.midButton = [];
+    mouse_3.rightButton = [];
+    mouse_3.time = [];
+    mouse_3.corr = [];
     mouse_3.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse_3.mouseClock.reset();
@@ -1868,6 +1881,24 @@ function trialGrayscaleRoutineEachFrame() {
           if (!gotValidClick) {
               mouse_3.clicked_name.push(null);
           }
+          // check whether click was in correct object
+          if (gotValidClick) {
+              corr = 0;
+              corrAns = eval( correct_answer_gray);
+              for (let obj of [corrAns]) {
+                  if (obj.contains(mouse_3)) {
+                      corr = 1;
+                  };
+              };
+              mouse_3.corr.push(corr);
+          };
+          _mouseXYs = mouse_3.getPos();
+          mouse_3.x.push(_mouseXYs[0]);
+          mouse_3.y.push(_mouseXYs[1]);
+          mouse_3.leftButton.push(_mouseButtons[0]);
+          mouse_3.midButton.push(_mouseButtons[1]);
+          mouse_3.rightButton.push(_mouseButtons[2]);
+          mouse_3.time.push(mouse_3.mouseClock.getTime());
           if (gotValidClick === true) { // end routine on response
             continueRoutine = false;
           }
@@ -1964,31 +1995,11 @@ function trialGrayscaleRoutineEachFrame() {
     if (image5_3.status === PsychoJS.Status.STARTED) {
     }
     
-    // Run 'Each Frame' code from grayCorrect
-    let clickable_objects = [image1, image2, image3, image4, image5];
-    
-    for (let obj of clickable_objects) {
-      if (obj.contains(mouse) && mouse.getPressed()[0]) {
-        clicked_img = obj.image;
-    
-        // Logging
-        psychoJS.experiment.addData("clicked_image", clicked_img);
-        psychoJS.experiment.addData("correct_answer_gray", correct_answer_gray);
-    
-        isCorrect = (clicked_img === correct_answer_gray) ? 1 : 0;
-        psychoJS.experiment.addData("isCorrect", isCorrect);
-    
-        // Time
+    if (mouse.clicked_name.length > 0) {
         let trial_end = (new Date()).getTime();
         let task_time = (trial_end - trial_start) / 1000;
         psychoJS.experiment.addData("task_time_sec", task_time);
-    
-        continueRoutine = false;
-        break;
-      }
     }
-    
-    
     
     // *queryCaption_gray* updates
     if (t >= 0.0 && queryCaption_gray.status === PsychoJS.Status.NOT_STARTED) {
@@ -2041,15 +2052,15 @@ function trialGrayscaleRoutineEnd(snapshot) {
       }
     });
     // store data for psychoJS.experiment (ExperimentHandler)
-    _mouseXYs = mouse_3.getPos();
-    _mouseButtons = mouse_3.getPressed();
-    psychoJS.experiment.addData('mouse_3.x', _mouseXYs[0]);
-    psychoJS.experiment.addData('mouse_3.y', _mouseXYs[1]);
-    psychoJS.experiment.addData('mouse_3.leftButton', _mouseButtons[0]);
-    psychoJS.experiment.addData('mouse_3.midButton', _mouseButtons[1]);
-    psychoJS.experiment.addData('mouse_3.rightButton', _mouseButtons[2]);
-    if (mouse_3.clicked_name.length > 0) {
-      psychoJS.experiment.addData('mouse_3.clicked_name', mouse_3.clicked_name[0]);}
+    psychoJS.experiment.addData('mouse_3.x', mouse_3.x);
+    psychoJS.experiment.addData('mouse_3.y', mouse_3.y);
+    psychoJS.experiment.addData('mouse_3.leftButton', mouse_3.leftButton);
+    psychoJS.experiment.addData('mouse_3.midButton', mouse_3.midButton);
+    psychoJS.experiment.addData('mouse_3.rightButton', mouse_3.rightButton);
+    psychoJS.experiment.addData('mouse_3.time', mouse_3.time);
+    psychoJS.experiment.addData('mouse_3.corr', mouse_3.corr);
+    psychoJS.experiment.addData('mouse_3.clicked_name', mouse_3.clicked_name);
+    
     // the Routine "trialGrayscale" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2221,6 +2232,7 @@ function trialColor_GrayRoutineBegin(snapshot) {
     mouse_2.midButton = [];
     mouse_2.rightButton = [];
     mouse_2.time = [];
+    mouse_2.corr = [];
     mouse_2.clicked_name = [];
     gotValidClick = false; // until a click is received
     mouse_2.mouseClock.reset();
@@ -2324,29 +2336,27 @@ function trialColor_GrayRoutineEachFrame() {
                   mouse_2.clicked_name.push(obj.name);
               }
           }
-          // check if the mouse was inside our 'clickable' objects
-          gotValidClick = false;
-          mouse_2.clickableObjects = eval([image1, image2, image3, image4, image5])
-          ;// make sure the mouse's clickable objects are an array
-          if (!Array.isArray(mouse_2.clickableObjects)) {
-              mouse_2.clickableObjects = [mouse_2.clickableObjects];
+          if (!gotValidClick) {
+              mouse_2.clicked_name.push(null);
           }
-          // iterate through clickable objects and check each
-          for (const obj of mouse_2.clickableObjects) {
-              if (obj.contains(mouse_2)) {
-                  gotValidClick = true;
-                  mouse_2.clicked_name.push(obj.name);
-              }
-          }
-          if (gotValidClick === true) { 
-            _mouseXYs = mouse_2.getPos();
-            mouse_2.x.push(_mouseXYs[0]);
-            mouse_2.y.push(_mouseXYs[1]);
-            mouse_2.leftButton.push(_mouseButtons[0]);
-            mouse_2.midButton.push(_mouseButtons[1]);
-            mouse_2.rightButton.push(_mouseButtons[2]);
-            mouse_2.time.push(mouse_2.mouseClock.getTime());
-          }
+          // check whether click was in correct object
+          if (gotValidClick) {
+              corr = 0;
+              corrAns = eval( [correct_answer, correct_answer_gray]);
+              for (let obj of [corrAns]) {
+                  if (obj.contains(mouse_2)) {
+                      corr = 1;
+                  };
+              };
+              mouse_2.corr.push(corr);
+          };
+          _mouseXYs = mouse_2.getPos();
+          mouse_2.x.push(_mouseXYs[0]);
+          mouse_2.y.push(_mouseXYs[1]);
+          mouse_2.leftButton.push(_mouseButtons[0]);
+          mouse_2.midButton.push(_mouseButtons[1]);
+          mouse_2.rightButton.push(_mouseButtons[2]);
+          mouse_2.time.push(mouse_2.mouseClock.getTime());
           if (gotValidClick === true) { // end routine on response
             continueRoutine = false;
           }
@@ -2443,29 +2453,10 @@ function trialColor_GrayRoutineEachFrame() {
     if (image5_2.status === PsychoJS.Status.STARTED) {
     }
     
-    // Run 'Each Frame' code from toggleGray
-    let clickable_objects = [image1, image2, image3, image4, image5];
-    
-    for (let obj of clickable_objects) {
-      if (obj.contains(mouse) && mouse.getPressed()[0]) {
-        clicked_img = obj.image;
-    
-        // Logging
-        psychoJS.experiment.addData("clicked_image", clicked_img);
-        psychoJS.experiment.addData("correct_answer_color", correct_answer);
-        psychoJS.experiment.addData("correct_answer_gray", correct_answer_gray);
-    
-        isCorrect = (clicked_img === correct_answer || clicked_img === correct_answer_gray) ? 1 : 0;
-        psychoJS.experiment.addData("isCorrect", isCorrect);
-    
-        // Time
+    if (mouse.clicked_name.length > 0) {
         let trial_end = (new Date()).getTime();
         let task_time = (trial_end - trial_start) / 1000;
         psychoJS.experiment.addData("task_time_sec", task_time);
-    
-        continueRoutine = false;
-        break;
-      }
     }
     
     // *toggle_button* updates
@@ -2582,6 +2573,7 @@ function trialColor_GrayRoutineEnd(snapshot) {
     psychoJS.experiment.addData('mouse_2.midButton', mouse_2.midButton);
     psychoJS.experiment.addData('mouse_2.rightButton', mouse_2.rightButton);
     psychoJS.experiment.addData('mouse_2.time', mouse_2.time);
+    psychoJS.experiment.addData('mouse_2.corr', mouse_2.corr);
     psychoJS.experiment.addData('mouse_2.clicked_name', mouse_2.clicked_name);
     
     psychoJS.experiment.addData('toggle_button.numClicks', toggle_button.numClicks);
