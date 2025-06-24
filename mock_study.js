@@ -365,6 +365,15 @@ async function experimentInit() {
   
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
+  // Run 'Begin Experiment' code from csv
+  // psychoJS.saveResults = false;
+  
+  var clicked_img = "none";
+  var correct_answer;
+  var correct_answer_gray;
+  var trial_start;
+  
+  
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
   divider = new visual.Rect ({
@@ -465,7 +474,6 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -7.0 
   });
-  var clicked_img = "none";
   queryCaption = new visual.TextStim({
     win: psychoJS.window,
     name: 'queryCaption',
@@ -641,10 +649,6 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -7.0 
   });
-  // Run 'Begin Experiment' code from grayCorrect
-  var clicked_img = "none";
-  
-  
   queryCaption_gray = new visual.TextStim({
     win: psychoJS.window,
     name: 'queryCaption_gray',
@@ -773,7 +777,6 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -7.0 
   });
-  var clicked_img = "none";
   toggle_button = new visual.ButtonStim({
     win: psychoJS.window,
     name: 'toggle_button',
@@ -1194,7 +1197,6 @@ function trialColorRoutineBegin(snapshot) {
     image3.setImage(choice3);
     image4.setImage(choice4);
     image5.setImage(choice5);
-    // Run 'Begin Routine' code from colorCorrect
     trial_start = (new Date()).getTime();
     
     
