@@ -15,10 +15,7 @@ let PILOTING = util.getUrlParameters().has('__pilotToken');
 // Run 'Before Experiment' code from csv
 // psychoJS.saveResults = false;
 
-var clicked_img = "none";
-var correct_answer;
-var correct_answer_gray;
-var trial_start;
+
 
 // init psychoJS:
 const psychoJS = new PsychoJS({
@@ -351,7 +348,11 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "WelcomeScreen"
   WelcomeScreenClock = new util.Clock();
-  
+  var clicked_img = "none";
+  var correct_answer;
+  var correct_answer_gray;
+  var isCorrect = 0;
+  var trial_start;
   
   
   
@@ -1379,22 +1380,24 @@ function trialColorRoutineEachFrame() {
     let clickable_objects = [image1, image2, image3, image4, image5];
     
     for (let obj of clickable_objects) {
-        if (obj.contains(mouse) && mouse.getPressed()[0]) {
-            clicked_img = obj.image;
+      if (obj.contains(mouse) && mouse.getPressed()[0]) {
+        clicked_img = obj.image;
     
-            // Log all key data
-            psychoJS.experiment.addData("clicked_image", clicked_img);
-            psychoJS.experiment.addData("correct_answer", correct_answer);
-            psychoJS.experiment.addData("isCorrect", clicked_img === correct_answer ? 1 : 0);
+        // Logging
+        psychoJS.experiment.addData("clicked_image", clicked_img);
+        psychoJS.experiment.addData("correct_answer", correct_answer);
     
-            // Time taken
-            let trial_end = (new Date()).getTime();
-            let task_time = (trial_end - trial_start) / 1000;
-            psychoJS.experiment.addData("task_time_sec", task_time);
+        isCorrect = (clicked_img === correct_answer) ? 1 : 0;
+        psychoJS.experiment.addData("isCorrect", isCorrect);
     
-            continueRoutine = false;
-            break;
-        }
+        // Time
+        let trial_end = (new Date()).getTime();
+        let task_time = (trial_end - trial_start) / 1000;
+        psychoJS.experiment.addData("task_time_sec", task_time);
+    
+        continueRoutine = false;
+        break;
+      }
     }
     
     
@@ -1965,23 +1968,26 @@ function trialGrayscaleRoutineEachFrame() {
     let clickable_objects = [image1, image2, image3, image4, image5];
     
     for (let obj of clickable_objects) {
-        if (obj.contains(mouse) && mouse.getPressed()[0]) {
-            clicked_img = obj.image;
+      if (obj.contains(mouse) && mouse.getPressed()[0]) {
+        clicked_img = obj.image;
     
-            // Log all key data
-            psychoJS.experiment.addData("clicked_image", clicked_img);
-            psychoJS.experiment.addData("correct_answer", correct_answer_gray);
-            psychoJS.experiment.addData("isCorrect", clicked_img === correct_answer_gray ? 1 : 0);
+        // Logging
+        psychoJS.experiment.addData("clicked_image", clicked_img);
+        psychoJS.experiment.addData("correct_answer_gray", correct_answer_gray);
     
-            // Time taken
-            let trial_end = (new Date()).getTime();
-            let task_time = (trial_end - trial_start) / 1000;
-            psychoJS.experiment.addData("task_time_sec", task_time);
+        isCorrect = (clicked_img === correct_answer_gray) ? 1 : 0;
+        psychoJS.experiment.addData("isCorrect", isCorrect);
     
-            continueRoutine = false;
-            break;
-        }
+        // Time
+        let trial_end = (new Date()).getTime();
+        let task_time = (trial_end - trial_start) / 1000;
+        psychoJS.experiment.addData("task_time_sec", task_time);
+    
+        continueRoutine = false;
+        break;
+      }
     }
+    
     
     
     // *queryCaption_gray* updates
@@ -2441,28 +2447,26 @@ function trialColor_GrayRoutineEachFrame() {
     let clickable_objects = [image1, image2, image3, image4, image5];
     
     for (let obj of clickable_objects) {
-        if (obj.contains(mouse) && mouse.getPressed()[0]) {
-            clicked_img = obj.image;
+      if (obj.contains(mouse) && mouse.getPressed()[0]) {
+        clicked_img = obj.image;
     
-            // Log all key data
-            psychoJS.experiment.addData("clicked_image", clicked_img);
-            
-            psychoJS.experiment.addData("correct_answer_color", correct_answer);
-            psychoJS.experiment.addData("correct_answer_gray", correct_answer_gray);
-            
-            let isCorrect = (clicked_img === correct_answer || clicked_img === correct_answer_gray) ? 1 : 0;
-            psychoJS.experiment.addData("isCorrect", isCorrect);
+        // Logging
+        psychoJS.experiment.addData("clicked_image", clicked_img);
+        psychoJS.experiment.addData("correct_answer_color", correct_answer);
+        psychoJS.experiment.addData("correct_answer_gray", correct_answer_gray);
     
-            // Time taken
-            let trial_end = (new Date()).getTime();
-            let task_time = (trial_end - trial_start) / 1000;
-            psychoJS.experiment.addData("task_time_sec", task_time);
+        isCorrect = (clicked_img === correct_answer || clicked_img === correct_answer_gray) ? 1 : 0;
+        psychoJS.experiment.addData("isCorrect", isCorrect);
     
-            continueRoutine = false;
-            break;
-        }
+        // Time
+        let trial_end = (new Date()).getTime();
+        let task_time = (trial_end - trial_start) / 1000;
+        psychoJS.experiment.addData("task_time_sec", task_time);
+    
+        continueRoutine = false;
+        break;
+      }
     }
-    
     
     // *toggle_button* updates
     if (t >= 0 && toggle_button.status === PsychoJS.Status.NOT_STARTED) {
