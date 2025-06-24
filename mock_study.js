@@ -20,6 +20,14 @@ let expInfo = {
 let PILOTING = util.getUrlParameters().has('__pilotToken');
 
 // Start code blocks for 'Before Experiment'
+// Run 'Before Experiment' code from csv
+// psychoJS.saveResults = false;
+
+var clicked_img = "none";
+var correct_answer;
+var correct_answer_gray;
+var trial_start;
+
 // init psychoJS:
 const psychoJS = new PsychoJS({
   debug: true
@@ -365,13 +373,8 @@ async function experimentInit() {
   
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
-  // Run 'Begin Experiment' code from csv
-  // psychoJS.saveResults = false;
   
-  var clicked_img = "none";
-  var correct_answer;
-  var correct_answer_gray;
-  var trial_start;
+  
   
   
   // Initialize components for Routine "trialColor"
