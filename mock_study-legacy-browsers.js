@@ -321,6 +321,8 @@ var image2_3;
 var image3_3;
 var image4_3;
 var image5_3;
+var clicked_img;
+var trial_start;
 var queryCaption_gray;
 var NextScreenClock;
 var textNextScreen;
@@ -632,6 +634,9 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -7.0 
   });
+  // Run 'Begin Experiment' code from grayCorrect
+  clicked_img = undefined;
+  trial_start = (new Date()).getTime();
   queryCaption_gray = new visual.TextStim({
     win: psychoJS.window,
     name: 'queryCaption_gray',
@@ -1157,7 +1162,6 @@ function trialsGray_ColorLoopEndIteration(scheduler, snapshot) {
 
 var trialColorMaxDurationReached;
 var gotValidClick;
-var clicked_img;
 var trialColorMaxDuration;
 var trialColorComponents;
 function trialColorRoutineBegin(snapshot) {
@@ -1193,6 +1197,7 @@ function trialColorRoutineBegin(snapshot) {
     image5.setImage(choice5);
     // Run 'Begin Routine' code from colorCorrect
     clicked_img = undefined;
+    trial_start = (new Date()).getTime();
     trialColorMaxDuration = null
     // keep track of which components have finished
     trialColorComponents = [];
@@ -1399,6 +1404,11 @@ function trialColorRoutineEachFrame() {
             psychoJS.experiment.addData("clicked_image", clicked_img);
             psychoJS.experiment.addData("correct_answer", correct_answer);
             psychoJS.experiment.addData("isCorrect", Number.parseInt((clicked_img === correct_answer)));
+            
+            let trial_end = (new Date()).getTime();
+            let task_time = (trial_end - trial_start) / 1000; // in seconds
+            psychoJS.experiment.addData("task_time_sec", task_time);
+            
             continueRoutine = false;
             break;
         }
@@ -1998,6 +2008,12 @@ function trialGrayscaleRoutineEachFrame() {
             psychoJS.experiment.addData("clicked_image", clicked_img);
             psychoJS.experiment.addData("correct_answer", correct_answer);
             psychoJS.experiment.addData("isCorrect", Number.parseInt((clicked_img === correct_answer)));
+            
+            
+            let trial_end = (new Date()).getTime();
+            let task_time = (trial_end - trial_start) / 1000; // in seconds
+            psychoJS.experiment.addData("task_time_sec", task_time);
+            
             continueRoutine = false;
             break;
         }
@@ -2244,6 +2260,9 @@ function trialColor_GrayRoutineBegin(snapshot) {
     image4_2.setImage(choice4);
     image5_2.setImage(choice5);
     // Run 'Begin Routine' code from toggleGray
+    clicked_img = undefined;
+    trial_start = (new Date()).getTime();
+    
     document.querySelector('button').style.borderRadius = '0px';
     
     color_paths = [choice1, choice2, choice3, choice4, choice5];
@@ -2460,6 +2479,11 @@ function trialColor_GrayRoutineEachFrame() {
             psychoJS.experiment.addData("clicked_image", clicked_img);
             psychoJS.experiment.addData("correct_answer", correct_answer);
             psychoJS.experiment.addData("isCorrect", Number.parseInt((clicked_img === correct_answer)));
+            
+            let trial_end = (new Date()).getTime();
+            let task_time = (trial_end - trial_start) / 1000; // in seconds
+            psychoJS.experiment.addData("task_time_sec", task_time);
+            
             continueRoutine = false;
             break;
         }
