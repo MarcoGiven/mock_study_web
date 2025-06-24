@@ -79,6 +79,23 @@
   </Settings>
   <Routines>
     <Routine name="WelcomeScreen">
+      <CodeComponent name="csv" plugin="None">
+        <Param val="# psychoJS.saveResults = False;" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="// psychoJS.saveResults = false;&amp;#10;&amp;#10;var clicked_img = &quot;none&quot;;&amp;#10;var correct_answer;&amp;#10;var correct_answer_gray;&amp;#10;var trial_start;&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="csv" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <RoutineSettingsComponent name="WelcomeScreen" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -142,23 +159,6 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="False" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
-      <CodeComponent name="csv" plugin="None">
-        <Param val="# psychoJS.saveResults = False;" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="// psychoJS.saveResults = false;&amp;#10;&amp;#10;var clicked_img = &quot;none&quot;;&amp;#10;var correct_answer;&amp;#10;var correct_answer_gray;&amp;#10;var trial_start;&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Both" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="csv" valType="code" updates="None" name="name"/>
-      </CodeComponent>
     </Routine>
     <Routine name="EndScreen">
       <RoutineSettingsComponent name="EndScreen" plugin="None">

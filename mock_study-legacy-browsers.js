@@ -351,6 +351,10 @@ var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "WelcomeScreen"
   WelcomeScreenClock = new util.Clock();
+  
+  
+  
+  
   textWelcomeMessage = new visual.TextStim({
     win: psychoJS.window,
     name: 'textWelcomeMessage',
@@ -360,14 +364,10 @@ async function experimentInit() {
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
+    depth: -1.0 
   });
   
   key_Continue = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
-  
-  
-  
   
   // Initialize components for Routine "trialColor"
   trialColorClock = new util.Clock();
